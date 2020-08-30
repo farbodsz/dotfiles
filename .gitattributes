@@ -1,0 +1,2 @@
+# Recognise IdeaVim configuration file as Vimscript
+*.ideavimrc linguist-language=Vim
