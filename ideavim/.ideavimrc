@@ -1,0 +1,67 @@
+" ~~~~~~~
+" GENERAL
+" ~~~~~~~
+ 
+" Leader key
+let mapleader = " "
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+map <leader><space> :let @/ = ''<cr>
+
+" Show relative line numbers
+set number
+set relativenumber
+
+" Show file stats
+set ruler
+
+" Vim auto-indents when pasting, set a toggle for this
+set pastetoggle=<F3>
+
+" Automatically use system clipboard for copy/paste
+set clipboard=unnamedplus
+
+" Give more space for displaying messages
+set cmdheight=2
+
+" Enable mouse
+set mouse=a
+
+" Joining
+set ideajoin
+
+
+" ~~~~~~~~
+" MAPPINGS
+" ~~~~~~~~
+
+let mapleader=' '
+
+nnoremap <leader>w :w<cr>
+
+" Window navigation and resizing
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
+
+" Coc-like mappings
+vnoremap <leader>gc :action CommentByLineComment<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>cf :action ReformatCode<CR>
+vnoremap <leader>cf :action ReformatCode<CR>
+
+" FZF-like mappings
+nnoremap <leader><tab> :action SearchEverywhere<CR>
+
+" NERDTree-like mappings
+nnoremap <leader>t :action ActivateProjectToolWindow<CR>
