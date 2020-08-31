@@ -134,9 +134,3 @@ export NVM_DIR="$HOME/.nvm"
 # Run script for styling the terminal prompt
 . ~/.bash_styles
 
-# Aliases for commonly used programs
-alias chrome="google-chrome"
-alias idea="intellij-idea-ultimate"
-alias pdf="qpdfview"
-alias bfg="java -jar /opt/bfg/bfg-1.13.0.jar"  # BFG repo cleaner
-
