@@ -44,6 +44,10 @@ map <leader><space> :let @/ = ''<cr>
 set number
 set relativenumber
 
+" Folding
+set foldmethod=syntax
+au BufRead * normal zR  " open all folds by default
+
 " Show file stats
 set ruler
 
