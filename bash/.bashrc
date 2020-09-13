@@ -124,6 +124,9 @@ export PATH="/usr/local/jdk1.7.0/bin:$PATH"
 export PATH="/opt/gradle/gradle-6.4.1/bin:$PATH"
 export PATH="/opt/ghc/8.6.5/bin:$PATH"
 
+# Add custom scripts
+export PATH="/home/farbod/bin:$PATH"
+
 # NVM_DIR
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
