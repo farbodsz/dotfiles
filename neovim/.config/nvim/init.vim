@@ -120,6 +120,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 
 " Syntax highlighting improvements
+Plug 'vim-syntastic/syntastic'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -377,6 +378,19 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+
+" ~~~~~~~~~
+" SYNTASTIC
+" ~~~~~~~~~
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
+
+let g:syntastic_python_checkers = ["pylint"]
 
 
 " ~~~~~~~~~~~~~~~
