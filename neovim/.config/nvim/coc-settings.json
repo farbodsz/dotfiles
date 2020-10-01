@@ -17,5 +17,6 @@
         "languageServerHaskell": {}
       }
     }
-  }
+  },
+  "diagnostic.displayByAle": true
 }

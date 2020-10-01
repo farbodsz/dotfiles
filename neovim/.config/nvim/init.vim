@@ -96,6 +96,14 @@ autocmd FileType cpp setlocal makeprg=g++\ -g\ -std=c++14\ -Wall\ -o\ %< %
 map <F9> <ESC>:w<CR>:make<CR>
 
 
+" ~~~~~~~~~~~
+" PRE-PLUGINS
+" ~~~~~~~~~~~
+
+" Disable LSP features in ALE since already provided by COC
+" This needs to be before plugins are loaded.
+let g:ale_disable_lsp = 1
+
 " ~~~~~~~ 
 " PLUGINS
 " ~~~~~~~
@@ -120,7 +128,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 
 " Syntax highlighting improvements
-Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
+Plug 'milkypostman/vim-togglelist'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -380,17 +389,25 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 
-" ~~~~~~~~~
-" SYNTASTIC
-" ~~~~~~~~~
+" ~~~
+" ALE
+" ~~~
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
+let g:ale_linters = {
+\  'bash': ['shfmt'],
+\  'python': ['pylint'],
+\}
 
-let g:syntastic_python_checkers = ["pylint"]
+" Only run linters named in ale_linters settings.
+let g:ale_linters_explicit = 1
+
+" Set format for ALE messages
+" In this case: [linter] some error message [E]
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 
 
 " ~~~~~~~~~~~~~~~
