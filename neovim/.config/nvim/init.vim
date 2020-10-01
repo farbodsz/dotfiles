@@ -394,7 +394,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " ~~~
 
 let g:ale_linters = {
-\  'bash': ['shfmt'],
+\  'bash': ['shfmt', 'shellcheck'],
 \  'python': ['pylint'],
 \}
 
