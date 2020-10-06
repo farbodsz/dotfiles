@@ -104,6 +104,7 @@ map <F9> <ESC>:w<CR>:make<CR>
 " This needs to be before plugins are loaded.
 let g:ale_disable_lsp = 1
 
+
 " ~~~~~~~ 
 " PLUGINS
 " ~~~~~~~
@@ -134,6 +135,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'lervag/vimtex'
 
 " Auto-completion 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -157,8 +159,9 @@ Plug 'tpope/vim-fugitive'
 " Show hex colors
 Plug 'chrisbra/Colorizer'
 
-" Markdown Preview
+" Previewing
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 call plug#end()
 
@@ -390,12 +393,24 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 
 " ~~~
+" TEX
+" ~~~
+
+" Default TeX format when ambiguous for VimTeX
+let g:tex_flavor = 'latex'
+
+" Default PDF viewer for vim-latex-live-preview
+let g:livepreview_previewer = 'qpdfview'
+
+
+" ~~~
 " ALE
 " ~~~
 
 let g:ale_linters = {
 \  'bash': ['shfmt', 'shellcheck'],
 \  'python': ['pylint', 'mypy'],
+\  'tex': ['chktex'],
 \}
 
 " Only run linters named in ale_linters settings.
