@@ -10,5 +10,8 @@
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
 disable=missing-function-docstring,
+        missing-class-docstring,
         missing-module-docstring,
-        invalid-name                    # allow short (<3 char) variable names
+        invalid-name,                   # allow short (<3 char) variable names
+        too-few-public-methods,
+        using-variable-before-assignment
