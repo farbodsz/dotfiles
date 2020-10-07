@@ -111,18 +111,11 @@ let g:ale_disable_lsp = 1
 
 call plug#begin()
 
-" Themes
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
+" Theming and styling
 Plug 'sjl/badwolf', { 'as': 'badwolf' }
-
-" Lightline
 Plug 'itchyny/lightline.vim'
 
-" Display indentation levels with vertical lines
-Plug 'Yggdroot/indentLine'
-
-" Navigation plugins
+" Navigation
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -138,7 +131,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'lervag/vimtex'
 
 " Auto-completion 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -213,11 +206,6 @@ endfunction
 let g:colorizer_skip_comments = 1
 let g:colorizer_colornames = 0
 
-" Disable indentLine by default 
-let g:indentLine_enabled = 0
-" Indent line customisation
-let g:indentLine_char = '⎸'
-
 
 " ~~~~~~~~
 " NERDTREE
@@ -225,9 +213,6 @@ let g:indentLine_char = '⎸'
 
 " Open NERDTree automatically on startup
 autocmd vimenter * NERDTree
-
-" Close Vim if only window left is NERDTree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
