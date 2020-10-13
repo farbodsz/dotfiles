@@ -23,6 +23,10 @@ set textwidth=80
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
 
+" Folding
+set foldmethod=indent
+set nofoldenable  " don't fold when files are opened normally
+
 " Language-specific overrides for whitespace
 autocmd FileType javascript,css,sass,scss,html,json,yaml,sh,markdown setlocal ts=2 sw=2 expandtab 
 
