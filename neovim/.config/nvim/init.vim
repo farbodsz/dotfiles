@@ -24,7 +24,7 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
 
 " Language-specific overrides for whitespace
-autocmd FileType javascript,css,sass,scss,json,yaml,sh setlocal ts=2 sw=2 expandtab 
+autocmd FileType javascript,css,sass,scss,html,json,yaml,sh,markdown setlocal ts=2 sw=2 expandtab 
 
 " Leader key
 let mapleader = " "
@@ -266,7 +266,7 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 " Use <leader>cf for [c]ode [f]ormat 
 autocmd FileType c,cpp,objc nnoremap <buffer><leader>cf :ClangFormat<cr>
 autocmd FileType c,cpp,objc vnoremap <buffer><leader>cf :ClangFormat<cr>
-autocmd FileType javascript,typescript,json,html,css,less,scss,yaml nnoremap <buffer><leader>cf :Prettier<cr>
+autocmd FileType javascript,typescript,json,html,css,less,scss,yaml,markdown nnoremap <buffer><leader>cf :Prettier<cr>
 autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
 autocmd FileType haskell nnoremap <buffer><leader>cf :Brittany<cr> 
 autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
@@ -278,6 +278,9 @@ let g:clang_format#style_options={
             \ "IndentWidth": 4, 
             \ "AccessModifierOffset": -2, 
             \ "ContinuationIndentWidth": 8}
+
+" Prettier
+let g:prettier#config#prose_wrap='always'
 
 " Black options
 let g:black_linelength=80
