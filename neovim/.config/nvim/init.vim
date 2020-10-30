@@ -242,15 +242,20 @@ aug i3config_ft_detection
 aug end
 
 
-" ~~~
-" TEX
-" ~~~
+" ~~~~~~~~~~~~~~
+" MARKDOWN & TEX
+" ~~~~~~~~~~~~~~
 
 " Default TeX format when ambiguous for VimTeX
 let g:tex_flavor = 'latex'
 
 " Default PDF viewer for vim-latex-live-preview
-let g:livepreview_previewer = 'qpdfview'
+let g:livepreview_previewer = 'zathura'
+
+" Keybinding to preview files
+nnoremap <leader>p <Nop>  " disable Prettier plugin default binding
+autocmd FileType markdown nnoremap <buffer><leader>p :MarkdownPreview<cr>
+autocmd FileType tex nnoremap <buffer><leader>p :LLPStartPreview<cr>
 
 
 " ~~~
