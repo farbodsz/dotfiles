@@ -134,3 +134,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Run script for styling the terminal prompt
 . ~/.bash_styles
+
+# Set keyboard layout
+setxkbmap -layout us -variant altgr-intl
