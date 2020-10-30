@@ -131,10 +131,10 @@ Plug 'kshenoy/vim-signature'
 " Syntax highlighting improvements
 Plug 'dense-analysis/ale'
 Plug 'milkypostman/vim-togglelist'
-Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex'
 
 " Auto-completion 
@@ -146,10 +146,10 @@ Plug 'tpope/vim-commentary'
 " Auto-formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format'
-Plug 'psf/black', { 'branch': 'stable' }
-Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
+Plug 'stsewd/isort.nvim', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
-Plug 'meck/vim-brittany'
+Plug 'meck/vim-brittany', { 'for': 'haskell' }
 
 " Git
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -160,7 +160,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'chrisbra/Colorizer'
 
 " Previewing
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install'  }
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 call plug#end()
