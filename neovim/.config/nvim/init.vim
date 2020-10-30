@@ -1,4 +1,4 @@
-" ~~~~~~~
+3" ~~~~~~~
 " GENERAL 
 " ~~~~~~~
 
@@ -136,6 +136,7 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex'
+Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 
 " Auto-completion 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -228,6 +229,17 @@ xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 " ~~~~~~~
 
 source ~/.config/nvim/coc.vim
+
+
+" ~~~~~~
+" SYNTAX
+" ~~~~~~
+
+" i3config detection based on filepath
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.dotfiles/i3/.config/i3/config set filetype=i3config
+aug end
 
 
 " ~~~
