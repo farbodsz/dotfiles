@@ -50,4 +50,3 @@ set index-active-fg             "#45413b" # bg 2
 set recolor-lightcolor          "#1c1b1a" # bg
 set recolor-darkcolor           "#f8f6f2" # fg
 set recolor                     "true"
-set recolor-keephue             "true"    # keep original color
