@@ -1,0 +1,53 @@
+# =============================================================================
+# ZATHURA CONFIGURATION
+# Author: Farbod Salamat-Zadeh
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Basic Settings
+# -----------------------------------------------------------------------------
+
+set font "Hasklig 13"
+set adjust-open "width"
+set pages-per-row 1
+
+
+# -----------------------------------------------------------------------------
+# Theme
+# -----------------------------------------------------------------------------
+
+set default-bg                  "#1c1b1a" # bg
+set default-fg                  "#f8f6f2" # fg
+
+set statusbar-bg                "#1c1b1a" # bg
+set statusbar-fg                "#f8f6f2" # fg
+
+set inputbar-bg                 "#1c1b1a" # bg
+set inputbar-fg                 "#f8f6f2" # fg
+
+set notification-bg             "#1c1b1a" # bg
+set notification-fg             "#aeee00" # green
+set notification-warning-bg     "#1c1b1a" # bg
+set notification-warning-fg     "#ffa724" # orange
+set notification-error-bg       "#1c1b1a" # bg
+set notification-error-fg       "#ff2c4b" # red
+
+set highlight-color             "#fade3e" # yellow
+set highlight-active-color      "#ffa724" # orange
+
+set completion-bg               "#45413b" # bg 2
+set completion-fg               "#f8f6f2" # fg
+set completion-group-bg         "#35322d" # bg 1
+set completion-group-fg         "#f8f6f2" # fg
+set completion-highlight-bg     "#0a9dff" # blue
+set completion-highlight-fg     "#45413b" # bg 2
+
+set index-bg                    "#45413b" # bg 2
+set index-fg                    "#f8f6f2" # fg
+set index-active-bg             "#0a9dff" # blue
+set index-active-fg             "#45413b" # bg 2
+
+set recolor-lightcolor          "#1c1b1a" # bg
+set recolor-darkcolor           "#f8f6f2" # fg
+set recolor                     "true"
+set recolor-keephue             "true"    # keep original color
