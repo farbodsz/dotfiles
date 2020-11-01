@@ -1,4 +1,4 @@
-3" ~~~~~~~
+" ~~~~~~~
 " GENERAL 
 " ~~~~~~~
 
@@ -249,8 +249,9 @@ aug end
 " Default TeX format when ambiguous for VimTeX
 let g:tex_flavor = 'latex'
 
-" Default PDF viewer for vim-latex-live-preview
+" Settings for vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
+let g:livepreview_cursorhold_recompile = 0
 
 " Keybinding to preview files
 nnoremap <leader>p <Nop>  " disable Prettier plugin default binding
