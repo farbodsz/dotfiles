@@ -5,6 +5,6 @@ alias open="xdg-open"
 
 alias chrome="google-chrome"
 alias idea="intellij-idea-ultimate"
-alias pdf="qpdfview"
+alias pdf="zathura"
 
 alias bfg="java -jar /opt/bfg/bfg-1.13.0.jar" # BFG repo cleaner
