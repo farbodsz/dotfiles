@@ -11,6 +11,8 @@ set font "Hasklig 13"
 set adjust-open "width"
 set pages-per-row 1
 
+map J navigate previous
+map K navigate next
 
 # -----------------------------------------------------------------------------
 # Theme
