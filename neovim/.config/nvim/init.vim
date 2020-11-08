@@ -127,16 +127,17 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'milkypostman/vim-togglelist'
 
 " Syntax highlighting improvements
 Plug 'dense-analysis/ale'
-Plug 'milkypostman/vim-togglelist'
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex'
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 " Auto-completion 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -248,6 +249,20 @@ aug end
 
 " Default TeX format when ambiguous for VimTeX
 let g:tex_flavor = 'latex'
+
+" Set concealing for math symbols but disable for regular markdown
+autocmd FileType markdown,tex set conceallevel=2
+let g:vim_markdown_conceal = 0
+let g:tex_conceal='abdmgs'
+
+" Highlight math regions within markdown
+let g:vim_markdown_math = 1
+
+" Fix conceal background issue
+hi Conceal ctermbg=NONE
+hi Conceal ctermfg=NONE
+hi Conceal guifg=NONE
+hi Conceal guibg=NONE
 
 " Settings for vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
