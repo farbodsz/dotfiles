@@ -1,4 +1,4 @@
-" ~~~~~~~
+"p ~~~~~~~
 " GENERAL 
 " ~~~~~~~
 
@@ -135,7 +135,8 @@ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'KeitaNakamura/tex-conceal.vim', { 'for': 'tex' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
