@@ -1,4 +1,4 @@
-"p ~~~~~~~
+" ~~~~~~~
 " GENERAL 
 " ~~~~~~~
 
@@ -243,6 +243,10 @@ aug i3config_ft_detection
   au BufNewFile,BufRead ~/.dotfiles/i3/.config/i3/config set filetype=i3config
 aug end
 
+" Do not automatically insert bulletpoints with vim-markdown
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+
 
 " ~~~~~~~~~~~~~~
 " MARKDOWN & TEX
@@ -251,10 +255,9 @@ aug end
 " Default TeX format when ambiguous for VimTeX
 let g:tex_flavor = 'latex'
 
-" Set concealing for math symbols but disable for regular markdown
-autocmd FileType markdown,tex set conceallevel=2
-let g:vim_markdown_conceal = 0
-let g:tex_conceal='abdmgs'
+" Concealing disabled by default but add binding to enable/disable
+nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
+let g:tex_conceal='abdmg'
 
 " Highlight math regions within markdown
 let g:vim_markdown_math = 1
