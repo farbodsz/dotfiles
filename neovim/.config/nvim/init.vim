@@ -123,7 +123,6 @@ Plug 'sjl/badwolf', { 'as': 'badwolf' }
 Plug 'itchyny/lightline.vim'
 
 " Navigation
-Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
@@ -155,7 +154,6 @@ Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plug 'meck/vim-brittany', { 'for': 'haskell' }
 
 " Git
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
@@ -177,17 +175,16 @@ source ~/.config/nvim/theme.vim
 
 
 " ~~~~~~~~
-" NERDTREE
+" EXPLORER
 " ~~~~~~~~
 
-" Open NERDTree automatically on startup
-autocmd vimenter * NERDTree
+let g:coc_explorer_global_presets = {
+\   'custom': {
+\     'width': 30,
+\   },
+\ }
 
-" Show hidden files in NERDTree
-let NERDTreeShowHidden=1
-
-" Keybindings
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>t :CocCommand explorer --preset custom<CR>
 
 
 " ~~~~~~~
