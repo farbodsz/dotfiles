@@ -94,15 +94,6 @@ nnoremap <M-l> :vertical resize +2<CR>
 nnoremap <C-M-s> :e ~/.config/nvim/init.vim<CR>
 
 
-" ~~~~~~~~~
-" EXECUTION
-" ~~~~~~~~~
-
-autocmd FileType cpp setlocal makeprg=g++\ -g\ -std=c++14\ -Wall\ -o\ %< %
-
-map <F9> <ESC>:w<CR>:make<CR>
-
-
 " ~~~~~~~~~~~
 " PRE-PLUGINS
 " ~~~~~~~~~~~
@@ -138,6 +129,7 @@ Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'KeitaNakamura/tex-conceal.vim', { 'for': 'tex' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'gisphm/vim-gitignore', { 'for': 'gitignore' }
 
 " Auto-completion 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
