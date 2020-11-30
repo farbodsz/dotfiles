@@ -1,6 +1,7 @@
-" ~~~~~~~
-" GENERAL 
-" ~~~~~~~
+" =============================================================================
+" NeoVim configuration
+" Author: Farbod Salamat-Zadeh
+" =============================================================================
 
 " Syntax
 syntax on
@@ -27,11 +28,18 @@ highlight ColorColumn ctermbg=0 guibg=grey
 set foldmethod=indent
 set nofoldenable  " don't fold when files are opened normally
 
-" Language-specific overrides for whitespace
-autocmd FileType javascript,css,sass,scss,html,json,yaml,sh,markdown setlocal ts=2 sw=2 expandtab 
+" Language-specific overrides for whitespace (tabstop and shiftwidth)
+augroup whitespace_settings
+  autocmd FileType html,css,sass,scss setlocal sw=2 ts=2
+  autocmd FileType javascript setlocal sw=2 ts=2
+  autocmd FileType json,yaml setlocal sw=2 ts=2
+  autocmd FileType markdown setlocal sw=2 ts=2
+  autocmd FileType sh setlocal sw=2 ts=2
+  autocmd FileType vim setlocal sw=2 ts=2
+augroup end
 
 " Leader key
-let mapleader = " "
+let mapleader = ' '
 
 " Show sign columns
 set signcolumn=yes
@@ -102,7 +110,6 @@ nnoremap <C-M-s> :e ~/.config/nvim/init.vim<CR>
 " This needs to be before plugins are loaded.
 let g:ale_disable_lsp = 1
 
-
 " ~~~~~~~ 
 " PLUGINS
 " ~~~~~~~
@@ -159,67 +166,15 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 
-" ~~~~~
-" THEME
-" ~~~~~
+" ~~~~~~~~~~~~~
+" PLUGIN CONFIG
+" ~~~~~~~~~~~~~
 
 source ~/.config/nvim/theme.vim
-
-
-" ~~~~~~~~
-" EXPLORER
-" ~~~~~~~~
-
-let g:coc_explorer_global_presets = {
-\   'custom': {
-\     'width': 30,
-\   },
-\ }
-
-nnoremap <leader>t :CocCommand explorer --preset custom<CR>
-
-
-" ~~~~~~~
-" FZF.VIM
-" ~~~~~~~
-
-nnoremap <silent> <leader><tab> :Files<CR>
-nnoremap <silent> <leader>f :Rg<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>' :Marks<CR>
-
-
-" ~~~~~~~~~
-" GITGUTTER
-" ~~~~~~~~~
-
-" Clear default mappings for GitGutter
-let g:gitgutter_map_keys = 0
-
-" Navigate git hunks
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-
-" Preview/stage/undo hunks when cursor is in it
-nmap <leader>hs <Plug>(GitGutterStageHunk)
-nmap <leader>hu <Plug>(GitGutterUndoHunk)
-nmap <leader>hp <Plug>(GitGutterPreviewHunk)
-
-" Toggle line highlighting
-nmap <leader>hh :GitGutterLineHighlightsToggle<cr>
-
-" Hunk text objects in visual and operator-pending modes
-omap ih <Plug>(GitGutterTextObjectInnerPending)
-omap ah <Plug>(GitGutterTextObjectOuterPending)
-xmap ih <Plug>(GitGutterTextObjectInnerVisual)
-xmap ah <Plug>(GitGutterTextObjectOuterVisual)
-
-
-" ~~~~~~~
-" COC.VIM
-" ~~~~~~~
-
 source ~/.config/nvim/coc.vim
+source ~/.config/nvim/ale.vim
+source ~/.config/nvim/fzf.vim
+source ~/.config/nvim/gitgutter.vim
 
 
 " ~~~~~~
@@ -246,7 +201,7 @@ let g:tex_flavor = 'latex'
 
 " Concealing disabled by default but add binding to enable/disable
 nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
-let g:tex_conceal='abdmg'
+let g:tex_conceal = 'abdmg'
 
 " Highlight math regions within markdown
 let g:vim_markdown_math = 1
@@ -261,32 +216,12 @@ hi Conceal guibg=NONE
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
 
-" Keybinding to preview files
-nnoremap <leader>p <Nop>  " disable Prettier plugin default binding
-autocmd FileType markdown nnoremap <buffer><leader>p :MarkdownPreview<cr>
-autocmd FileType tex nnoremap <buffer><leader>p :LLPStartPreview<cr>
-
-
-" ~~~
-" ALE
-" ~~~
-
-let g:ale_linters = {
-\  'bash': ['shfmt', 'shellcheck'],
-\  'python': ['pylint', 'mypy'],
-\  'tex': ['chktex'],
-\}
-
-" Only run linters named in ale_linters settings.
-let g:ale_linters_explicit = 1
-
-" Set format for ALE messages
-" In this case: [linter] some error message [E]
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+" Keybinding to preview files and disable Prettier plugin's default binding
+nnoremap <leader>p <Nop>
+augroup file_preview
+  autocmd FileType markdown nnoremap <buffer><leader>p :MarkdownPreview<cr>
+  autocmd FileType tex      nnoremap <buffer><leader>p :LLPStartPreview<cr>
+augroup end
 
 
 " ~~~~~~~~~~~~~~~
@@ -294,30 +229,27 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 " ~~~~~~~~~~~~~~~
 
 " Use <leader>cf for [c]ode [f]ormat 
-autocmd FileType c,cpp,objc nnoremap <buffer><leader>cf :ClangFormat<cr>
-autocmd FileType c,cpp,objc vnoremap <buffer><leader>cf :ClangFormat<cr>
-autocmd FileType javascript,typescript,json,html,css,less,scss,yaml,markdown nnoremap <buffer><leader>cf :Prettier<cr>
-autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
-autocmd FileType haskell nnoremap <buffer><leader>cf :Brittany<cr> 
-autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
-
-" Clang options
-let g:clang_format#code_style="google"    " base style
-let g:clang_format#style_options={
-            \ "AllowShortCaseLabelsOnASingleLine": "true", 
-            \ "IndentWidth": 4, 
-            \ "AccessModifierOffset": -2, 
-            \ "ContinuationIndentWidth": 8}
+augroup autoformat_settings
+  autocmd FileType c,cpp nnoremap <buffer><leader>cf :ClangFormat<cr>
+  autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<cr>
+  autocmd FileType haskell nnoremap <buffer><leader>cf :Brittany<cr> 
+  autocmd FileType html,css,scss nnoremap <buffer><leader>cf :Prettier<cr>
+  autocmd FileType javascript nnoremap <buffer><leader>cf :Prettier<cr>
+  autocmd FileType json,yaml nnoremap <buffer><leader>cf :Prettier<cr>
+  autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
+  autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
+  autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
+augroup end
 
 " Prettier
-let g:prettier#config#prose_wrap='always'
+let g:prettier#config#prose_wrap = 'always'
 
 " Black options
-let g:black_linelength=80
+let g:black_linelength = 80
 
 " Brittany options
 let g:brittany_on_save = 0
-let g:brittany_config_file = "~/.config/brittany/config.yaml"
+let g:brittany_config_file = '~/.config/brittany/config.yaml'
 
 " Shfmt options: like Google style guide
-let g:shfmt_extra_args = "-i 2 -ci"
+let g:shfmt_extra_args = '-i 2 -ci'
