@@ -3,6 +3,7 @@
 
 alias open="xdg-open"
 
+alias vi="nvim"
 alias chrome="google-chrome"
 alias idea="intellij-idea-ultimate"
 alias pdf="zathura"
