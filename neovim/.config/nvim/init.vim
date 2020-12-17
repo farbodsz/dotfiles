@@ -30,6 +30,7 @@ set nofoldenable  " don't fold when files are opened normally
 
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
 augroup whitespace_settings
+  autocmd FileType bib setlocal sw=2 ts=2
   autocmd FileType html,css,sass,scss setlocal sw=2 ts=2
   autocmd FileType javascript setlocal sw=2 ts=2
   autocmd FileType json,yaml setlocal sw=2 ts=2
@@ -239,6 +240,7 @@ augroup autoformat_settings
   autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
   autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
+  autocmd FileType tex,bib nnoremap <buffer><leader>cf :ALEFix<cr>
 augroup end
 
 " Prettier
