@@ -1,6 +1,10 @@
-" ~~~~~~~
-" GENERAL
-" ~~~~~~~
+" -----------------------------------------------------------------------------
+" .ideavimrc
+"
+" My Vim keybindings for IntelliJ IDEA
+"
+" Author: Farbod Salamat-Zadeh
+" -----------------------------------------------------------------------------
  
 " Leader key
 let mapleader = " "
@@ -36,14 +40,6 @@ set mouse=a
 set ideajoin
 
 
-" ~~~~~~~~
-" MAPPINGS
-" ~~~~~~~~
-
-let mapleader=' '
-
-nnoremap <leader>w :w<cr>
-
 " Window navigation and resizing
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -63,5 +59,8 @@ vnoremap <leader>cf :action ReformatCode<CR>
 " FZF-like mappings
 nnoremap <leader><tab> :action SearchEverywhere<CR>
 
-" NERDTree-like mappings
+" Explorer-like mappings
 nnoremap <leader>t :action ActivateProjectToolWindow<CR>
+
+" GitGutter-like mappings
+nnoremap <leader>hu :action Vcs.RollbackChangedLines<CR>
