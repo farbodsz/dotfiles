@@ -39,6 +39,13 @@ augroup whitespace_settings
   autocmd FileType vim setlocal sw=2 ts=2
 augroup end
 
+" Spelling
+augroup spelling_settings
+  autocmd FileType markdown,tex setlocal spell
+  " Go to end of word, then show spelling fix suggestions in insert mode
+  autocmd FileType markdown,tex nnoremap <buffer><leader>s ea<C-x><C-s>
+augroup end
+
 " Leader key
 let mapleader = ' '
 
@@ -111,7 +118,7 @@ nnoremap <C-M-s> :e ~/.config/nvim/init.vim<CR>
 " This needs to be before plugins are loaded.
 let g:ale_disable_lsp = 1
 
-" ~~~~~~~ 
+" ~~~~~~~
 " PLUGINS
 " ~~~~~~~
 
@@ -139,7 +146,7 @@ Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'gisphm/vim-gitignore', { 'for': 'gitignore' }
 
-" Auto-completion 
+" Auto-completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -176,6 +183,8 @@ source ~/.config/nvim/coc.vim
 source ~/.config/nvim/ale.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/gitgutter.vim
+
+nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
 
 
 " ~~~~~~
@@ -229,18 +238,18 @@ augroup end
 " AUTO-FORMATTING
 " ~~~~~~~~~~~~~~~
 
-" Use <leader>cf for [c]ode [f]ormat 
+" Use <leader>cf for [c]ode [f]ormat
 augroup autoformat_settings
   autocmd FileType c,cpp nnoremap <buffer><leader>cf :ClangFormat<cr>
   autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<cr>
-  autocmd FileType haskell nnoremap <buffer><leader>cf :Brittany<cr> 
+  autocmd FileType haskell nnoremap <buffer><leader>cf :Brittany<cr>
   autocmd FileType html,css,scss nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType javascript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType json,yaml nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
   autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
-  autocmd FileType tex,bib nnoremap <buffer><leader>cf :ALEFix<cr>
+  autocmd FileType tex,bib,vim nnoremap <buffer><leader>cf :ALEFix<cr>
 augroup end
 
 " Prettier
