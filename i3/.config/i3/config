@@ -160,6 +160,17 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 1%+ unmute -q
 
 
 # -----------------------------------------------------------------------------
+# NOTIFICATIONS
+# -----------------------------------------------------------------------------
+
+# Pause notifications
+bindsym $mod+x exec killall -SIGUSR1 dunst
+
+# Resume notifications
+bindsym $mod+Shift+x exec killall -SIGUSR2 dunst # resume
+
+
+# -----------------------------------------------------------------------------
 # TAKING SCREENSHOTS 
 # -----------------------------------------------------------------------------
 
