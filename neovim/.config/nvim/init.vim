@@ -158,7 +158,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'stsewd/isort.nvim', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
-Plug 'meck/vim-brittany', { 'for': 'haskell' }
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -242,7 +241,7 @@ augroup end
 augroup autoformat_settings
   autocmd FileType c,cpp nnoremap <buffer><leader>cf :ClangFormat<cr>
   autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<cr>
-  autocmd FileType haskell nnoremap <buffer><leader>cf :Brittany<cr>
+  autocmd FileType haskell nnoremap <buffer><leader>cf :ALEFix<cr>
   autocmd FileType html,css,scss nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType javascript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType json,yaml nnoremap <buffer><leader>cf :Prettier<cr>
@@ -257,10 +256,6 @@ let g:prettier#config#prose_wrap = 'always'
 
 " Black options
 let g:black_linelength = 80
-
-" Brittany options
-let g:brittany_on_save = 0
-let g:brittany_config_file = '~/.config/brittany/config.yaml'
 
 " Shfmt options: like Google style guide
 let g:shfmt_extra_args = '-i 2 -ci'
