@@ -4,18 +4,16 @@
   "python.venvFolders": ["envs", ".pyenv", ".direnv", "venv", ".venv"],
   "languageserver": {
     "haskell": {
-      "command": "hie-wrapper",
+      "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
       "rootPatterns": [
         "*.cabal",
         "stack.yaml",
         "cabal.project",
-        "package.yaml"
+        "package.yaml",
+        "hie.yaml"
       ],
-      "filetypes": ["hs", "lhs", "haskell"],
-      "initializationOptions": {
-        "languageServerHaskell": {}
-      }
+      "filetypes": ["haskell", "lhaskell"]
     }
   },
   "diagnostic.displayByAle": true
