@@ -119,10 +119,9 @@ fi
 ###############################################################################
 
 # PATH
-export PATH="/home/farbod/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/jdk1.7.0/bin:$PATH"
 export PATH="/opt/gradle/gradle-6.4.1/bin:$PATH"
-export PATH="/opt/ghc/8.6.5/bin:$PATH"
 
 # Add custom scripts
 export PATH="/home/farbod/bin:$PATH"
@@ -131,6 +130,9 @@ export PATH="/home/farbod/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# ghcup for Haskell
+[ -f "/home/farbod/.ghcup/env" ] && source "/home/farbod/.ghcup/env" # ghcup-env
 
 # Run script for styling the terminal prompt
 . ~/.bash_styles
