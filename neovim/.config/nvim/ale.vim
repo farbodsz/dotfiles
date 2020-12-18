@@ -19,7 +19,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_fixers = {
       \ 'bib': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'haskell': ['brittany'],
+      \ 'haskell': ['brittany', 'remove_trailing_lines'],
       \ 'tex': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'vim': ['remove_trailing_lines', 'trim_whitespace'],
       \ }
