@@ -239,6 +239,9 @@ augroup end
 
 " Use <leader>cf for [c]ode [f]ormat
 augroup autoformat_settings
+  " Default
+  nnoremap <leader>cf :ALEFix<cr>
+  " Language-specific
   autocmd FileType c,cpp nnoremap <buffer><leader>cf :ClangFormat<cr>
   autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<cr>
   autocmd FileType haskell nnoremap <buffer><leader>cf :ALEFix<cr>
@@ -248,7 +251,6 @@ augroup autoformat_settings
   autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
   autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
-  autocmd FileType tex,bib,vim nnoremap <buffer><leader>cf :ALEFix<cr>
 augroup end
 
 " Prettier
