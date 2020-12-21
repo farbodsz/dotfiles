@@ -15,11 +15,12 @@ set textwidth=80
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set nowrap
 set autoindent
 set smartindent
 
-" Text width
+" Wrapping and column width
+set nowrap
+autocmd FileType qf setlocal wrap
 set textwidth=80
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
