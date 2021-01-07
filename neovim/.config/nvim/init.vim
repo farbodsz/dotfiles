@@ -26,8 +26,15 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
 
 " Folding
-set foldmethod=indent
-set nofoldenable  " don't fold when files are opened normally
+set foldmethod=manual
+set nofoldenable
+set foldopen-=block  " prevent block movements from opening folds
+
+augroup remember_folds
+  autocmd!
+  au BufWrite,VimLeave ?* mkview
+  au BufRead ?* loadview
+augroup end
 
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
 augroup whitespace_settings
