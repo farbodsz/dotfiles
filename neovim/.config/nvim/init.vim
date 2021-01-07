@@ -32,8 +32,8 @@ set foldopen-=block  " prevent block movements from opening folds
 
 augroup remember_folds
   autocmd!
-  au BufWrite,VimLeave ?* mkview
-  au BufRead ?* loadview
+  au BufWrite,VimLeave ?* silent! mkview
+  au BufRead ?* silent! loadview
 augroup end
 
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
