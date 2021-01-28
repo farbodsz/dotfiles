@@ -234,11 +234,27 @@ hi Conceal guibg=NONE
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
 
-" Keybinding to preview files and disable Prettier plugin's default binding
+" Disable Prettier plugin's default binding
 nnoremap <leader>p <Nop>
+
 augroup file_preview
-  autocmd FileType markdown nnoremap <buffer><leader>p :MarkdownPreview<cr>
-  autocmd FileType tex      nnoremap <buffer><leader>p :LLPStartPreview<cr>
+  " m for 'make'
+  " Convert to HTML using pandoc, open in chrome, then focus back on terminal
+  autocmd FileType markdown nnoremap <buffer><leader>m
+              \ :! ~/bin/mdtohtml.sh % preview.html &&
+              \ google-chrome preview.html &&
+              \ xdotool search --onlyvisible --class Kitty windowfocus<cr>
+
+  " p for 'preview'
+  " Silently convert to HTML, refresh tab, then focus back on terminal
+  autocmd FileType markdown nnoremap <buffer><silent><leader>p :silent exec
+              \ "! ~/bin/mdtohtml.sh % preview.html &&
+              \ xdotool search --onlyvisible --class Chrome windowfocus key F5 &&
+              \ xdotool search --onlyvisible --class Kitty windowfocus"<cr>
+
+  " p for 'preview'
+  " Using vim-latex-live-preview
+  autocmd FileType tex nnoremap <buffer><leader>p :LLPStartPreview<cr>
 augroup end
 
 
