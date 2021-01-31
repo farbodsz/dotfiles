@@ -206,10 +206,6 @@ aug i3config_ft_detection
   au BufNewFile,BufRead ~/.dotfiles/i3/.config/i3/config set filetype=i3config
 aug end
 
-" Do not automatically insert bulletpoints with vim-markdown
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_new_list_item_indent = 0
-
 
 " ~~~~~~~~~~~~~~
 " MARKDOWN & TEX
@@ -222,8 +218,11 @@ let g:tex_flavor = 'latex'
 nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
 let g:tex_conceal = 'abdmg'
 
-" Highlight math regions within markdown
+" Markdown settings
 let g:vim_markdown_math = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_fenced_languages = ['graphviz=dot']
 
 " Fix conceal background issue
 hi Conceal ctermbg=NONE
