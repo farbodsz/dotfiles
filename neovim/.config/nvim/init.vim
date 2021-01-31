@@ -178,6 +178,7 @@ Plug 'chrisbra/Colorizer'
 " Previewing
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install'  }
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'liuchengxu/graphviz.vim', { 'for': 'dot' }
 
 call plug#end()
 
@@ -234,21 +235,26 @@ hi Conceal guibg=NONE
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
 
+" Settings for GraphViz
+let g:graphviz_output_format = 'png'
+
 " Disable Prettier plugin's default binding
 nnoremap <leader>p <Nop>
 
 augroup file_preview
+  autocmd Filetype dot nnoremap <buffer><leader>p :Graphviz!!<cr>
+
   " m for 'make'
   " Convert to HTML using pandoc, open in chrome, then focus back on terminal
   autocmd FileType markdown nnoremap <buffer><leader>m
-              \ :! ~/bin/mdtohtml.sh % preview.html &&
+              \ :! ~/bin/mdpreview.sh % preview.html &&
               \ google-chrome preview.html &&
               \ xdotool search --onlyvisible --class Kitty windowfocus<cr>
 
   " p for 'preview'
   " Silently convert to HTML, refresh tab, then focus back on terminal
   autocmd FileType markdown nnoremap <buffer><silent><leader>p :silent exec
-              \ "! ~/bin/mdtohtml.sh % preview.html &&
+              \ "! ~/bin/mdpreview.sh % preview.html &&
               \ xdotool search --onlyvisible --class Chrome windowfocus key F5 &&
               \ xdotool search --onlyvisible --class Kitty windowfocus"<cr>
 
