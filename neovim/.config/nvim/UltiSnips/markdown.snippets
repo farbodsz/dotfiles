@@ -1,0 +1,44 @@
+snippet fmatter
+---
+title: $1
+date: ${2:`date "+%d %b %Y"`}
+---
+
+# $1
+$0
+endsnippet
+
+snippet eqn
+$$
+$1
+$$
+$0
+endsnippet
+
+snippet align
+$$
+\begin{aligned}
+$1
+\end{aligned}
+$$
+$0
+endsnippet
+
+snippet fsm
+\`\`\`graphviz
+digraph {
+
+rankdir=LR
+node [shape=circle]
+
+$1
+}
+\`\`\`
+$0
+endsnippet
+
+snippet cases
+\begin{cases}
+$1
+\end{cases}$0
+endsnippet

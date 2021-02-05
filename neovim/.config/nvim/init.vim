@@ -160,6 +160,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'SirVer/ultisnips'
 
 " Auto-formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -194,6 +195,9 @@ source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/gitgutter.vim
 
 nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
+
+let g:UltiSnipsExpandTrigger="<nop>"
+let g:UltiSnipsEditSplit="vertical"
 
 
 " ~~~~~~
