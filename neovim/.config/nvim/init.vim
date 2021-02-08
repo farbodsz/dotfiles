@@ -39,6 +39,7 @@ augroup end
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
 augroup whitespace_settings
   autocmd FileType bib setlocal sw=2 ts=2
+  autocmd FileType dot setlocal sw=2 ts=2
   autocmd FileType html,css,sass,scss setlocal sw=2 ts=2
   autocmd FileType javascript setlocal sw=2 ts=2
   autocmd FileType json,yaml setlocal sw=2 ts=2
