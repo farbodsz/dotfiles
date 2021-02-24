@@ -211,6 +211,9 @@ aug i3config_ft_detection
   au BufNewFile,BufRead ~/.dotfiles/i3/.config/i3/config set filetype=i3config
 aug end
 
+" Try improving rendering times on large files
+set re=1
+
 
 " ~~~~~~~~~~~~~~
 " MARKDOWN & TEX
