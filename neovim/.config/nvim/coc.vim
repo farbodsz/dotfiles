@@ -131,6 +131,7 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 
 let g:coc_global_extensions = [
       \ 'coc-clangd',
+      \ 'coc-clang-format-style-options',
       \ 'coc-css',
       \ 'coc-cssmodules',
       \ 'coc-eslint',
