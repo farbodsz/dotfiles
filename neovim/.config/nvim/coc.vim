@@ -2,6 +2,10 @@
 " COC.vim configuration
 " =============================================================================
 
+" ~~~~~~~~~~~~~~~~~~
+" Setup and bindings
+" ~~~~~~~~~~~~~~~~~~
+
 " TextEdit might fail if hidden not set
 set hidden
 
@@ -119,3 +123,27 @@ command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+
+
+" ~~~~~~~~~~
+" Extensions
+" ~~~~~~~~~~
+
+let g:coc_global_extensions = [
+      \ 'coc-clangd',
+      \ 'coc-css',
+      \ 'coc-cssmodules',
+      \ 'coc-eslint',
+      \ 'coc-explorer',
+      \ 'coc-java',
+      \ 'coc-json',
+      \ 'coc-lists',
+      \ 'coc-prettier',
+      \ 'coc-python',
+      \ 'coc-sh',
+      \ 'coc-snippets',
+      \ 'coc-sql',
+      \ 'coc-tsserver',
+      \ 'coc-vimtex',
+      \ 'coc-yaml',
+      \ ]
