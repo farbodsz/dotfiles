@@ -18,7 +18,7 @@ endsnippet
 
 # Math
 
-snippet eqn
+snippet math
 $$
 $1
 $$
@@ -26,12 +26,9 @@ $0
 endsnippet
 
 snippet align
-$$
 \begin{aligned}
 $1
-\end{aligned}
-$$
-$0
+\end{aligned}$0
 endsnippet
 
 snippet cases
@@ -54,6 +51,18 @@ snippet gathered
 \begin{gathered}
 $1
 \end{gathered}$0
+endsnippet
+
+# More complex math
+
+snippet induction
+\begin{aligned}
+&\textbf{Basis:} \quad $1 \\
+&\quad $2 \\
+\\
+&\textbf{Induction:} \\
+&\quad $3
+\end{aligned}$0
 endsnippet
 
 # Graphs and diagrams
