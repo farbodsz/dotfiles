@@ -239,12 +239,6 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_fenced_languages = ['graphviz=dot']
 let g:vim_markdown_frontmatter = 1
 
-" Fix conceal background issue
-hi Conceal ctermbg=NONE
-hi Conceal ctermfg=NONE
-hi Conceal guifg=NONE
-hi Conceal guibg=NONE
-
 " Settings for vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
