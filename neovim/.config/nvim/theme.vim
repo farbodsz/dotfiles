@@ -16,10 +16,10 @@ hi Conceal guibg=NONE
 
 
 " Badwolf theme improvements
-hi DiffAdd    guifg=#1c1b1a guibg=#aeee00
-hi DiffChange guifg=#1c1b1a guibg=#8cffba
-hi DiffDelete guibg=#ff2c4b
-hi DiffText   guifg=#1c1b1a guibg=#fade3e gui=bold
+hi DiffAdd    guifg=#aeee00 gui=inverse
+hi DiffChange guifg=#8cffba gui=inverse
+hi DiffDelete guifg=#ff2c4b gui=inverse
+hi DiffText   guifg=#fade3e gui=bold,inverse
 
 hi GitGutterAdd          guifg=#aeee00
 hi GitGutterChange       guifg=#8cffba
