@@ -193,6 +193,7 @@ source ~/.config/nvim/theme.vim
 source ~/.config/nvim/coc.vim
 source ~/.config/nvim/ale.vim
 source ~/.config/nvim/fzf.vim
+source ~/.config/nvim/fugitive.vim
 source ~/.config/nvim/gitgutter.vim
 
 nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
