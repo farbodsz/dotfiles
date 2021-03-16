@@ -239,6 +239,9 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_fenced_languages = ['graphviz=dot']
 let g:vim_markdown_frontmatter = 1
 
+" Use gO (goto outline) - same binding as for vim docs
+autocmd FileType markdown nnoremap <buffer>gO :Toch<cr>
+
 " Settings for vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
