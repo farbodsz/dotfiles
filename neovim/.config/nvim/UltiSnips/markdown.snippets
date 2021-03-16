@@ -8,6 +8,14 @@ date: ${2:`date "+%d %b %Y"`}
 $0
 endsnippet
 
+# Code
+
+snippet code
+\`\`\`$1
+$2
+\`\`\`$0
+endsnippet
+
 # Table
 
 snippet table
@@ -51,6 +59,14 @@ snippet gathered
 \begin{gathered}
 $1
 \end{gathered}$0
+endsnippet
+
+snippet mathop
+\DeclareMathOperator{$1}$2{$3}$0
+endsnippet
+
+snippet mathoptext
+\DeclareMathOperator{\\$1}{\text{$1}}$0
 endsnippet
 
 # More complex math
