@@ -28,6 +28,11 @@
         "stdio"
       ],
       "filetypes": ["prolog"]
+    },
+    "javacc": {
+      "command": "java",
+      "args": ["-jar", "/home/farbod/.config/nvim/bin/com.javacc.ls-uber.jar"],
+      "filetypes": ["javacc"]
     }
   },
   "diagnostic.displayByAle": true
