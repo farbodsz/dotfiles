@@ -155,6 +155,7 @@ Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'gisphm/vim-gitignore', { 'for': 'gitignore' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
+Plug '~/dot-syntax.vim', { 'for': 'dot' }
 
 " Auto-completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
