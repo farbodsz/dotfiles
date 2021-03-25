@@ -123,6 +123,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="/usr/local/jdk1.7.0/bin:$PATH"
+export PATH="/usr/local/javacc/javacc-javacc-7.0.10/scripts:$PATH"
 export PATH="/opt/gradle/gradle-6.4.1/bin:$PATH"
 
 # Add custom scripts
