@@ -27,6 +27,11 @@ command! -bang -nargs=* Rg
       \   <bang>0
       \ )
 
+function! s:find_project_root()
+  return finddir('.git/..', expand('%:p:h').';')
+endfunction
+command! ProjectFiles execute 'Files' s:find_project_root()
+
 " Set layout options for fzf.vim
 let g:fzf_layout = {
       \ 'up': '~90%',
@@ -37,7 +42,7 @@ let g:fzf_layout = {
       \ }
 
 " Bindings: most common
-nnoremap <silent> <leader><tab> :Files<CR>
+nnoremap <silent> <leader><tab> :ProjectFiles<CR>
 nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>' :Marks<CR>
 
