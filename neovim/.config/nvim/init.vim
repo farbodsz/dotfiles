@@ -12,11 +12,19 @@ set encoding=utf-8
 " Whitespace and indentation
 set expandtab
 set textwidth=80
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
 set autoindent
 set smartindent
+
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+
+" Language-specific overrides for whitespace (tabstop and shiftwidth)
+augroup whitespace_settings
+  autocmd FileType c,cpp setlocal sw=4 ts=4
+  autocmd FileType haskell setlocal sw=4 ts=4
+  autocmd FileType python setlocal sw=4 ts=4
+augroup end
 
 " Wrapping and column width
 set nowrap
@@ -34,18 +42,6 @@ augroup remember_folds
   autocmd!
   au BufWrite,VimLeave ?* silent! mkview
   au BufRead ?* silent! loadview
-augroup end
-
-" Language-specific overrides for whitespace (tabstop and shiftwidth)
-augroup whitespace_settings
-  autocmd FileType bib setlocal sw=2 ts=2
-  autocmd FileType dot setlocal sw=2 ts=2
-  autocmd FileType html,css,sass,scss setlocal sw=2 ts=2
-  autocmd FileType javascript setlocal sw=2 ts=2
-  autocmd FileType json,yaml setlocal sw=2 ts=2
-  autocmd FileType markdown setlocal sw=2 ts=2
-  autocmd FileType sh setlocal sw=2 ts=2
-  autocmd FileType vim setlocal sw=2 ts=2
 augroup end
 
 " Spelling
@@ -118,6 +114,13 @@ nnoremap <M-l> :vertical resize +2<CR>
 " Open this init.vim
 nnoremap <C-M-s> :e ~/.config/nvim/init.vim<CR>
 
+aug terminal_escape
+  " Use Esc to go to normal mode in terminal, *except* for FZF buffer
+  au!
+  au TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+  au FileType fzf tunmap <buffer> <Esc>
+aug end
+
 
 " ~~~~~~~~~~~
 " PRE-PLUGINS
@@ -153,9 +156,10 @@ Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'KeitaNakamura/tex-conceal.vim', { 'for': 'tex' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'gisphm/vim-gitignore', { 'for': 'gitignore' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
 Plug '~/dot-syntax.vim', { 'for': 'dot' }
+Plug '~/gitignore.vim', { 'for': 'gitignore' }
+Plug 'MTDL9/vim-log-highlighting'
 
 " Auto-completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
