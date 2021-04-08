@@ -24,6 +24,7 @@ augroup whitespace_settings
   autocmd FileType c,cpp setlocal sw=4 ts=4
   autocmd FileType haskell setlocal sw=4 ts=4
   autocmd FileType python setlocal sw=4 ts=4
+  autocmd FileType make setlocal noexpandtab
 augroup end
 
 " Wrapping and column width
