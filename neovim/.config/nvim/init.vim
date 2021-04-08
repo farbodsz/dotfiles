@@ -199,31 +199,12 @@ source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/fugitive.vim
 source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/markdown.vim
+source ~/.config/nvim/syntax.vim
 
 nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
 
 let g:UltiSnipsExpandTrigger="<nop>"
 let g:UltiSnipsEditSplit="vertical"
-
-
-" ~~~~~~
-" SYNTAX
-" ~~~~~~
-
-" i3config detection based on filepath
-aug i3config_ft_detection
-  au!
-  au BufNewFile,BufRead ~/.dotfiles/i3/.config/i3/config set filetype=i3config
-aug end
-
-" Use YAML syntax for .clang-format files
-aug clang_config_syntax
-  au!
-  au BufNewFile,BufRead *.clang-format set syntax=yaml
-aug end
-
-" Try improving rendering times on large files
-set re=1
 
 
 " ~~~~~~~~~~~~~~
