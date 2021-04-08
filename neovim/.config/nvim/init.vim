@@ -141,20 +141,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'milkypostman/vim-togglelist'
 
-" Syntax highlighting improvements
+" Language support
 Plug 'dense-analysis/ale'
-Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'KeitaNakamura/tex-conceal.vim', { 'for': 'tex' }
-Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'adimit/prolog.vim', { 'for': 'prolog' }
-Plug '~/dot-syntax.vim', { 'for': 'dot' }
-Plug '~/gitignore.vim', { 'for': 'gitignore' }
-Plug 'MTDL9/vim-log-highlighting'
 
 " Auto-completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -162,6 +153,17 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
+
+" Syntax highlighting
+Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
+Plug 'adimit/prolog.vim', { 'for': 'prolog' }
+Plug '~/dot-syntax.vim', { 'for': 'dot' }
+Plug '~/gitignore.vim', { 'for': 'gitignore' }
+Plug 'MTDL9/vim-log-highlighting'
 
 " Auto-formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -173,6 +175,7 @@ Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " Show hex colors
 Plug 'chrisbra/Colorizer'
