@@ -200,6 +200,7 @@ source ~/.config/nvim/ale.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/fugitive.vim
 source ~/.config/nvim/gitgutter.vim
+source ~/.config/nvim/markdown.vim
 
 nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
 
@@ -237,16 +238,6 @@ let g:tex_flavor = 'latex'
 " Concealing disabled by default but add binding to enable/disable
 nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
 let g:tex_conceal = 'abdmg'
-
-" Markdown settings
-let g:vim_markdown_math = 1
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_fenced_languages = ['graphviz=dot']
-let g:vim_markdown_frontmatter = 1
-
-" Use gO (goto outline) - same binding as for vim docs
-autocmd FileType markdown nnoremap <buffer>gO :Toch<cr>
 
 " Settings for vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
