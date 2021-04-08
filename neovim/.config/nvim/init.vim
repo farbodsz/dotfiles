@@ -85,6 +85,8 @@ set mouse=a
 " Auto source init.vim on save
 au! BufWritePost $MYVIMRC source %
 
+" Allow external project-specific vimrc
+set exrc
 
 " ~~~~~~~~
 " MAPPINGS
