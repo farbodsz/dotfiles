@@ -38,12 +38,6 @@ set foldmethod=manual
 set nofoldenable
 set foldopen-=block  " prevent block movements from opening folds
 
-augroup remember_folds
-  autocmd!
-  au BufWrite,VimLeave ?* silent! mkview
-  au BufRead ?* silent! loadview
-augroup end
-
 " Spelling
 augroup spelling_settings
   autocmd FileType markdown,tex setlocal spell
