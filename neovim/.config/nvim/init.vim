@@ -3,133 +3,18 @@
 " Author: Farbod Salamat-Zadeh
 " =============================================================================
 
-" Syntax
-syntax on
-
-" Encoding
-set encoding=utf-8
-
-" Whitespace and indentation
-set expandtab
-set textwidth=80
-set autoindent
-set smartindent
-
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-
-" Language-specific overrides for whitespace (tabstop and shiftwidth)
-augroup whitespace_settings
-  autocmd FileType c,cpp setlocal sw=4 ts=4
-  autocmd FileType haskell setlocal sw=4 ts=4
-  autocmd FileType python setlocal sw=4 ts=4
-  autocmd FileType make setlocal noexpandtab
-augroup end
-
-" Wrapping and column width
-set nowrap
-autocmd FileType qf setlocal wrap
-set textwidth=80
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=grey
-
-" Folding
-set foldmethod=manual
-set nofoldenable
-set foldopen-=block  " prevent block movements from opening folds
-
-" Spelling
-augroup spelling_settings
-  autocmd FileType markdown,tex setlocal spell
-  " Go to end of word, then show spelling fix suggestions in insert mode
-  autocmd FileType markdown,tex nnoremap <buffer><leader>s ea<C-x><C-s>
-augroup end
-
-" Leader key
-let mapleader = ' '
-
-" Show sign columns
-set signcolumn=yes
-
-" Stop newline continuation of comments
-set formatoptions-=cro
-
-" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-map <leader><space> :let @/ = ''<cr>
-
-" Show relative line numbers
-set number
-set relativenumber
-
-" Show file stats
-set ruler
-
-" Vim auto-indents when pasting, set a toggle for this
-set pastetoggle=<F3>
-
-" Automatically use system clipboard for copy/paste
-set clipboard=unnamedplus
-
-" Give more space for displaying messages
-set cmdheight=2
-
-" Enable mouse
-set mouse=a
-
-" Auto source init.vim on save
-au! BufWritePost $MYVIMRC source %
-
-" Allow external project-specific vimrc
-set exrc
-
-" ~~~~~~~~
-" MAPPINGS
-" ~~~~~~~~
-
-" Save
-nnoremap <leader>w :w<CR>
-
-" Yank file contents
-nnoremap <leader>y :%y<CR>
-
-" Window navigation and resizing
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <M-j> :resize -2<CR>
-nnoremap <M-k> :resize +2<CR>
-nnoremap <M-h> :vertical resize -2<CR>
-nnoremap <M-l> :vertical resize +2<CR>
-
-" Open this init.vim
-nnoremap <C-M-s> :e ~/.config/nvim/init.vim<CR>
-
-aug terminal_escape
-  " Use Esc to go to normal mode in terminal, *except* for FZF buffer
-  au!
-  au TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
-  au FileType fzf tunmap <buffer> <Esc>
-aug end
+" Load default mappings and keybindings
+source ~/.config/nvim/defaults.vim
+source ~/.config/nvim/mappings.vim
 
 
-" ~~~~~~~~~~~
-" PRE-PLUGINS
-" ~~~~~~~~~~~
-
+" PREPLUGIN:
 " Disable LSP features in ALE since already provided by COC
 " This needs to be before plugins are loaded.
 let g:ale_disable_lsp = 1
 
-" ~~~~~~~
-" PLUGINS
-" ~~~~~~~
+
+" PLUGINS:
 
 call plug#begin()
 
@@ -190,18 +75,22 @@ Plug 'liuchengxu/graphviz.vim', { 'for': 'dot' }
 call plug#end()
 
 
-" ~~~~~~~~~~~~~
-" PLUGIN CONFIG
-" ~~~~~~~~~~~~~
+" CONFIG:
 
 source ~/.config/nvim/theme.vim
+
 source ~/.config/nvim/coc.vim
 source ~/.config/nvim/ale.vim
+source ~/.config/nvim/format.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/fugitive.vim
 source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/markdown.vim
 source ~/.config/nvim/syntax.vim
+source ~/.config/nvim/tex.vim
+
+
+" MISCELLANY:
 
 nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
 
@@ -209,16 +98,7 @@ let g:UltiSnipsExpandTrigger="<nop>"
 let g:UltiSnipsEditSplit="vertical"
 
 
-" ~~~~~~~~~~~~~~
-" MARKDOWN & TEX
-" ~~~~~~~~~~~~~~
-
-" Default TeX format when ambiguous for VimTeX
-let g:tex_flavor = 'latex'
-
-" Concealing disabled by default but add binding to enable/disable
-nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
-let g:tex_conceal = 'abdmg'
+" PREVIEWING:
 
 " Settings for vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
@@ -251,33 +131,3 @@ augroup file_preview
   " Using vim-latex-live-preview
   autocmd FileType tex nnoremap <buffer><leader>p :LLPStartPreview<cr>
 augroup end
-
-
-" ~~~~~~~~~~~~~~~
-" AUTO-FORMATTING
-" ~~~~~~~~~~~~~~~
-
-" Use <leader>cf for [c]ode [f]ormat
-augroup autoformat_settings
-  " Language-specific
-  autocmd FileType c,cpp nnoremap <buffer><leader>cf :ClangFormat<cr>
-  autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<cr>
-  autocmd FileType haskell nnoremap <buffer><leader>cf :ALEFix<cr>
-  autocmd FileType html,css,scss nnoremap <buffer><leader>cf :Prettier<cr>
-  autocmd FileType javascript nnoremap <buffer><leader>cf :Prettier<cr>
-  autocmd FileType json,yaml nnoremap <buffer><leader>cf :Prettier<cr>
-  autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
-  autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
-  autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
-  " Default
-  nnoremap <buffer><leader>cf :ALEFix<cr>
-augroup end
-
-" Prettier
-let g:prettier#config#prose_wrap = 'always'
-
-" Black options
-let g:black_linelength = 80
-
-" Shfmt options: like Google style guide
-let g:shfmt_extra_args = '-i 2 -ci'
