@@ -20,6 +20,11 @@ nnoremap <M-k> :resize +2<CR>
 nnoremap <M-h> :vertical resize -2<CR>
 nnoremap <M-l> :vertical resize +2<CR>
 
+nnoremap <M-J> :resize -20<CR>
+nnoremap <M-K> :resize +20<CR>
+nnoremap <M-H> :vertical resize -20<CR>
+nnoremap <M-L> :vertical resize +20<CR>
+
 " Terminal mode mappings
 aug terminal_escape
   " Use Esc to go to normal mode in terminal, *except* for FZF buffer
