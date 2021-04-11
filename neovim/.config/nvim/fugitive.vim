@@ -6,6 +6,7 @@ nmap <leader>gs :G<cr>
 
 nmap <leader>gb :G blame<cr>
 nmap <leader>gl :0Gllog<cr>
+nmap <leader>go :GBrowse<cr>
 
 " Merging conflicts
 nmap <leader>gk :diffget //2<cr>
