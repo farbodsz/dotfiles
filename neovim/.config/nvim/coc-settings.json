@@ -1,7 +1,9 @@
 {
   "clangd.path": "/home/farbod/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+
   "python.jediEnabled": false,
   "python.venvFolders": ["envs", ".pyenv", ".direnv", "venv", ".venv"],
+
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
@@ -15,6 +17,13 @@
       ],
       "filetypes": ["haskell", "lhaskell"]
     },
+
+    "javacc": {
+      "command": "java",
+      "args": ["-jar", "/home/farbod/.config/nvim/bin/com.javacc.ls-uber.jar"],
+      "filetypes": ["javacc"]
+    },
+
     "prolog-lsp": {
       "command": "swipl",
       "args": [
@@ -29,11 +38,31 @@
       ],
       "filetypes": ["prolog"]
     },
-    "javacc": {
-      "command": "java",
-      "args": ["-jar", "/home/farbod/.config/nvim/bin/com.javacc.ls-uber.jar"],
-      "filetypes": ["javacc"]
+
+    "vimls": {
+      "command": "vim-language-server",
+      "args": ["--stdio"],
+      "initializationOptions": {
+        "isNeovim": true,
+        "iskeyword": "@,48-57,_,192-255,-#", // vim iskeyword option
+        "vimruntime": "", // $VIMRUNTIME option
+        "runtimepath": "", // vim runtime path separate by `,`
+        "diagnostic": {
+          "enable": true
+        },
+        "indexes": {
+          "runtimepath": true,
+          "gap": 100, // index time gap between next file
+          "count": 3
+        },
+        "suggest": {
+          "fromVimruntime": true,
+          "fromRuntimepath": false
+        }
+      },
+      "filetypes": ["vim"]
     }
   },
+
   "diagnostic.displayByAle": true
 }
