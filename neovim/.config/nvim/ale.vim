@@ -6,6 +6,7 @@ let g:ale_linters = {
       \ 'bash': ['shfmt', 'shellcheck'],
       \ 'python': ['pylint', 'mypy'],
       \ 'tex': ['chktex'],
+      \ 'vim': ['vimls', 'vint'],
       \ }
 
 " Only run linters named in ale_linters settings.
