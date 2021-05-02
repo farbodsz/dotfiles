@@ -216,3 +216,5 @@ client.urgent           #242321 #ff2c4b #ffffff #900000   #ff2c4b
 client.placeholder      #000000 #141413 #ffffff #000000   #141413
 client.background       #ffffff
 
+# Desktop wallpaper
+exec_always --no-startup-id exec bash $HOME/.fehbg
