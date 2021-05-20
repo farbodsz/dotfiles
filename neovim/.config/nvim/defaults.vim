@@ -33,6 +33,9 @@ set textwidth=80
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
 
+" Scrolling: keep 4 lines above and below cursor
+set scrolloff=4
+
 " Folding
 set foldmethod=manual
 set nofoldenable
