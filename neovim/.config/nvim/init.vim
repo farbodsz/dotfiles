@@ -48,8 +48,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
-Plug '~/dot-syntax.vim', { 'for': 'dot' }
-Plug '~/gitignore.vim', { 'for': 'gitignore' }
 Plug 'MTDL9/vim-log-highlighting'
 
 " Auto-formatting
@@ -70,7 +68,6 @@ Plug 'chrisbra/Colorizer'
 " Previewing
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install'  }
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'liuchengxu/graphviz.vim', { 'for': 'dot' }
 
 call plug#end()
 
@@ -104,15 +101,10 @@ let g:UltiSnipsEditSplit="vertical"
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
 
-" Settings for GraphViz
-let g:graphviz_output_format = 'png'
-
 " Disable Prettier plugin's default binding
 nnoremap <leader>p <Nop>
 
 augroup file_preview
-  autocmd Filetype dot nnoremap <buffer><leader>p :Graphviz!!<cr>
-
   " m for 'make'
   " Convert to HTML using pandoc, open in chrome, then focus back on terminal
   autocmd FileType markdown nnoremap <buffer><leader>m
