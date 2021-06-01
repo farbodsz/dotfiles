@@ -43,9 +43,9 @@ set foldopen-=block  " prevent block movements from opening folds
 
 " Spelling
 augroup spelling_settings
-  autocmd FileType markdown,tex setlocal spell
+  autocmd FileType gitcommit,markdown,tex setlocal spell
   " Go to end of word, then show spelling fix suggestions in insert mode
-  autocmd FileType markdown,tex nnoremap <buffer><leader>s ea<C-x><C-s>
+  autocmd FileType gitcommit,markdown,tex nnoremap <buffer><leader>s ea<C-x><C-s>
 augroup end
 
 " Leader key
