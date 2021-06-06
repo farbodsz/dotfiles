@@ -218,3 +218,11 @@ client.background       #ffffff
 
 # Desktop wallpaper
 exec_always --no-startup-id exec bash $HOME/.fehbg
+
+
+# -----------------------------------------------------------------------------
+# CUSTOM
+# -----------------------------------------------------------------------------
+
+bindsym $mod+e exec ~/.dotfiles/scripts/dmenu-emoji.sh
+bindsym $mod+q exec ~/.dotfiles/scripts/dmenu-man.sh
