@@ -6,7 +6,7 @@ Farbod's dotfiles, managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
 |             |                                            |
 | ----------- | ------------------------------------------ |
-| DE/WM       | [i3wm](https://i3wm.org/)                  |
+| DE/WM       | [i3-gaps](https://github.com/Airblader/i3) |
 | Terminal    | [kitty](https://sw.kovidgoyal.net/kitty/)  |
 | Theme       | [badwolf](https://github.com/sjl/badwolf)  |
 | Text editor | [neovim](https://github.com/neovim/neovim) |
