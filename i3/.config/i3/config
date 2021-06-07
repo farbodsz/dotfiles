@@ -77,11 +77,9 @@ bindsym $mod+Ctrl+j move workspace to output down
 bindsym $mod+Ctrl+k move workspace to output up
 bindsym $mod+Ctrl+l move workspace to output right
 
-# split in horizontal orientation
-bindsym $mod+m split h
-
-# split in vertical orientation
-bindsym $mod+n split v
+# split in horizontal/vertical orientations (o = orientation)
+bindsym $mod+o split h
+bindsym $mod+Shift+O split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -232,5 +230,9 @@ exec_always --no-startup-id exec bash $HOME/.fehbg
 # CUSTOM
 # -----------------------------------------------------------------------------
 
+# e = emoji selector
 bindsym $mod+e exec ~/.dotfiles/scripts/dmenu-emoji.sh
-bindsym $mod+q exec ~/.dotfiles/scripts/dmenu-man.sh
+# m = man page
+bindsym $mod+m exec ~/.dotfiles/scripts/dmenu-man.sh
+# M = message (send someting to i3-msg)
+bindsym $mod+Shift+m exec ~/.dotfiles/scripts/dmenu-i3-msg.sh
