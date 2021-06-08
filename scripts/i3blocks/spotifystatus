@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Prints currently playing song on Spotify
+# Requires playerctl
+
+[ "$(playerctl --player=spotify status)" = "Playing" ] && 
+  echo "🎶 $(playerctl metadata album): $(playerctl metadata title)"

@@ -7,6 +7,10 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
+[spotify]
+command=$SCRIPT_DIR/spotifystatus
+interval=10
+
 [volume]
 command=$SCRIPT_DIR/volume
 interval=once
