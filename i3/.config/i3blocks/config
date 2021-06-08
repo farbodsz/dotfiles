@@ -15,12 +15,11 @@ signal=10
 # https://github.com/vivien/i3blocks-contrib/tree/master/battery2
 [battery]
 command=$SCRIPT_DIR/battery2
-markup=pango
 interval=30
 
 [date]
 label=📅
-command=date '+%d/%m/%Y'
+command=date '+%a %d %b'
 interval=600
 
 [time]
