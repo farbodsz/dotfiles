@@ -2,5 +2,10 @@
 # Prints currently playing song on Spotify
 # Requires playerctl
 
-[ "$(playerctl --player=spotify status)" = "Playing" ] && 
-  echo "🎶 $(playerctl metadata album): $(playerctl metadata title)"
+shorten() {
+  awk -v len=30 '{ if (length($0) > len) print substr($0, 1, len-3) ".."; else print; }'
+}
+
+[ "$(playerctl --player=spotify status)" = "Playing" ] &&
+  echo "🎶 $(playerctl metadata album | shorten): $(playerctl metadata title)" |
+  sed 's/\&/\&amp;/g'
