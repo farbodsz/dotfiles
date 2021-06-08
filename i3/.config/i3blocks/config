@@ -7,14 +7,17 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-# Battery indicator
+[volume]
+command=$SCRIPT_DIR/volume
+interval=once
+signal=10
+
 # https://github.com/vivien/i3blocks-contrib/tree/master/battery2
 [battery]
 command=$SCRIPT_DIR/battery2
 markup=pango
 interval=30
 
-# Date Time
 [date]
 label=📅
 command=date '+%d/%m/%Y'
@@ -22,5 +25,5 @@ interval=600
 
 [time]
 label=🕓
-command=date '+%H:%M'
+command=date '+%H:%M '
 interval=20

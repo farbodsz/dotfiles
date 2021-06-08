@@ -153,9 +153,14 @@ bindsym $mod+r mode "resize"
 # AUDIO CONTROLS
 # -----------------------------------------------------------------------------
 
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
-bindsym XF86AudioLowerVolume exec amixer set Master 1%- unmute -q
-bindsym XF86AudioRaiseVolume exec amixer set Master 1%+ unmute -q
+# Change volume using amixer and send signal to i3block for volume
+
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle \
+  && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 1%- unmute -q \
+  && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 1%+ unmute -q \
+  && pkill -RTMIN+10 i3blocks
 
 
 # -----------------------------------------------------------------------------

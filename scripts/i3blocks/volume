@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Prints the volume percentage with a speaker emoji
+
+# Outputs something like: "Front Right: Playback 29113 44% off"
+volinfo=$(amixer -D pulse sget Master | tail -n 1 | sed 's/\[//g; s/\]//g')
+
+if [ -z "$volinfo" ]; then
+  echo "❌ ERR"
+else
+  if [ "$(echo $volinfo | awk '{print $6}')" = "off" ]; then
+    echo "🔇 MUTE"
+  else
+    # Volume percentage
+    vol=$(echo $volinfo | awk '{print $5}')
+
+    case "$vol" in
+      [0-2]*) echo "🔈 $vol" ;;
+      [3-6]*) echo "🔉 $vol" ;;
+      [7-9]* | 100) echo "🔊 $vol" ;;
+      *) echo "❌ ERR" ;;
+    esac
+  fi
+fi
