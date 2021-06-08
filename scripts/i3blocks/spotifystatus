@@ -8,4 +8,5 @@ shorten() {
 
 [ "$(playerctl --player=spotify status)" = "Playing" ] &&
   echo "🎶 $(playerctl metadata album | shorten): $(playerctl metadata title)" |
-  sed 's/\&/\&amp;/g'
+  sed 's/\&/\&amp;/g' ||
+  echo ''
