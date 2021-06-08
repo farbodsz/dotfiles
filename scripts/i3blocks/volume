@@ -14,9 +14,10 @@ else
     vol=$(echo $volinfo | awk '{print $5}')
 
     case "$vol" in
-      [0-2]*) echo "🔈 $vol" ;;
+      [0-2][0-9]) echo "🔈 $vol" ;;
       [3-6]*) echo "🔉 $vol" ;;
-      [7-9]* | 100) echo "🔊 $vol" ;;
+      [7-9]*) echo "🔊 $vol" ;;
+      [100]*) echo "🔊 $vol" ;;
       *) echo "❌ ERR" ;;
     esac
   fi
