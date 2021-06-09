@@ -192,7 +192,7 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 #  - Disable window titlebars (needed in order for gaps to work)
 for_window [class=".*"] border pixel 0
 #  - Gap width
-gaps inner 10
+gaps inner 20
 #  - Only show gap if in split mode with >1 window
 # smart_gaps on
 
@@ -200,7 +200,6 @@ gaps inner 10
 # finds out, if available)
 bar {
   position top
-  mode hide
   status_command SCRIPT_DIR=~/.dotfiles/scripts/i3blocks i3blocks
 
   colors {
