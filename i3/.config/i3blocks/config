@@ -27,6 +27,5 @@ command=date '+%a %d %b'
 interval=600
 
 [time]
-label=🕓
-command=date '+%H:%M '
+command=$SCRIPT_DIR/time
 interval=20
