@@ -22,7 +22,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'haskell': ['brittany', 'remove_trailing_lines'],
+      \ 'haskell': ['stylish-haskell', 'brittany'],
       \ }
 
 " Mapping to see error detail window
