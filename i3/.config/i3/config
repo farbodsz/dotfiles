@@ -150,10 +150,10 @@ bindsym $mod+r mode "resize"
 
 
 # -----------------------------------------------------------------------------
-# AUDIO CONTROLS
+# AUDIO/VIDEO CONTROLS
 # -----------------------------------------------------------------------------
 
-# Change volume using amixer and send signal to i3block for volume
+# Status bar is updated by sending the signal number in the i3block config
 
 bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle \
   && pkill -RTMIN+10 i3blocks
@@ -161,6 +161,11 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 1%- unmute -q \
   && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 1%+ unmute -q \
   && pkill -RTMIN+10 i3blocks
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 \
+  && pkill -RTMIN+11 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 \
+  && pkill -RTMIN+11 i3blocks
 
 
 # -----------------------------------------------------------------------------
@@ -175,7 +180,7 @@ bindsym $mod+Shift+x exec killall -SIGUSR2 dunst # resume
 
 
 # -----------------------------------------------------------------------------
-# TAKING SCREENSHOTS 
+# TAKING SCREENSHOTS
 # -----------------------------------------------------------------------------
 
 # Multi-screen screenshots with scrot

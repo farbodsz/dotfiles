@@ -16,6 +16,11 @@ command=$SCRIPT_DIR/volume
 interval=once
 signal=10
 
+[brightness]
+command=$SCRIPT_DIR/brightness
+interval=once
+signal=11
+
 # https://github.com/vivien/i3blocks-contrib/tree/master/battery2
 [battery]
 command=$SCRIPT_DIR/battery2

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Prints the brightness percentage with an emoji
+
+# Outputs something like: "80.0000", so convert to integer
+currval_float=$(xbacklight -get)
+currval=${currval_float%.*}
+
+[ "$currval" -lt 50 ] &&
+  echo "🔅 $currval%" ||
+  echo "🔆 $currval%"
