@@ -84,8 +84,5 @@ set cmdheight=2
 " Enable mouse
 set mouse=a
 
-" Auto source init.vim on save
-au! BufWritePost init.vim source %
-
 " Allow external project-specific vimrc
 set exrc

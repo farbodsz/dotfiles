@@ -19,8 +19,9 @@ let g:ale_disable_lsp = 1
 call plug#begin()
 
 " Theming and styling
-Plug 'sjl/badwolf', { 'as': 'badwolf' }
+Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " Navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

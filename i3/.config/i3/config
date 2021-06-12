@@ -201,6 +201,19 @@ gaps inner 20
 #  - Only show gap if in split mode with >1 window
 # smart_gaps on
 
+
+# Gruvbox dark hard colors, with darker bg from badwolf
+set $bg     #1c1b1a
+set $fg     #fbf1c7
+set $red    #cc241d
+set $green  #98971a
+set $yellow #d79921
+set $blue   #458588
+set $purple #b16286
+set $aqua   #689d68
+set $gray   #a89984
+set $dkgray #1d2021
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -208,28 +221,23 @@ bar {
   status_command SCRIPT_DIR=~/.dotfiles/scripts/i3blocks i3blocks
 
   colors {
-    background #1c1b1a
-    statusline #ffffff
+    background $bg
+    statusline $fg
 
     # Class            border  backgr. text
-    focused_workspace  #fade3e #fade3e #000000
-    active_workspace   #857f78 #857f78 #000000
-    inactive_workspace #857f78 #857f78 #1c1b1a
-    urgent_workspace   #242321 #242321 #ffffff
-    binding_mode       #242321 #242321 #ffffff
+    focused_workspace  $aqua   $aqua   $dkgray
+    active_workspace   $dkgray $dkgray $yellow
+    inactive_workspace $dkgray $dkgray $yellow
+    urgent_workspace   $red    $red    $bg
+    binding_mode       $red    $red    $bg
   }
 }
 
-# Color customization
-# - Colors from badwolf theme
-# - Use background color for child_border to make it look invisible
 # Class                 border  backgr. text    indicator child_border
-client.focused          #1c1b1a #1c1b1a #ffffff #000000   #1c1b1a
-client.focused_inactive #35322d #45413b #ffffff #45413b   #45413b
-client.unfocused        #35322d #242321 #857f78 #242321   #242321
-client.urgent           #242321 #ff2c4b #ffffff #900000   #ff2c4b
-client.placeholder      #000000 #141413 #ffffff #000000   #141413
-client.background       #ffffff
+client.focused          $blue   $blue   $dkgray $purple   $dkgray
+client.focused_inactive $dkgray $dkgray $yellow $purple   $dkgray
+client.unfocused        $dkgray $dkgray $yellow $purple   $dkgray
+client.urgent           $red    $red    $fg     $red      $red
 
 # Desktop wallpaper
 exec_always --no-startup-id exec bash $HOME/.fehbg

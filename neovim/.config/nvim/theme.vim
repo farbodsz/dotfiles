@@ -3,43 +3,19 @@
 " =============================================================================
 
 " Set theme
-colorscheme badwolf
 set background=dark
 set termguicolors
 
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_colors = { 'bg0': '1c1b1a' } " darker bg from badwolf
+let g:gruvbox_sign_column = 'bg0'
 
-" Fix conceal background issue
-hi Conceal ctermbg=NONE
-hi Conceal ctermfg=NONE
-hi Conceal guifg=NONE
-hi Conceal guibg=NONE
-
-
-" Badwolf theme improvements
-hi DiffAdd    guifg=#aeee00 gui=inverse
-hi DiffChange guifg=#8cffba gui=inverse
-hi DiffDelete guifg=#ff2c4b gui=inverse
-hi DiffText   guifg=#fade3e gui=bold,inverse
-
-hi GitGutterAdd          guifg=#aeee00
-hi GitGutterChange       guifg=#8cffba
-hi GitGutterDelete       guifg=#ff2c4b
-hi GitGutterChangeDelete guifg=#8cffba
-
-hi SignatureMarkText   guifg=#8cffba
-hi SignatureMarkerText guifg=#ff9eb8
-
-hi ALEErrorSign   guifg=#ff2c4b
-hi ALEWarningSign guifg=#fade3e
-hi ALEInfoSign    guifg=#ff9eb8
-
-" Turn on CSS properties highlighting
-let g:badwolf_css_sprops_highlight = 1
+colorscheme gruvbox
 
 
 " Lightline customisation
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
