@@ -15,5 +15,21 @@ aug clang_config_syntax
   au BufNewFile,BufRead *.clang-format set syntax=yaml
 aug end
 
-" Try improving rendering times on large files
-set re=1
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  ignore_install = { },
+  -- Highlighting
+  highlight = {
+    enable = true
+  },
+  -- Tree-sitter based indentation
+  indent = {
+    enable = true
+  }
+}
+EOF
+
+" Tree-sitter folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()

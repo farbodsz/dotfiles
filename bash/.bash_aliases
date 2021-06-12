@@ -3,7 +3,7 @@
 
 alias open="xdg-open"
 
-alias vi="nvim"
+alias vi="nvim.appimage"
 alias chrome="google-chrome"
 alias idea="intellij-idea-ultimate"
 alias pdf="zathura"

@@ -41,10 +41,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
 
+" Tree sitter
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/playground'
+
 " Syntax highlighting
-Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
