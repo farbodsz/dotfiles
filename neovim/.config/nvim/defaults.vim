@@ -28,7 +28,13 @@ augroup end
 
 " Wrapping and column width
 set nowrap
-autocmd FileType qf setlocal wrap
+
+augroup wrapping
+  au!
+  autocmd FileType ale-preview setlocal wrap
+  autocmd FileType qf setlocal wrap
+augroup end
+
 set textwidth=80
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
