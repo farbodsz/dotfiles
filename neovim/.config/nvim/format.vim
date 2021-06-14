@@ -15,6 +15,8 @@ augroup autoformat_settings
   autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
   autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
+  autocmd FileType typescript nnoremap <buffer><leader>cf :Prettier<cr>
+  autocmd FileType typescriptreact nnoremap <buffer><leader>cf :Prettier<cr>
   " Default
   nnoremap <buffer><leader>cf :ALEFix<cr>
 augroup end
