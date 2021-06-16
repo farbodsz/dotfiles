@@ -137,6 +137,11 @@ export NVM_DIR="$HOME/.nvm"
 # ghcup for Haskell
 [ -f "/home/farbod/.ghcup/env" ] && source "/home/farbod/.ghcup/env" # ghcup-env
 
+# IHP and dependencies
+source ~/.nix-profile/etc/profile.d/nix.sh
+export IHP_BROWSER=google-chrome
+eval "$(direnv hook bash)"
+
 # Run script for styling the terminal prompt
 . ~/.bash_styles
 
