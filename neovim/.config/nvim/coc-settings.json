@@ -39,6 +39,11 @@
       "filetypes": ["prolog"]
     },
 
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
+    },
+
     "vimls": {
       "command": "vim-language-server",
       "args": ["--stdio"],
