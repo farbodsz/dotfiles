@@ -46,9 +46,10 @@ Plug 'SirVer/ultisnips'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
 
-" Syntax highlighting
+" Language syntax/detection
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
+Plug 'https://github.com/LnL7/vim-nix', { 'for': 'nix' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
 Plug 'MTDL9/vim-log-highlighting'
 
