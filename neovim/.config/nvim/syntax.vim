@@ -17,7 +17,7 @@ aug end
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   ignore_install = { },
   -- Highlighting
   highlight = {
@@ -28,6 +28,12 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+
+-- At the moment, some languages (e.g. tree-sitter-haskell) compile with errors
+-- when compiled with `gcc`. Force `clang` to resolve this and ensure 
+-- consistency.
+require'nvim-treesitter.install'.compilers = { "clang" }
+
 EOF
 
 " Tree-sitter folding
