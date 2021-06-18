@@ -59,6 +59,7 @@
   (constructor_operator)
   (type_operator)
   (tycon_arrow)
+  (qualified_module)  ; grabs the `.` (dot), ex: import System.IO
   (all_names)
   (wildcard)
   "="
@@ -72,7 +73,7 @@
   "@"
 ] @operator
 
-(qualified_module (module) @parameter)  ; TODO: use different capture group?
+(qualified_module (module) @constructor)
 (qualified_type (module) @namespace)
 (qualified_variable (module) @namespace)
 (import (module) @namespace)
@@ -102,8 +103,8 @@
 ;; ----------------------------------------------------------------------------
 ;; Functions and variables
 
-(signature name: (variable) @function)
-(function name: (variable) @function.call)
+(signature name: (variable) @type)
+(function name: (variable) @function)
 
 (variable) @variable
 "_" @variable.special
