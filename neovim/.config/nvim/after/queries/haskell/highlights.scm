@@ -1,24 +1,37 @@
-; Highlights based on that of:
-; https://github.com/nvim-treesitter/nvim-treesitter/pull/1210
-
-; There are also highlights at https://github.com/farbodsz/tree-sitter-haskell
-; but they seem to work less well
-
+;; ----------------------------------------------------------------------------
+;; Literals and comments
 
 (integer) @number
+(exp_negation) @number
 (exp_literal (float)) @float
-
 (char) @character
-
 (string) @string
 
-(variable) @variable
-
-(con_unit) @symbol
+(con_unit) @symbol  ; unit, as in ()
 
 (comment) @comment
 
-(function name: (variable) @function)
+
+;; ----------------------------------------------------------------------------
+;; Punctuation
+
+[
+  "("
+  ")"
+  "{"
+  "}"
+  "["
+  "]"
+] @punctuation.bracket
+
+[
+  (comma)
+  ";"
+] @punctuation.delimiter
+
+
+;; ----------------------------------------------------------------------------
+;; Keywords, operators, includes
 
 [
   "forall"
@@ -31,37 +44,38 @@
   "if"
   "then"
   "else"
+  "case"
+  "of"
 ] @conditional
 
 [
-  (constructor)
-  (module)
-] @constructor
-
-;; True or False
-((constructor) @_bool (#match? @_bool "(True|False)")) @boolean
-
-(signature name: (variable) @type)
-(constraint class: (class_name (type)) @type)
-(class (class_head class: (class_name (type)) @type))
-(instance (instance_head class: (class_name (type)) @type))
-
-[
-  (type)
-] @type
-
-[
-  (qualified_module) ;; grabs the `.` (dot), ex: import System.IO
-  (tycon_arrow)
-  (operator)
-  (constructor_operator)
-  "::"
-] @operator
-
-[
   "import"
+  "qualified"
   "module"
 ] @include
+
+[
+  (operator)
+  (constructor_operator)
+  (type_operator)
+  (tycon_arrow)
+  (all_names)
+  (wildcard)
+  "="
+  "|"
+  "::"
+  "=>"
+  "->"
+  "<-"
+  "\\"
+  "`"
+  "@"
+] @operator
+
+(qualified_module (module) @parameter)  ; TODO: use different capture group?
+(qualified_type (module) @namespace)
+(qualified_variable (module) @namespace)
+(import (module) @namespace)
 
 [
   (where)
@@ -73,8 +87,8 @@
   "newtype"
   "family"
   "type"
-  "qualified"
   "as"
+  "hiding"
   "deriving"
   "via"
   "stock"
@@ -84,15 +98,27 @@
   "rec"
 ] @keyword
 
-[
-  "("
-  ")"
-  "{"
-  "}"
-  "["
-  "]"
-] @punctuation.bracket
 
-; [
-;   ","
-; ] @punctuation.delimiter
+;; ----------------------------------------------------------------------------
+;; Functions and variables
+
+(signature name: (variable) @function)
+(function name: (variable) @function.call)
+
+(variable) @variable
+"_" @variable.special
+
+(exp_infix (variable) @operator)  ; consider infix functions as operators
+
+("@" @namespace)  ; "as" pattern operator, e.g. x@Constructor
+
+
+;; ----------------------------------------------------------------------------
+;; Types
+
+(type) @type
+
+(constructor) @constructor
+
+; True or False
+((constructor) @_bool (#match? @_bool "(True|False)")) @boolean
