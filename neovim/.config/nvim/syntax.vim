@@ -17,7 +17,7 @@ aug end
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
+  ensure_installed = "maintained",  -- compile Haskell parser manually
   ignore_install = { },
   -- Highlighting
   highlight = {
@@ -29,9 +29,8 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
--- At the moment, some languages (e.g. tree-sitter-haskell) compile with errors
--- when compiled with `gcc`. Force `clang` to resolve this and ensure 
--- consistency.
+-- At the moment, some languages compile with errors when compiled with `gcc`.
+-- Force `clang` to resolve this and ensure consistency.
 require'nvim-treesitter.install'.compilers = { "clang" }
 
 EOF
