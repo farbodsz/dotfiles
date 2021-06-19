@@ -1,2 +1,5 @@
 # Font UUIDs
 .uuid
+
+# NeoMutt email account details
+accounts.muttrc

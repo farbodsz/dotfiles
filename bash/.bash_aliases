@@ -11,3 +11,5 @@ alias pdf="zathura"
 alias bfg="java -jar /opt/bfg/bfg-1.13.0.jar" # BFG repo cleaner
 
 alias dotfiles="cd $HOME/.dotfiles/"
+
+alias m=neomutt

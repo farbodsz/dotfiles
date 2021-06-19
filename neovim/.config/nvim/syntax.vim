@@ -15,6 +15,13 @@ aug clang_config_syntax
   au BufNewFile,BufRead *.clang-format set syntax=yaml
 aug end
 
+" Mutt
+aug mutt_ft_detection
+  au!
+  au BufNewFile,BufRead *.muttrc set filetype=muttrc
+  au BufNewFile,BufRead *mutt-* set filetype=mail
+aug end
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",  -- compile Haskell parser manually
