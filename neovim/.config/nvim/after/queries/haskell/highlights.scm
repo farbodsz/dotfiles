@@ -123,3 +123,10 @@
 
 ; True or False
 ((constructor) @_bool (#match? @_bool "(True|False)")) @boolean
+
+
+;; ----------------------------------------------------------------------------
+;; Quasi-quotes
+
+(quoter) @attribute
+; Highlighting the body is handled by injections.scm
