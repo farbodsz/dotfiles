@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 # Bash aliases
 
-alias open="xdg-open"
-
-alias vi="nvim.appimage"
+alias bfg="java -jar /opt/bfg/bfg-1.13.0.jar" # BFG repo cleaner
 alias chrome="google-chrome"
 alias idea="intellij-idea-ultimate"
+alias m=neomutt
+alias open="xdg-open"
 alias pdf="zathura"
-
-alias bfg="java -jar /opt/bfg/bfg-1.13.0.jar" # BFG repo cleaner
+alias vi="nvim.appimage"
 
 alias dtf="cd $HOME/.dotfiles/"
 
-alias m=neomutt
+# Clean up home dotfiles
+alias gcalcli="gcalcli --config-folder=/home/farbod/.config/gcalcli"
+alias hue="hue -c ~/.config/hue/hue.json"
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
