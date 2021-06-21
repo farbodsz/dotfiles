@@ -1,1 +1,20 @@
+# Images
+image/bmp;feh %s
+image/gif;feh %s
+image/ilbm;feh %s
+image/jpg;feh %s
+image/jpeg;feh %s
+image/png;feh %s
+image/tiff;feh %s
+image/x-png;feh %s
+image/x-ilbm;feh %s
+
+# Text, HTML, XML
+text/plain;vim %s
+text/xml;vim %s
+
 text/html; elinks -dump; copiousoutput;
+
+# PDF
+application/pdf;zathura %s
+image/pdf;zathura %s
