@@ -1,0 +1,15 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/mailto=neomutt.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+x-scheme-handler/msteams=teams.desktop
+
+[Added Associations]
+text/html=org.gnome.gedit.desktop;
+application/pdf=libreoffice-draw.desktop;google-chrome.desktop;zathura-pdf-poppler.desktop;qpdfview.desktop;
+image/jpeg=gimp.desktop;
