@@ -1,0 +1,69 @@
+# Reset weird bindings that are unused, or cause conflicts with others.
+
+# --------------------
+# BINDINGS: NAVIGATION
+# --------------------
+
+bind attach,index,pager g noop
+
+bind index,pager,compose H noop
+bind index,pager,compose L noop
+bind index,pager,compose M noop
+bind index,pager,compose z noop
+bind index,pager,compose Z noop
+
+# -----------
+# INDEX/PAGER
+# -----------
+
+bind index,pager c noop
+bind index,pager <Esc>c noop
+
+bind index,pager C noop
+bind index,pager <Esc>C noop
+
+bind index,pager d noop
+bind index,pager D noop
+bind index,pager \CD noop
+bind index,pager <Esc>d noop
+
+bind index,pager i noop
+bind index,pager <Esc>i noop
+
+bind index,pager <Esc>k noop
+
+bind index,pager r noop
+
+bind index,pager s noop
+bind index,pager <Esc>s noop
+
+bind index,pager S noop
+
+bind index,pager t noop
+bind index,pager T noop
+bind index,pager <Esc>t noop
+
+bind index,pager u noop
+bind index,pager U noop
+bind index,pager \Cu noop
+bind index,pager <Esc>u noop
+
+bind index,pager <Esc>v noop
+bind index,pager <Esc>V noop
+
+bind index,pager y noop
+bind index,pager Y noop
+
+# -------
+# COMPOSE
+# -------
+
+bind compose b noop
+bind compose c noop
+bind compose d noop
+bind compose f noop
+bind compose <Esc>f noop
+bind compose r noop
+bind compose s noop
+bind compose t noop
+bind compose y noop
