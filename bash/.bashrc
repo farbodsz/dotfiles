@@ -75,6 +75,11 @@ fi
 # Set keyboard layout
 setxkbmap -layout us -variant altgr-intl
 
+#-------------------------------------------------------------------------------
+# Default programs
+#-------------------------------------------------------------------------------
+
+export BROWSER=google-chrome
 export EDITOR=~/.local/bin/nvim.appimage
 
 #-------------------------------------------------------------------------------

@@ -155,8 +155,9 @@ macro compose \Ch "F pandoc -s -f markdown -t html \ny^T^Utext/html; charset=utf
 # Open in browser
 macro attach \Co "<pipe-entry>iconv -c --to-code=UTF8 > /tmp/mail.html<Enter><shell-escape>$BROWSER /tmp/mail.html<Enter>"
 
-# View list of links on page. Follow links with urlview
-macro pager U <pipe-entry>'urlview'<Enter> 'Follow links with urlview'
+# Urlscan
+macro attach,compose U "<pipe-entry>   urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro index,pager    U "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
 # Goobook integration
 set query_command = "goobook query %s"
