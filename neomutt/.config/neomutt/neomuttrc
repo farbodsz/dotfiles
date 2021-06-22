@@ -9,14 +9,15 @@
 # -------
 
 set my_cfgdir = $HOME/.dotfiles/neomutt/.config/neomutt
+set my_cachedir = $HOME/.cache/neomutt
 
 set realname="Farbod Salamat-Zadeh"
 source $my_cfgdir/accounts.muttrc
 source $my_cfgdir/theme.muttrc
 
 # Paths
-set header_cache = $XDG_CACHE_HOME/neomutt/headers
-set message_cachedir = $XDG_CACHE_HOME/neomutt/bodies
+set header_cache = $my_cachedir
+set message_cachedir = $my_cachedir
 set mailcap_path = $my_cfgdir/mailcap
 
 # Mail folders
