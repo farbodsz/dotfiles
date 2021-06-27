@@ -1,8 +1,10 @@
 bar mode invisible
 bar mode dock
+gaps inner all set 0
 gaps inner all set 10
 gaps inner all set 20
 gaps inner all set 30
+gaps outer all set 0
 gaps outer all set 10
 gaps outer all set 20
 gaps outer all set 30
