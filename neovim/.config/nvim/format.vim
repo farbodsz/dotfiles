@@ -21,6 +21,10 @@ augroup autoformat_settings
   nnoremap <buffer><leader>cf :ALEFix<cr>
 augroup end
 
+" ClangFormat defaults
+let g:clang_format#code_style = 'google'
+let g:clang_format#style_options = { 'AccessModifierOffset': -2 }
+
 " Prettier
 let g:prettier#config#prose_wrap = 'always'
 
