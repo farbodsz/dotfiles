@@ -1,6 +1,8 @@
 {
   "clangd.path": "/home/farbod/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
 
+  "diagnostic.displayByAle": true,
+
   "python.jediEnabled": false,
   "python.venvFolders": ["envs", ".pyenv", ".direnv", "venv", ".venv"],
 
@@ -24,6 +26,16 @@
       "filetypes": ["javacc"]
     },
 
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
+    },
+
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
+    },
+
     "prolog-lsp": {
       "command": "swipl",
       "args": [
@@ -37,11 +49,6 @@
         "stdio"
       ],
       "filetypes": ["prolog"]
-    },
-
-    "nix": {
-      "command": "rnix-lsp",
-      "filetypes": ["nix"]
     },
 
     "vimls": {
@@ -67,7 +74,5 @@
       },
       "filetypes": ["vim"]
     }
-  },
-
-  "diagnostic.displayByAle": true
+  }
 }
