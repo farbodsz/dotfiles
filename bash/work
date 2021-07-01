@@ -1,0 +1,33 @@
+#!/bin/sh
+# Work configuration
+
+#-------------------------------------------------------------------------------
+# Terminal
+#-------------------------------------------------------------------------------
+
+export TERM=xterm-256color
+
+#-------------------------------------------------------------------------------
+# Local Perl (for GNU stow)
+#-------------------------------------------------------------------------------
+
+export PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
+export PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_MB_OPT="--install_base \"$HOME/perl5\""
+export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
+
+#-------------------------------------------------------------------------------
+# Aliases
+#-------------------------------------------------------------------------------
+
+alias wah="cd /apps/home/salamatf"
+
+# Q REPL
+alias q="/opt/sp/qlib/3.5u.x86_64/q"
+
+#-------------------------------------------------------------------------------
+# Python 3.8
+#-------------------------------------------------------------------------------
+
+[ -f /opt/rh/rh-python38/enable ] && source /opt/rh/rh-python38/enable

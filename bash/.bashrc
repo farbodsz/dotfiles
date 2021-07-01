@@ -1,4 +1,4 @@
-# !/usr/bin/env bash
+#!/usr/bin/env bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 # If not running interactively, don't do anything
@@ -134,8 +134,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #-------------------------------------------------------------------------------
 
 # Source aliases and custom styling if exist
-[ -f ~/.dotfiles/bash/aliases ] && source ~/.dotfiles/bash/aliases
-source ~/.dotfiles/bash/styles
+source $HOME/.dotfiles/bash/aliases
+source $HOME/.dotfiles/bash/styles
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -165,7 +165,10 @@ export PATH="/opt/gradle/gradle-6.4.1/bin:$PATH"
 # Node Version Manager
 #-------------------------------------------------------------------------------
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] &&
+  printf %s "${HOME}/.nvm" ||
+  printf %s "${XDG_CONFIG_HOME}/nvm")"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
@@ -174,12 +177,21 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 #-------------------------------------------------------------------------------
 
 # ghcup for Haskell
-[ -f "/home/farbod/.ghcup/env" ] && source "/home/farbod/.ghcup/env"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # IHP and dependencies
-source ~/.nix-profile/etc/profile.d/nix.sh
-export IHP_BROWSER=google-chrome
-eval "$(direnv hook bash)"
+[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] &&
+  source $HOME/.nix-profile/etc/profile.d/nix.sh &&
+  export IHP_BROWSER=google-chrome &&
+  eval "$(direnv hook bash)"
 
-# Hackage user deails
-source ~/.hackage_userinfo.sh
+# Hackage user details
+[ -f $HOME/.hackage_userinfo.sh ] && source $HOME/.hackage_userinfo.sh
+
+#-------------------------------------------------------------------------------
+# Work stuff
+#-------------------------------------------------------------------------------
+
+[[ $(hostname) = "ldz"* ]] &&
+  [ -f $HOME/.dotfiles/bash/work ] &&
+  source $HOME/.dotfiles/bash/work
