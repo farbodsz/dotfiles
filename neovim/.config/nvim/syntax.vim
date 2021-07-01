@@ -33,4 +33,9 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+
+-- At the moment, some languages (e.g. Haskell) compile with errors when
+-- compiled with `gcc`.
+require'nvim-treesitter.install'.compilers = { "clang" }
+
 EOF
