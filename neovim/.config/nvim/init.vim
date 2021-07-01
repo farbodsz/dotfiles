@@ -49,8 +49,9 @@ Plug 'nvim-treesitter/playground'
 " Language syntax/detection
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
-Plug 'https://github.com/LnL7/vim-nix', { 'for': 'nix' }
+Plug 'LnL7/vim-nix', { 'for': 'nix' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
+Plug 'memgraph/cypher.vim', { 'for': 'cypher' }
 Plug 'MTDL9/vim-log-highlighting'
 
 " Auto-formatting
