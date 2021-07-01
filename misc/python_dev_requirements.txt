@@ -1,0 +1,8 @@
+isort==5.9.1
+jedi==0.17.2
+mypy==0.910
+pylint==2.9.0
+pyls-mypy==0.1.8
+pynvim
+python-language-server==0.36.2
+typing==3.7.4.3
