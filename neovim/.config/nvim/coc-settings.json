@@ -3,9 +3,6 @@
 
   "diagnostic.displayByAle": true,
 
-  "python.jediEnabled": false,
-  "python.venvFolders": ["envs", ".pyenv", ".direnv", "venv", ".venv"],
-
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
@@ -34,6 +31,32 @@
     "nix": {
       "command": "rnix-lsp",
       "filetypes": ["nix"]
+    },
+    
+    "python": {
+      "command": "python",
+      "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
+      "trace.server": "verbose",
+      "filetypes": ["python"],
+      "settings": {
+        "pyls": {
+          "enable": true,
+          "trace": { "server": "verbose" },
+          "commandPath": "",
+          "plugins": {
+            "jedi_completion": { "enabled": true },
+            "jedi_hover": { "enabled": true },
+            "jedi_references": { "enabled": true },
+            "jedi_signature_help": { "enabled": true },
+            "jedi_symbols": { "enabled": true, "all_scopes": true },
+            "mccabe": { "enabled": true, "threshold": 15 },
+            "preload": { "enabled": true },
+            // Enable type-checking (requires pyls-mypy from pip)
+            "pyls_mypy": { "enabled": true, "live_mode": false },
+            "rope_completion": { "enabled": true }
+          }
+        }
+      }
     },
 
     "prolog-lsp": {
