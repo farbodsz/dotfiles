@@ -24,8 +24,7 @@ aug end
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",  -- compile Haskell parser manually
-  ignore_install = { },
+  ensure_installed = "maintained",
   -- Highlighting
   highlight = {
     enable = true
@@ -35,13 +34,4 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
-
--- At the moment, some languages compile with errors when compiled with `gcc`.
--- Force `clang` to resolve this and ensure consistency.
-require'nvim-treesitter.install'.compilers = { "clang" }
-
 EOF
-
-" Tree-sitter folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
