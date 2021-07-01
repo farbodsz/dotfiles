@@ -24,7 +24,6 @@ aug end
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
   -- Highlighting
   highlight = {
     enable = true
