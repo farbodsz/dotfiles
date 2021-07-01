@@ -8,6 +8,7 @@ nnoremap <leader>w :w<CR>
 " Yank file contents
 nnoremap <leader>y :%y<CR>
 
+
 " Window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -24,6 +25,18 @@ nnoremap <M-J> :resize -20<CR>
 nnoremap <M-K> :resize +20<CR>
 nnoremap <M-H> :vertical resize -20<CR>
 nnoremap <M-L> :vertical resize +20<CR>
+
+
+" Open scratch buffer (note <C-w>n opens a normal new window/buffer)
+nnoremap <C-n> :call OpenScratch()<CR>
+
+function! OpenScratch()
+  new
+  setlocal buftype=nofile
+  setlocal bufhidden=hide
+  setlocal noswapfile
+endfunction
+
 
 " Terminal mode mappings
 aug terminal_escape
