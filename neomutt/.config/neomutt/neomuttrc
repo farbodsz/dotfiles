@@ -40,6 +40,7 @@ set fast_reply                                  # disable reply To/From prompt
 set include                                     # include original in reply
 unset mark_old                                  # no "Old New", just New/Read
 set status_on_top                               # status top, bindings bottom
+set text_flowed                                 # ignore char limit line breaks
 
 # Index format and sorting mail
 set index_format="%3C | %Z %{%d-%b-%y %H:%M}  %-25.25L  (%-4.4c)  %s"
