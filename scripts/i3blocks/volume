@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # Prints the volume percentage with a speaker emoji
 
 # Outputs something like: "Front Right: Playback 29113 44% off"
@@ -10,15 +10,17 @@ else
   if [ "$(echo $volinfo | awk '{print $6}')" = "off" ]; then
     echo "🔇 MUTE"
   else
-    # Volume percentage
-    vol=$(echo $volinfo | awk '{print $5}')
+    # Volume percentage (excl. % sign)
+    vol=$(echo $volinfo | awk '{print $5}' | sed 's/.$//')
 
     case "$vol" in
-      [0-2][0-9]) echo "🔈 $vol" ;;
-      [3-6]*) echo "🔉 $vol" ;;
-      [7-9]*) echo "🔊 $vol" ;;
-      [100]*) echo "🔊 $vol" ;;
-      *) echo "❌ ERR" ;;
+      0) emoji="🔇" ;;
+      [1-9] | [1-2][0-9]) emoji="🔈" ;;
+      [3-6][0-9]) emoji="🔉" ;;
+      [7-9][0-9] | 100) emoji="🔊" ;;
+      *) emoji="❌" ;;
     esac
+
+    echo "$emoji $vol%"
   fi
 fi
