@@ -14,7 +14,7 @@ let g:ale_linters = {
 let g:ale_linters_explicit = 1
 
 " Disable auto-detection of virtual envs, use $VIRTUAL_ENV instead
-let g:ale_virtualenv_dir_names == []
+let g:ale_virtualenv_dir_names = []
 
 " Set format for ALE messages
 " In this case: [linter] some error message [E]
