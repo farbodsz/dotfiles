@@ -62,7 +62,7 @@ function! s:build_quickfix_list(lines)
   cc
 endfunction
 
-let f:fzf_action = {
+let g:fzf_action = {
       \ 'ctrl-q': function('s:build_quickfix_list'),
       \ 'ctrl-x': 'split',
       \ 'ctrl-v': 'vsplit'
