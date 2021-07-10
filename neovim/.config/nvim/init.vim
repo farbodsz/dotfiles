@@ -28,6 +28,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'milkypostman/vim-togglelist'
+Plug 'liuchengxu/vista.vim'
 
 " Language support
 Plug 'dense-analysis/ale'
