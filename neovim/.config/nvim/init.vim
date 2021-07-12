@@ -94,8 +94,6 @@ source ~/.config/nvim/tex.vim
 
 " MISCELLANY:
 
-nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
-
 let g:UltiSnipsExpandTrigger="<nop>"
 let g:UltiSnipsEditSplit="vertical"
 
