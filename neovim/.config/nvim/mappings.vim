@@ -45,3 +45,8 @@ aug terminal_escape
   au TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
   au FileType fzf tunmap <buffer> <Esc>
 aug end
+
+
+" Quickfix and location list
+nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
+nmap <script> <silent> <leader>qq :call ToggleQuickfixList()<cr>
