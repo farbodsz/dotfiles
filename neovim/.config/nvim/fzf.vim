@@ -42,14 +42,7 @@ let g:fzf_layout = {
       \ }
 
 " Bindings: most common
-nnoremap <silent> <leader><tab> :ProjectFiles<CR>
-nnoremap <silent> <leader>f :Rg<CR>
-nnoremap <silent> <leader>' :Marks<CR>
-
-" Bindings: s for search
-nnoremap <silent> <leader>sb :Buffers<CR>
-nnoremap <silent> <leader>sd :Files ~/.dotfiles<CR>
-nnoremap <silent> <leader>sh :Files ~<CR>
+nnoremap <silent> <leader>fg :Rg<CR>
 
 " Actions
 function! s:build_quickfix_list(lines)

@@ -2,6 +2,9 @@
 " vim-fugitive and vim-rhubarb configuration
 " =============================================================================
 
+" Mappings
+" (See telescope.vim for more git-related mappings)
+
 nmap <leader>gs :G<cr>
 
 nmap <leader>gb :G blame<cr>
