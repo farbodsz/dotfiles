@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 -- telescope configuration
 --------------------------------------------------------------------------------
+
 local M = {}
 
 local actions = require("telescope.actions")
@@ -9,6 +10,11 @@ local builtin = require("telescope.builtin")
 require("telescope").setup {
   defaults = {
     file_sorter = require("telescope.sorters").get_fzy_sorter,
+
+    layout_config = {
+      prompt_position = "top"
+    },
+    sorting_strategy = "ascending",
 
     mappings = {
       i = {
