@@ -71,12 +71,13 @@ set smartcase
 set showmatch
 map <leader><space> :let @/ = ''<cr>
 
-" Show relative line numbers
+" Show relative line numbers and file stats
 set number
 set relativenumber
-
-" Show file stats
 set ruler
+
+" Prevent windows auto-resizing when one is closed/opened
+set noequalalways
 
 " Vim auto-indents when pasting, set a toggle for this
 set pastetoggle=<F3>
