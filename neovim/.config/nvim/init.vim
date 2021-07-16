@@ -16,7 +16,7 @@ let g:ale_disable_lsp = 1
 
 " PLUGINS:
 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 
 " Theming and styling
 Plug 'gruvbox-community/gruvbox'
