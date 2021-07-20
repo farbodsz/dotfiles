@@ -36,6 +36,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Navigation: Others
 Plug 'kshenoy/vim-signature'
 Plug 'milkypostman/vim-togglelist'
+Plug 'szw/vim-maximizer'
 
 " Language support
 Plug 'dense-analysis/ale'

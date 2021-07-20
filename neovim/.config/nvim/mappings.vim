@@ -26,6 +26,9 @@ nnoremap <M-K> :resize +20<CR>
 nnoremap <M-H> :vertical resize -20<CR>
 nnoremap <M-L> :vertical resize +20<CR>
 
+" Vim maximizer
+let g:maximizer_set_default_mapping = 0
+nnoremap <C-w>m :MaximizerToggle!<CR>
 
 " Open scratch buffer (note <C-w>n opens a normal new window/buffer)
 nnoremap <C-n> :call OpenScratch()<CR>
