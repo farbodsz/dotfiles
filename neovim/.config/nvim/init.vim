@@ -56,16 +56,16 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
 
 " Language syntax/detection
+Plug 'memgraph/cypher.vim', { 'for': 'cypher' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'LnL7/vim-nix', { 'for': 'nix' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
-Plug 'memgraph/cypher.vim', { 'for': 'cypher' }
-Plug 'MTDL9/vim-log-highlighting'
+Plug 'MTDL9/vim-log-highlighting', { 'for': 'log' }
 
 " Auto-formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
 Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'stsewd/isort.nvim', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
