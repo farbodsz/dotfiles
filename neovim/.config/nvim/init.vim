@@ -34,6 +34,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Navigation: Others
+Plug 'kassio/neoterm'
 Plug 'kshenoy/vim-signature'
 Plug 'milkypostman/vim-togglelist'
 Plug 'szw/vim-maximizer'
@@ -96,6 +97,7 @@ source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/fugitive.vim
 source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/markdown.vim
+source ~/.config/nvim/neoterm.vim
 source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/tex.vim
