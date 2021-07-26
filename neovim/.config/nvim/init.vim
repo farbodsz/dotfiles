@@ -38,6 +38,7 @@ Plug 'kassio/neoterm'
 Plug 'kshenoy/vim-signature'
 Plug 'milkypostman/vim-togglelist'
 Plug 'szw/vim-maximizer'
+Plug 'tpope/vim-unimpaired'
 
 " Language support
 Plug 'dense-analysis/ale'

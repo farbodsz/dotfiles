@@ -52,4 +52,4 @@ aug end
 
 " Quickfix and location list
 nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
-nmap <script> <silent> <leader>qq :call ToggleQuickfixList()<cr>
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<cr>

@@ -99,7 +99,7 @@ endfunction
 
 " Code action and auto-fix mappings
 nmap <leader>ac <Plug>(coc-codeaction)
-nmap <leader>qf <Plug>(coc-fix-current)
+nmap <leader>af <Plug>(coc-fix-current)
 
 " Code action for selected region (e.g. <leader>aap for paragraph)
 xmap <leader>a <Plug>(coc-codeaction-selected)
