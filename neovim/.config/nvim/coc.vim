@@ -1,10 +1,10 @@
 " =============================================================================
-" COC.vim configuration
+" coc.vim configuration
 " =============================================================================
 
-" ~~~~~~~~~~~~~~~~~~
-" Setup and bindings
-" ~~~~~~~~~~~~~~~~~~
+" ----------------
+" Setup / bindings
+" ----------------  
 
 " TextEdit might fail if hidden not set
 set hidden
@@ -15,12 +15,17 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|
 set shortmess+=c
 
+" Recently vim can merge signcolumn and number column into one
 if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
 else
   set signcolumn=yes
 endif
+
+
+" ----------
+" Completion
+" ----------
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -52,11 +57,16 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-" Navigate diagnostics and get all for current buffer in location list
+
+" ----------
+" Navigation
+" ----------
+
+" Navigate diagnostics for current buffer (loc list)
 nmap <leader>]g <Plug>(coc-diagnostic-prev)
 nmap <leader>[g <Plug>(coc-diagnostic-next)
 
-" GoTo code navigation.
+" Code navigation ("go-to ...")
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -66,7 +76,12 @@ nmap <silent> gr <Plug>(coc-references)
 " Snippets
 imap <silent> <c-l> <plug>(coc-snippets-expand)
 
-" Use K to show documentation in preview window.
+
+" -------------
+" Documentation
+" -------------
+
+" Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -77,10 +92,23 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight the symbol and its references when holding the cursor.
+
+" ------------
+" Code actions
+" ------------
+
+" Code action and auto-fix mappings
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>qf <Plug>(coc-fix-current)
+
+" Code action for selected region (e.g. <leader>aap for paragraph)
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
+" Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
+" Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
 
 augroup mygroup
@@ -91,14 +119,10 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Apply codeAction to selected region (e.g. <leader>aap for paragraph)
-xmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
 
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line ("quick-fix")
-nmap <leader>qf <Plug>(coc-fix-current)
+" ------------
+" Text objects
+" ------------
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -111,24 +135,25 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
+
+" ----------
+" Miscellany
+" ----------
+
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 
-" Add `:Format` command to format current buffer.
+" Coc commands for buffer: `:Format`, `:Fold`, `:OR` (organize imports)
 command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 
-" ~~~~~~~~~~
+" ----------
 " Extensions
-" ~~~~~~~~~~
+" ----------
 
 let g:coc_global_extensions = [
       \ 'coc-clangd',
