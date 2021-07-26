@@ -42,7 +42,7 @@ let g:fzf_layout = {
       \ }
 
 " Bindings: most common
-nnoremap <silent> <leader>fg :Rg<CR>
+nnoremap <silent> <leader>F :Rg<CR>
 
 " Actions
 function! s:build_quickfix_list(lines)
