@@ -60,6 +60,7 @@ Plug 'nvim-treesitter/playground'
 " Language syntax/detection
 Plug 'memgraph/cypher.vim', { 'for': 'cypher' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'towolf/vim-helm', { 'for': ['helm', 'yaml'] }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'LnL7/vim-nix', { 'for': 'nix' }
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
