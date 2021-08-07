@@ -8,8 +8,8 @@
 nmap <leader>gs :G<cr>
 
 nmap <leader>gb :G blame<cr>
-nmap <leader>gl :0Gllog<cr>
-nmap <leader>gL :Gllog<cr>
+nmap <leader>gl :0Gclog!<cr>
+nmap <leader>gL :Gclog!<cr>
 nmap <leader>go :GBrowse<cr>
 
 " Merging conflicts
