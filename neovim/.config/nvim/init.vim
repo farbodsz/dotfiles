@@ -94,48 +94,14 @@ source ~/.config/nvim/theme.vim
 
 source ~/.config/nvim/coc.vim
 source ~/.config/nvim/ale.vim
+
 source ~/.config/nvim/format.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/fugitive.vim
 source ~/.config/nvim/gitgutter.vim
 source ~/.config/nvim/markdown.vim
 source ~/.config/nvim/neoterm.vim
+source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/tex.vim
-
-
-" MISCELLANY:
-
-let g:UltiSnipsExpandTrigger="<nop>"
-let g:UltiSnipsEditSplit="vertical"
-
-
-" PREVIEWING:
-
-" Settings for vim-latex-live-preview
-let g:livepreview_previewer = 'zathura'
-let g:livepreview_cursorhold_recompile = 0
-
-" Disable Prettier plugin's default binding
-nnoremap <leader>p <Nop>
-
-augroup file_preview
-  " m for 'make'
-  " Convert to HTML using pandoc, open in chrome, then focus back on terminal
-  autocmd FileType markdown nnoremap <buffer><leader>m
-              \ :! ~/bin/mdpreview.sh % preview.html &&
-              \ google-chrome preview.html &&
-              \ xdotool search --onlyvisible --class Kitty windowfocus<cr>
-
-  " p for 'preview'
-  " Silently convert to HTML, refresh tab, then focus back on terminal
-  autocmd FileType markdown nnoremap <buffer><silent><leader>p :silent exec
-              \ "! ~/bin/mdpreview.sh % preview.html &&
-              \ xdotool search --onlyvisible --class Chrome windowfocus key F5 &&
-              \ xdotool search --onlyvisible --class Kitty windowfocus"<cr>
-
-  " p for 'preview'
-  " Using vim-latex-live-preview
-  autocmd FileType tex nnoremap <buffer><leader>p :LLPStartPreview<cr>
-augroup end
