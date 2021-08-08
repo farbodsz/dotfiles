@@ -12,9 +12,9 @@ export PATH="$HOME/bin:$PATH"
 
 # XDG - set defaults as they are not usually set on Ubuntu
 # See: https://wiki.archlinux.org/index.php/XDG_Base_Directory_support
-XDG_CONFIG_HOME="$HOME/.config"
-XDG_CACHE_HOME="$HOME/.cache"
-XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 if [ ! -w ${XDG_RUNTIME_DIR:="/run/user/$UID"} ]; then
   echo "\$XDG_RUNTIME_DIR ($XDG_RUNTIME_DIR) not writable. Unsetting." >&2
