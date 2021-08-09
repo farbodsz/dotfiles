@@ -8,13 +8,17 @@
 nmap <leader>gs :G<cr>
 
 nmap <leader>gb :G blame<cr>
-nmap <leader>gl :0Gclog!<cr>
+nmap <leader>gd :Gdiffsplit!<space>
+nmap <leader>gD :G difftool -y<space>
+" TODO: get nicely formatted file tree for overview of changes?
+nmap <leader>gl :0Gllog!<cr>
 nmap <leader>gL :Gclog!<cr>
 nmap <leader>go :GBrowse<cr>
 
 " Merging conflicts
 nmap <leader>gk :diffget //2<cr>
 nmap <leader>gj :diffget //3<cr>
+
 
 " vim-rhubarb: no preview window for issue body
 set completeopt-=preview
