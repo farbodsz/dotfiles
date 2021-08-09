@@ -19,7 +19,7 @@ set tabstop=2
 set softtabstop=2
 
 set list
-set listchars=tab:> ,trail:-,nbsp:+
+set listchars=tab:>\ ,trail:-,nbsp:+
 
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
 augroup whitespace_settings
