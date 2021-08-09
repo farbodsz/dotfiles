@@ -18,6 +18,9 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
+set list
+set listchars=tab:> ,trail:-,nbsp:+
+
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
 augroup whitespace_settings
   autocmd FileType c,cpp setlocal sw=4 ts=4
