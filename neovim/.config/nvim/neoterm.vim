@@ -2,6 +2,7 @@
 " neoterm configuration
 " =============================================================================
 
+let g:neoterm_automap_keys = 'tM'
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_size = 15
 let g:neoterm_autoscroll = 1
@@ -16,3 +17,11 @@ function! StartRepl(termno)
 endfunction
 
 command! -nargs=0 REPL :call StartRepl(1)<CR>
+
+nnoremap tr :REPL<CR>
+nnoremap tn :Tnew<CR>
+nnoremap th :Tprev<CR>
+nnoremap tl :Tnext<CR>
+nnoremap to :Topen<CR>
+nnoremap tc :Tclose!<CR>
+nnoremap t<space> :Tls<CR>
