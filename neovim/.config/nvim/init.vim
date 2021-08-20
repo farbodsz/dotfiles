@@ -78,7 +78,6 @@ Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'sindrets/diffview.nvim'
 
 " Databases
 Plug 'tpope/vim-dadbod'
