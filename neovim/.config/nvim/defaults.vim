@@ -10,7 +10,6 @@ set encoding=utf-8
 
 " Whitespace and indentation
 set expandtab
-set textwidth=80
 set autoindent
 set smartindent
 
@@ -19,10 +18,11 @@ set tabstop=2
 set softtabstop=2
 
 set list
-set listchars=tab:>\ ,trail:-,nbsp:+
+set listchars=tab:>\ ,nbsp:+
 
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
 augroup whitespace_settings
+  au!
   autocmd FileType c,cpp setlocal sw=4 ts=4
   autocmd FileType haskell setlocal sw=4 ts=4
   autocmd FileType python setlocal sw=4 ts=4
@@ -41,6 +41,7 @@ augroup end
 set textwidth=80
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
+
 
 " Scrolling: keep 4 lines above and below cursor
 set scrolloff=4
