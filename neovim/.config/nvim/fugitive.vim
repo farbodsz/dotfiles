@@ -13,6 +13,9 @@ nmap <leader>gD :G difftool -y<space>
 " TODO: get nicely formatted file tree for overview of changes?
 nmap <leader>gl :0Gllog!<cr>
 nmap <leader>gL :Gclog!<cr>
+nmap <leader>gmd :GDelete<cr>
+nmap <leader>gmm :GMove<space>
+nmap <leader>gmr :GRename<space>
 nmap <leader>go :GBrowse<cr>
 
 " Merging conflicts
