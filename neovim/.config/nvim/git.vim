@@ -13,9 +13,9 @@ nmap <leader>gb :G blame<cr>
 nmap <leader>gc <cmd>Telescope git_branches<cr>
 nmap <leader>gC <cmd>Telescope git_commits<cr>
 
-nmap <leader>gd :Gdiffsplit!<space>
-nmap <leader>gDb :lua require("farbodsz.git").git_compare(false)<cr>
-nmap <leader>gDc :lua require("farbodsz.git").git_compare(true)<cr>
+nmap <leader>gD :Gdiffsplit!<space>
+nmap <leader>gdb :lua require("farbodsz.git").git_compare(false)<cr>
+nmap <leader>gdc :lua require("farbodsz.git").git_compare(true)<cr>
 
 nmap <leader>gl :0Gllog!<cr>
 nmap <leader>gL :Gclog!<cr>
