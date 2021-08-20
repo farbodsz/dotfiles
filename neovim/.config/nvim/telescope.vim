@@ -17,6 +17,7 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>' <cmd>Telescope marks<cr>
 
 nnoremap <leader>gc <cmd>Telescope git_branches<cr>
+nnoremap <leader>gC <cmd>Telescope git_commits<cr>
 nnoremap <leader>gS <cmd>Telescope git_stash<cr>
 
 nnoremap <silent><leader>sd :lua require("farbodsz.telescope").search_dotfiles()<cr>
