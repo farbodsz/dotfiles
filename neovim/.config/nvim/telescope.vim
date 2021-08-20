@@ -16,9 +16,7 @@ nnoremap <leader>f? <cmd>Telescope builtin<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>' <cmd>Telescope marks<cr>
 
-nnoremap <leader>gc <cmd>Telescope git_branches<cr>
-nnoremap <leader>gC <cmd>Telescope git_commits<cr>
-nnoremap <leader>gS <cmd>Telescope git_stash<cr>
+" See git.vim for git-specific mappings
 
 nnoremap <silent><leader>sd :lua require("farbodsz.telescope").search_dotfiles()<cr>
 nnoremap <silent><leader>sh :lua require("farbodsz.telescope").search_home()<cr>
