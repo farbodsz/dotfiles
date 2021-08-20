@@ -63,6 +63,7 @@ Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'towolf/vim-helm', { 'for': ['helm', 'yaml'] }
 Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
 Plug 'LnL7/vim-nix', { 'for': 'nix' }
+Plug 'lifepillar/pgsql.vim'
 Plug 'adimit/prolog.vim', { 'for': 'prolog' }
 Plug 'MTDL9/vim-log-highlighting', { 'for': 'log' }
 
@@ -77,6 +78,10 @@ Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+
+" Databases
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 " Show hex colors
 Plug 'chrisbra/Colorizer'
@@ -95,6 +100,7 @@ source ~/.config/nvim/theme.vim
 source ~/.config/nvim/coc.vim
 source ~/.config/nvim/ale.vim
 
+source ~/.config/nvim/db.vim
 source ~/.config/nvim/format.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/fugitive.vim
