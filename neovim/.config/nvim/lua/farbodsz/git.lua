@@ -9,7 +9,7 @@ local action_state = require("telescope.actions.state")
 local builtin = require("telescope.builtin")
 
 
-local open_diff = function(value_base)
+local open_compare = function(value_base)
   local selected_entry = action_state.get_selected_entry()
   local value_against = selected_entry["value"]
   
@@ -46,7 +46,7 @@ local git_compare_against = function(show_commits)
   git_list({
     attach_mappings = function(_, map)
       map('i', '<cr>', function()
-        open_diff(value_base)
+        open_compare(value_base)
       end)
       return true
     end,
@@ -79,5 +79,33 @@ M.git_compare = function(show_commits)
     prompt_title = "Compare: base " .. compare_type
   })
 end
+
+
+local open_diff = function()
+  local selected_entry = action_state.get_selected_entry()
+  local value = selected_entry["value"]
+  
+  -- close Telescope window before switching windows
+  vim.api.nvim_win_close(0, true)
+  
+  local cmd = 'DiffviewOpen --untracked-files=false ' 
+    .. value
+    .. '~1..'
+    .. value
+
+  vim.cmd(cmd)
+end
+
+
+-- Like builtin.git_commits but adds the option of viewing diffs with <c-d>
+M.git_commits = function()
+  builtin.git_commits({
+    attach_mappings = function(_, map)
+      map('i', '<c-o>', open_diff)
+      return true
+    end
+  })
+end
+
 
 return M
