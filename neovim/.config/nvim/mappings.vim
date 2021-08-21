@@ -30,6 +30,14 @@ nnoremap <M-L> :vertical resize +20<CR>
 let g:maximizer_set_default_mapping = 0
 nnoremap <C-w>m :MaximizerToggle!<CR>
 
+
+" Tab navigation (override unimpaired.vim tag maps)
+nnoremap [t :tabprevious<CR>
+nnoremap ]t :tabnext<CR>
+nnoremap [T :tabclose<CR>
+nnoremap ]T :tabnew<CR>
+
+
 " Open scratch buffer (note <C-w>n opens a normal new window/buffer)
 nnoremap <C-n> :call OpenScratch()<CR>
 
