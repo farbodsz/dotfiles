@@ -73,7 +73,7 @@ end
 
 
 local open_diff = function()
-  local selected_entry = action_state.get_selected_entry()["value"]
+  local selected_entry = action_state.get_selected_entry()
   local value = selected_entry["value"]
   
   -- close Telescope window before switching windows
