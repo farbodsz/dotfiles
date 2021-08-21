@@ -25,6 +25,15 @@ local open_compare = function(value_base)
 end
 
 
+local git_function_and_text = function(is_commits)
+  if is_commits then 
+    return builtin.git_commits, "commit"
+  else 
+    return builtin.git_branches, "branch"
+  end
+end
+
+
 local git_compare_against = function(show_commits)
   local selected_entry = action_state.get_selected_entry()
   local value_base = selected_entry["value"]
@@ -32,18 +41,9 @@ local git_compare_against = function(show_commits)
   -- close Telescope window before switching windows
   vim.api.nvim_win_close(0, true)
 
-  local git_list
-  local compare_type
+  local git_function, compare_type = git_function_and_text(show_commits)
 
-  if show_commits then 
-    git_list = builtin.git_commits 
-    compare_type = "commit"
-  else 
-    git_list = builtin.git_branches
-    compare_type = "branch"
-  end
-
-  git_list({
+  git_function({
     attach_mappings = function(_, map)
       map('i', '<cr>', function()
         open_compare(value_base)
@@ -57,18 +57,9 @@ end
 
 
 M.git_compare = function(show_commits)
-  local git_list
-  local compare_type
+  local git_function, compare_type = git_function_and_text(show_commits)
 
-  if show_commits then 
-    git_list = builtin.git_commits 
-    compare_type = "commit"
-  else 
-    git_list = builtin.git_branches
-    compare_type = "branch"
-  end
-
-  git_list({
+  git_function({
     attach_mappings = function(_, map)
       map('i', '<cr>', function()
         git_compare_against(show_commits)
@@ -82,7 +73,7 @@ end
 
 
 local open_diff = function()
-  local selected_entry = action_state.get_selected_entry()
+  local selected_entry = action_state.get_selected_entry()["value"]
   local value = selected_entry["value"]
   
   -- close Telescope window before switching windows
@@ -97,7 +88,15 @@ local open_diff = function()
 end
 
 
--- Like builtin.git_commits but adds the option of viewing diffs with <c-d>
+M.git_branches = function()
+  builtin.git_branches({
+    attach_mappings = function(_, map)
+      map('i', '<c-o>', open_diff)
+      return true
+    end
+  })
+end
+
 M.git_commits = function()
   builtin.git_commits({
     attach_mappings = function(_, map)
