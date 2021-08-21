@@ -18,6 +18,7 @@ nmap <leader>gdb :lua require("farbodsz.git").git_compare(false)<cr>
 nmap <leader>gdc :lua require("farbodsz.git").git_compare(true)<cr>
 
 nmap <leader>gl :0Gllog!<cr>
+vmap <leader>gl :Gllog!<cr>
 nmap <leader>gL :Gclog!<cr>
 
 nmap <leader>gmd :GDelete<cr>
@@ -25,6 +26,7 @@ nmap <leader>gmm :GMove<space>
 nmap <leader>gmr :GRename<space>
 
 nmap <leader>go :GBrowse<cr>
+vmap <leader>go :GBrowse<cr>
 nmap <leader>gS <cmd>Telescope git_stash<cr>
 
 " Merging conflicts
