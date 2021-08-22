@@ -39,6 +39,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'milkypostman/vim-togglelist'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-unimpaired'
+Plug 'liuchengxu/vista.vim'
 
 " Language support
 Plug 'dense-analysis/ale'
@@ -112,3 +113,4 @@ source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/tex.vim
+source ~/.config/nvim/vista.vim
