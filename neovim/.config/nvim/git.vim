@@ -53,14 +53,14 @@ function! DiffviewFlog()
   let l:line = trim(getline('.'))
   let l:parts = split(line, "[")
   let l:sha = split(parts[1], "]")[0]
-  execute "DiffviewOpen --untracked-files=false " . l:sha . "~1.." . l:sha
+  execute "DiffviewOpen --untracked-files=false " . l:sha . "^!"
 endfunction
 
 " Opens Diffview for the commit under the cursor in fugitiveblame
 function! DiffviewFugitiveBlame()
   let l:line = trim(getline('.'))
   let l:sha = split(line, " ")[0]
-  execute "DiffviewOpen --untracked-files=false " . l:sha . "~1.." . l:sha
+  execute "DiffviewOpen --untracked-files=false " . l:sha . "^!"
 endfunction
 
 " Opens Diffview for the fugitive file showing commit details (ft=git)
@@ -69,7 +69,7 @@ function! DiffviewFugitiveGit()
   let l:sha = expand('%:t')
   let l:project_root = expand('#:h:p')  " path from previously opened file
   execute "DiffviewOpen --untracked-files=false -C" 
-        \ . l:project_root . " " . l:sha . "~1.." . l:sha
+        \ . l:project_root . " " . l:sha . "^!"
 endfunction
 
 

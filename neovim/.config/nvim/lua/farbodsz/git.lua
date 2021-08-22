@@ -79,11 +79,7 @@ local open_diff = function()
   -- close Telescope window before switching windows
   vim.api.nvim_win_close(0, true)
   
-  local cmd = 'DiffviewOpen --untracked-files=false ' 
-    .. value
-    .. '~1..'
-    .. value
-
+  local cmd = 'DiffviewOpen --untracked-files=false ' .. value .. '^!'
   vim.cmd(cmd)
 end
 
