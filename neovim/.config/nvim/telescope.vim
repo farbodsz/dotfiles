@@ -2,6 +2,8 @@
 " telescope configuration
 " =============================================================================
 
+lua require("farbodsz.telescope")
+
 nnoremap <silent><leader><backspace> :lua require("farbodsz.telescope").find_files()<cr>
 
 " TODO: use FZF for grepping, for now, since it is far quicker
