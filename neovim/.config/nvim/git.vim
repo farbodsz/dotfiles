@@ -35,6 +35,45 @@ nmap <leader>gj :diffget //3<cr>
 
 
 " -----------------------------------------------------------------------------
+" diffview.nvim
+" -----------------------------------------------------------------------------
+
+augroup diffview_from_other_plugins
+  au!
+  au FileType floggraph nmap <buffer><leader>gD :call DiffviewFlog()<cr>
+  au FileType fugitiveblame 
+        \ nmap <buffer><leader>gD :call DiffviewFugitiveBlame()<cr>
+  au FileType git nmap <buffer><leader>gD :call DiffviewFugitiveGit()<cr>
+augroup end
+
+
+" Opens Diffview for the commit under the cursor in floggraph
+" Floggraph format should have only the SHA in square brackets
+function! DiffviewFlog()
+  let l:line = trim(getline('.'))
+  let l:parts = split(line, "[")
+  let l:sha = split(parts[1], "]")[0]
+  execute "DiffviewOpen --untracked-files=false " . l:sha . "~1.." . l:sha
+endfunction
+
+" Opens Diffview for the commit under the cursor in fugitiveblame
+function! DiffviewFugitiveBlame()
+  let l:line = trim(getline('.'))
+  let l:sha = split(line, " ")[0]
+  execute "DiffviewOpen --untracked-files=false " . l:sha . "~1.." . l:sha
+endfunction
+
+" Opens Diffview for the fugitive file showing commit details (ft=git)
+" File should be in the format fugitive://<fullPath>/.git//<SHA>
+function! DiffviewFugitiveGit()
+  let l:sha = expand('%:t')
+  let l:project_root = expand('#:h:p')  " path from previously opened file
+  execute "DiffviewOpen --untracked-files=false -C" 
+        \ . l:project_root . " " . l:sha . "~1.." . l:sha
+endfunction
+
+
+" -----------------------------------------------------------------------------
 " vim-rhubarb
 " -----------------------------------------------------------------------------
 
