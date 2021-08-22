@@ -81,6 +81,7 @@ Plug 'tpope/vim-fugitive', { 'commit': 'f5451e4' }
 Plug 'tpope/vim-rhubarb'
 Plug 'sindrets/diffview.nvim'
 Plug 'rbong/vim-flog'
+Plug 'tommcdo/vim-fugitive-blame-ext'
 
 " Databases
 Plug 'tpope/vim-dadbod'
