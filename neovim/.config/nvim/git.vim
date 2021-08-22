@@ -43,7 +43,8 @@ lua require("farbodsz.diffview")
 augroup diffview_from_other_plugins
   au!
   au FileType floggraph nmap <buffer><leader>gD :call DiffviewFlog()<cr>
-  au FileType fugitiveblame
+  au FileType fugitive nmap <buffer><leader>gD :call DiffviewFugitiveIndex()<cr>
+  au FileType fugitiveblame 
         \ nmap <buffer><leader>gD :call DiffviewFugitiveBlame()<cr>
   au FileType git nmap <buffer><leader>gD :call DiffviewFugitiveGit()<cr>
 augroup end
@@ -70,8 +71,14 @@ endfunction
 function! DiffviewFugitiveGit()
   let l:sha = expand('%:t')
   let l:project_root = expand('#:h:p')  " path from previously opened file
-  execute "DiffviewOpen --untracked-files=false -C"
+  execute "DiffviewOpen --untracked-files=false -C" 
         \ . l:project_root . " " . l:sha . "^!"
+endfunction
+
+" Opens Diffview to compare local changes from the GStatus buffer
+function! DiffviewFugitiveIndex()
+  let l:project_root = expand('%:h:h')  " project root according to fugitive
+  execute "DiffviewOpen --untracked-files=true -C" . l:project_root
 endfunction
 
 
