@@ -4,7 +4,7 @@
 
 " ----------------
 " Setup / bindings
-" ----------------  
+" ----------------
 
 " TextEdit might fail if hidden not set
 set hidden
@@ -16,7 +16,7 @@ set updatetime=300
 set shortmess+=c
 
 " Recently vim can merge signcolumn and number column into one
-if has("patch-8.1.1564")
+if has('patch-8.1.1564')
   set signcolumn=number
 else
   set signcolumn=yes

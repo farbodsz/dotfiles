@@ -12,12 +12,12 @@ local builtin = require("telescope.builtin")
 local open_compare = function(value_base)
   local selected_entry = action_state.get_selected_entry()
   local value_against = selected_entry["value"]
-  
+
   -- close Telescope window before switching windows
   vim.api.nvim_win_close(0, true)
-  
-  local cmd = 'DiffviewOpen --untracked-files=false ' 
-    .. value_against 
+
+  local cmd = 'DiffviewOpen --untracked-files=false '
+    .. value_against
     .. '..'
     .. value_base
 
@@ -27,9 +27,9 @@ end
 
 
 local git_function_and_text = function(is_commits)
-  if is_commits then 
+  if is_commits then
     return builtin.git_commits, "commit"
-  else 
+  else
     return builtin.git_branches, "branch"
   end
 end
@@ -38,7 +38,7 @@ end
 local git_compare_against = function(show_commits)
   local selected_entry = action_state.get_selected_entry()
   local value_base = selected_entry["value"]
-  
+
   -- close Telescope window before switching windows
   vim.api.nvim_win_close(0, true)
 
@@ -76,10 +76,10 @@ end
 local open_diff = function()
   local selected_entry = action_state.get_selected_entry()
   local value = selected_entry["value"]
-  
+
   -- close Telescope window before switching windows
   vim.api.nvim_win_close(0, true)
-  
+
   local cmd = 'DiffviewOpen --untracked-files=false ' .. value .. '^!'
   vim.cmd(":stopinsert")
   vim.cmd(cmd)

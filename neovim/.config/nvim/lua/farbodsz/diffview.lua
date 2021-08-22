@@ -9,7 +9,7 @@ require("diffview").setup {
 
   file_panel = {
     width = 40,
-    use_icons = false 
+    use_icons = false
   },
 
   key_bindings = {

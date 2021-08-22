@@ -1,5 +1,5 @@
 " =============================================================================
-" Theming 
+" Theming
 " =============================================================================
 
 " Set theme
@@ -21,8 +21,8 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ], 
-      \              [ 'percent' ], 
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
       \              [ 'gitstatus', 'filetype' ] ]
       \ },
       \ 'component_function': {

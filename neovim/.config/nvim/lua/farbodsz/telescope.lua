@@ -25,7 +25,7 @@ require("telescope").setup {
         -- Navigating results
         ["<c-k>"] = actions.move_selection_previous,
         ["<c-j>"] = actions.move_selection_next,
-        
+
         -- Quickfix list
         ["<c-q>"] = actions.send_selected_to_qflist,
         ["<c-Q>"] = actions.send_to_qflist,

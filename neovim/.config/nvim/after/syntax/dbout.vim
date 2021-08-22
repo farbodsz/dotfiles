@@ -9,7 +9,7 @@ if exists('b:current_syntax')
 endif
 
 runtime! syntax/log.vim
-let b:current_syntax = "dbout"
+let b:current_syntax = 'dbout'
 
 syn match dboutBorder "|"
 syn match dboutBorder /+---\+/

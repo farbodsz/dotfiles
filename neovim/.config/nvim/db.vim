@@ -21,7 +21,7 @@ nnoremap <leader>df :DBUIFindBuffer<cr>
 nnoremap <leader>dr :DBUIRenameBuffer<cr>
 nnoremap <leader>dl :DBUILastQueryInfo<cr>
 
-augroup dbui_mappings 
+augroup dbui_mappings
   au!
   autocmd FileType dbui nmap <buffer><return> <Plug>(DBUI_SelectLine)
   autocmd FileType dbui nmap <buffer>o <Plug>(DBUI_SelectLine)
