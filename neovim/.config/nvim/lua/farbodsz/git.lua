@@ -21,6 +21,7 @@ local open_compare = function(value_base)
     .. '..'
     .. value_base
 
+  vim.cmd(":stopinsert")
   vim.cmd(cmd)
 end
 
@@ -80,6 +81,7 @@ local open_diff = function()
   vim.api.nvim_win_close(0, true)
   
   local cmd = 'DiffviewOpen --untracked-files=false ' .. value .. '^!'
+  vim.cmd(":stopinsert")
   vim.cmd(cmd)
 end
 
