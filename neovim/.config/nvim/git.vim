@@ -38,6 +38,8 @@ nmap <leader>gj :diffget //3<cr>
 " diffview.nvim
 " -----------------------------------------------------------------------------
 
+lua require("farbodsz.diffview")
+
 augroup diffview_from_other_plugins
   au!
   au FileType floggraph nmap <buffer><leader>gD :call DiffviewFlog()<cr>
