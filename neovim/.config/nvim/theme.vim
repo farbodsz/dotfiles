@@ -12,7 +12,9 @@ let g:gruvbox_sign_column = 'bg0'
 
 colorscheme gruvbox
 
-hi link TSOperator GruvboxRed
+hi link TSOperator     GruvboxRed
+hi link TSPunctBracket Comment
+hi link TSTagDelimiter Comment
 
 
 " Lightline customisation
