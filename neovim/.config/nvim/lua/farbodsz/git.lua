@@ -17,9 +17,9 @@ local open_compare = function(value_base)
   vim.api.nvim_win_close(0, true)
 
   local cmd = 'DiffviewOpen --untracked-files=false '
-    .. value_against
-    .. '..'
     .. value_base
+    .. '..'
+    .. value_against
 
   vim.cmd(":stopinsert")
   vim.cmd(cmd)
@@ -73,6 +73,29 @@ M.git_compare = function(show_commits)
 end
 
 
+local open_diff_branch = function()
+  local selected_entry = action_state.get_selected_entry()
+  local value = selected_entry["value"]
+
+  -- close Telescope window before switching windows
+  vim.api.nvim_win_close(0, true)
+
+  local cmd = 'DiffviewOpen --untracked-files=false HEAD..' .. value
+  vim.cmd(":stopinsert")
+  vim.cmd(cmd)
+end
+
+
+M.git_branches = function()
+  builtin.git_branches({
+    attach_mappings = function(_, map)
+      map('i', '<c-o>', open_diff_branch)
+      return true
+    end
+  })
+end
+
+
 local open_diff = function()
   local selected_entry = action_state.get_selected_entry()
   local value = selected_entry["value"]
@@ -86,15 +109,6 @@ local open_diff = function()
 end
 
 
-M.git_branches = function()
-  builtin.git_branches({
-    attach_mappings = function(_, map)
-      map('i', '<c-o>', open_diff)
-      return true
-    end
-  })
-end
-
 M.git_commits = function()
   builtin.git_commits({
     attach_mappings = function(_, map)
@@ -104,5 +118,18 @@ M.git_commits = function()
   })
 end
 
+
+M.git_stash = function() 
+  builtin.git_stash({
+    attach_mappings = function(_, map)
+      map('i', '<c-a>', function()
+        vim.api.nvim_win_close(0, true)
+        vim.cmd(":stopinsert")
+        vim.cmd(":G stash")
+      end)
+      return true
+    end
+  })
+end
 
 return M

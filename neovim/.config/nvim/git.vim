@@ -13,7 +13,6 @@ nmap <leader>gb :G blame<cr>
 nmap <leader>gc :lua require("farbodsz.git").git_branches()<cr>
 nmap <leader>gC :lua require("farbodsz.git").git_commits()<cr>
 
-nmap <leader>gD :Gdiffsplit!<space>
 nmap <leader>gdb :lua require("farbodsz.git").git_compare(false)<cr>
 nmap <leader>gdc :lua require("farbodsz.git").git_compare(true)<cr>
 
@@ -27,7 +26,7 @@ nmap <leader>gmr :GRename<space>
 
 nmap <leader>go :GBrowse<cr>
 vmap <leader>go :GBrowse<cr>
-nmap <leader>gS <cmd>Telescope git_stash<cr>
+nmap <leader>gS :lua require("farbodsz.git").git_stash()<cr>
 
 " Merging conflicts
 nmap <leader>gk :diffget //2<cr>
