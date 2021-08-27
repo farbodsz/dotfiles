@@ -70,6 +70,7 @@ set formatoptions-=cro
 " Searching
 set hlsearch
 set incsearch
+set inccommand=nosplit
 set ignorecase
 set smartcase
 set showmatch
