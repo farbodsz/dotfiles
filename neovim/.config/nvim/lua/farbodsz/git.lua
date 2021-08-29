@@ -5,8 +5,10 @@
 local M = {}
 
 
+local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 local builtin = require("telescope.builtin")
+local utils = require("telescope.utils")
 
 
 local open_compare = function(value_base)
@@ -119,6 +121,31 @@ M.git_commits = function()
 end
 
 
+local drop_stash = function(prompt_bufnr)
+  local cwd = action_state.get_current_picker(prompt_bufnr).cwd
+  local selection = action_state.get_selected_entry()
+
+  -- close Telescope window before switching windows
+  -- vim.api.nvim_win_close(0, true)
+  
+  local confirmation = vim.fn.input("Do you really wanna drop stash " .. selection.value .. "? [Y/n] ")
+  if confirmation ~= "" and string.lower(confirmation) ~= "y" then
+    return
+  end
+
+  actions.close(prompt_bufnr)
+
+  local _, ret, stderr = utils.get_os_command_output({ "git", "stash", "drop", selection.value }, cwd)
+  if ret == 0 then
+    print("Dropped stash: " .. selection.value)
+  else
+    print(
+      string.format('Error when dropping stash: %s. Git returned: "%s', selection.value, table.concat(stderr, " "))
+    )
+  end
+end
+
+
 M.git_stash = function() 
   builtin.git_stash({
     attach_mappings = function(_, map)
@@ -127,6 +154,8 @@ M.git_stash = function()
         vim.cmd(":stopinsert")
         vim.cmd(":G stash")
       end)
+
+      map('i', '<c-d>', drop_stash)
       return true
     end
   })
