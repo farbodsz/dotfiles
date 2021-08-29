@@ -12,6 +12,7 @@ augroup autoformat_settings
   autocmd FileType html,css,scss nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType javascript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType json,yaml nnoremap <buffer><leader>cf :Prettier<cr>
+  autocmd FileType lua nnoremap <buffer><leader>cf :ALEFix<cr>
   autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
   autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>

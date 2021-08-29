@@ -4,6 +4,7 @@
 
 let g:ale_linters = {
       \ 'bash': ['shfmt', 'shellcheck'],
+      \ 'lua': ['luacheck', 'stylua'],
       \ 'prolog': ['swipl'],
       \ 'python': ['pylint', 'mypy'],
       \ 'tex': ['chktex'],

@@ -49,6 +49,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 " Auto-completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'rafcamlet/coc-nvim-lua'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'

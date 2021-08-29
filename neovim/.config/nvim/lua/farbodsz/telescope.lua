@@ -7,12 +7,12 @@ local M = {}
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
-require("telescope").setup {
+require("telescope").setup({
   defaults = {
     file_sorter = require("telescope.sorters").get_fzy_sorter,
 
     layout_config = {
-      prompt_position = "top"
+      prompt_position = "top",
     },
     sorting_strategy = "ascending",
 
@@ -29,7 +29,7 @@ require("telescope").setup {
         -- Quickfix list
         ["<c-q>"] = actions.send_selected_to_qflist,
         ["<c-Q>"] = actions.send_to_qflist,
-      }
+      },
     },
   },
 
@@ -37,12 +37,11 @@ require("telescope").setup {
     fzy_native = {
       override_generic_sorter = false,
       override_file_sorter = true,
-    }
-  }
-}
+    },
+  },
+})
 
 require("telescope").load_extension("fzy_native")
-
 
 local opts_find_command = {
   "rg",
@@ -64,11 +63,11 @@ local opts_vimgrep_args = {
 }
 
 M.find_files = function()
-  builtin.find_files({find_command = opts_find_command})
+  builtin.find_files({ find_command = opts_find_command })
 end
 
 M.live_grep = function()
-  builtin.live_grep({vimgrep_arguments = opts_vimgrep_args})
+  builtin.live_grep({ vimgrep_arguments = opts_vimgrep_args })
 end
 
 M.search_dotfiles = function()
