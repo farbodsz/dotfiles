@@ -76,6 +76,9 @@ set smartcase
 set showmatch
 map <leader><space> :let @/ = ''<cr>
 
+" Diffs 
+set diffopt=internal,filler,algorithm:histogram,indent-heuristic,closeoff
+
 " Show relative line numbers and file stats
 set number
 set relativenumber
