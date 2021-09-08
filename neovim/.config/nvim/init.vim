@@ -78,7 +78,7 @@ Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 
 " Git
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive', { 'commit': 'f5451e4' }
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'sindrets/diffview.nvim'
 Plug 'rbong/vim-flog'

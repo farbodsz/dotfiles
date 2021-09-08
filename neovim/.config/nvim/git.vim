@@ -16,7 +16,9 @@ nmap <leader>gC :lua require("farbodsz.git").git_commits()<cr>
 nmap <leader>gdb :lua require("farbodsz.git").git_compare(false)<cr>
 nmap <leader>gdc :lua require("farbodsz.git").git_compare(true)<cr>
 
-nmap <leader>gl :0Gllog!<cr>
+nmap <leader>ge :Gedit<cr>
+
+nmap <leader>gl :DiffviewFileHistory<cr>
 vmap <leader>gl :Gllog!<cr>
 nmap <leader>gL :belowright Flogsplit<cr>
 
@@ -24,13 +26,17 @@ nmap <leader>gmd :GDelete<cr>
 nmap <leader>gmm :GMove<space>
 nmap <leader>gmr :GRename<space>
 
+nmap <leader>gPF :G fetch --all --prune<cr>
+nmap <leader>gPU :G push<cr>
+nmap <leader>gPL :G pull<cr>
+
 nmap <leader>go :GBrowse<cr>
 vmap <leader>go :GBrowse<cr>
 nmap <leader>gS :lua require("farbodsz.git").git_stash()<cr>
 
 " Merging conflicts
-nmap <leader>gk :diffget //2<cr>
-nmap <leader>gj :diffget //3<cr>
+nmap <leader>gj :diffget //2<cr>
+nmap <leader>gk :diffget //3<cr>
 
 
 " -----------------------------------------------------------------------------
@@ -39,13 +45,15 @@ nmap <leader>gj :diffget //3<cr>
 
 lua require("farbodsz.diffview")
 
-augroup diffview_from_other_plugins
+augroup diffview_integrations
   au!
   au FileType floggraph nmap <buffer><leader>gD :call DiffviewFlog()<cr>
   au FileType fugitive nmap <buffer><leader>gD :call DiffviewFugitiveIndex()<cr>
   au FileType fugitiveblame 
         \ nmap <buffer><leader>gD :call DiffviewFugitiveBlame()<cr>
   au FileType git nmap <buffer><leader>gD :call DiffviewFugitiveGit()<cr>
+
+  au FileType DiffviewFileHistory nmap <buffer>a :tabclose<cr> :belowright Flogsplit -path=% -- --follow<cr>
 augroup end
 
 
