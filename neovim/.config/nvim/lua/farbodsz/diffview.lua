@@ -17,7 +17,6 @@ require("diffview").setup({
     position = "bottom",
     height = 16,
     log_options = {
-      all = true,
       follow = true,
     },
   },
