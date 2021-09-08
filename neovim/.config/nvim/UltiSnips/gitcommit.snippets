@@ -1,0 +1,51 @@
+global !p
+
+from pathlib import Path
+
+def get_active_branch_name():
+    head_dir = Path(".") / ".git" / "HEAD"
+    with head_dir.open("r") as f:
+        content = f.read().splitlines()
+
+    for line in content:
+        if line[0:4] == "ref:":
+            return line.partition("refs/heads/")[2]
+    return "" 
+
+def get_issue_tracker_num():
+    return get_active_branch_name().split("_")[0]
+
+endglobal
+
+
+snippet "(([a-z]+(\([a-z]+\))?)\?)" "work in progress conventional commit" br
+`!p snip.rv = match.group(2)`: $2
+
+WIP: $3
+endsnippet
+
+
+snippet "([a-z]+(\([a-z]+\))?!)" "breaking change conventional commit" br
+`!p snip.rv = match.group(1)`: $2
+
+BREAKING CHANGE: $3
+endsnippet
+
+
+snippet j "prefix with current branch" b
+`!p snip.rv = get_issue_tracker_num()`: $1
+endsnippet
+
+
+snippet j? "wip commit, prefix with current branch" b
+`!p snip.rv = get_issue_tracker_num()`: $1
+
+WIP: $2
+endsnippet
+
+
+snippet J "breaking change commit, prefix with current branch" b
+`!p snip.rv = get_issue_tracker_num()`: $1
+
+BREAKING CHANGE: $2
+endsnippet
