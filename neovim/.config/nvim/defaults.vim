@@ -48,7 +48,6 @@ set scrolloff=4
 
 " Folding
 set foldmethod=manual
-set nofoldenable
 set foldopen-=block  " prevent block movements from opening folds
 
 " Spelling
@@ -76,8 +75,11 @@ set smartcase
 set showmatch
 map <leader><space> :let @/ = ''<cr>
 
+" Highlight yanks
+au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="Visual", timeout=100 }
+
 " Diffs 
-set diffopt=internal,filler,algorithm:histogram,indent-heuristic,closeoff
+set diffopt=internal,filler,algorithm:histogram,indent-heuristic,closeoff,context:10
 
 " Show relative line numbers and file stats
 set number

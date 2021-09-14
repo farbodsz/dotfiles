@@ -30,7 +30,7 @@ require'nvim-treesitter.configs'.setup {
   },
   -- Tree-sitter based indentation
   indent = {
-    enable = true
+    enable = false
   }
 }
 

@@ -22,7 +22,7 @@ require("diffview").setup({
   },
 
   key_bindings = {
-    disable_defaults = false,
+    disable_defaults = true,
     file_panel = {
       ["k"] = cb("prev_entry"),
       ["j"] = cb("next_entry"),
