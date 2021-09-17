@@ -26,3 +26,21 @@ nmap <leader>dPl :call vimspector#ListBreakpoints()<cr>
 nmap <leader>dc :call win_gotoid(g:vimspector_session_windows.code)<cr>
 nmap <leader>dv :call win_gotoid(g:vimspector_session_windows.variables)<cr>
 nmap <leader>dw :call win_gotoid(g:vimspector_session_windows.watches)<cr>
+
+
+" Set custom syntax highlighting for buffers
+function! s:SetupVimspectorSyntax()
+  call win_gotoid(g:vimspector_session_windows.stack_trace)
+  setlocal ft=vimspectorStackTrace
+
+  call win_gotoid(g:vimspector_session_windows.variables)
+  setlocal ft=vimspectorVariables
+
+  call win_gotoid(g:vimspector_session_windows.watches)
+  setlocal ft=vimspectorWatches
+endfunction
+
+augroup vimspector_ui_customisations
+  au!
+  au User VimspectorUICreated call s:SetupVimspectorSyntax()
+augroup end
