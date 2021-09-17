@@ -12,10 +12,10 @@ runtime! syntax/log.vim
 let b:current_syntax = 'vimspectorVariables'
 
 
-syn match vimspectorVarBullet "+"
-syn match vimspectorVarBullet "-"
-syn match vimspectorVarBulletExp /\s*\*\+/ 
-syn match vimspectorVarBulletExp /\s*\*\-/
+syn match vimspectorVarBullet "+ "
+syn match vimspectorVarBullet "- "
+syn match vimspectorVarBulletExp /\s*\*\+ / 
+syn match vimspectorVarBulletExp /\s*\*\- /
 
 syn match vimspectorStScope "Scope: Locals"
 syn match vimspectorStScope "Scope: Globals"

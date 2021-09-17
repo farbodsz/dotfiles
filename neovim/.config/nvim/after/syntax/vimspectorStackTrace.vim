@@ -12,8 +12,8 @@ runtime! syntax/log.vim
 let b:current_syntax = 'vimspectorStackTrace'
 
 
-syn match vimspectorStBullet "+"
-syn match vimspectorStBullet "-"
+syn match vimspectorStBullet "+ "
+syn match vimspectorStBullet "- "
 
 syn match vimspectorStThread  /Thread \d\+/
 syn match vimspectorStService "SERVICE"
