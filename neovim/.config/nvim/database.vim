@@ -2,24 +2,28 @@
 " Database plugin configurations
 " =============================================================================
 
+" -----------------------------------------------------------------------------
 " pgsql.vim (syntax)
+" -----------------------------------------------------------------------------
 
 let g:sql_type_default = 'pgsql'
 
 
+" -----------------------------------------------------------------------------
 " vim-dadbod-ui
+" -----------------------------------------------------------------------------
 
 let g:db_ui_execute_on_save = 0
 let g:db_ui_auto_execute_table_helpers = 0
-
+let g:db_ui_win_position = 'right'
 let g:db_ui_show_help = 0
 let g:db_ui_force_echo_notifications = 1
 let g:db_ui_disable_mappings = 1
 
-nnoremap <leader>dt :DBUIToggle<cr>
-nnoremap <leader>df :DBUIFindBuffer<cr>
-nnoremap <leader>dr :DBUIRenameBuffer<cr>
-nnoremap <leader>dl :DBUILastQueryInfo<cr>
+nnoremap <leader>Dt :DBUIToggle<cr>
+nnoremap <leader>Df :DBUIFindBuffer<cr>
+nnoremap <leader>Dr :DBUIRenameBuffer<cr>
+nnoremap <leader>Dl :DBUILastQueryInfo<cr>
 
 augroup dbui_mappings
   au!
@@ -38,8 +42,8 @@ augroup dbui_mappings
   autocmd FileType dbout nmap <buffer>gk <Plug>(DBUI_JumpToForeignKey)
   autocmd FileType dbout nmap <buffer>p <Plug>(DBUI_ToggleResultLayout)
 
-  autocmd FileType sql nmap <buffer><leader>dx <Plug>(DBUI_ExecuteQuery)
-  autocmd FileType sql nmap <buffer><leader>de <Plug>(DBUI_EditBindParameters)
+  autocmd FileType sql nmap <buffer><leader>x <Plug>(DBUI_ExecuteQuery)
+  autocmd FileType sql nmap <buffer><leader>De <Plug>(DBUI_EditBindParameters)
 augroup end
 
 augroup dbout_settings

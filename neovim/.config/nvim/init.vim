@@ -88,6 +88,9 @@ Plug 'tommcdo/vim-fugitive-blame-ext'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 
+" Debugging
+Plug 'puremourning/vimspector', { 'do': ':VimspectorUpdate' }
+
 " Show hex colors
 Plug 'chrisbra/Colorizer'
 
@@ -104,8 +107,8 @@ source ~/.config/nvim/theme.vim
 
 source ~/.config/nvim/coc.vim
 source ~/.config/nvim/ale.vim
-
-source ~/.config/nvim/db.vim
+source ~/.config/nvim/database.vim
+source ~/.config/nvim/debug.vim
 source ~/.config/nvim/format.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/git.vim
