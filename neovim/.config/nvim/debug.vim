@@ -3,26 +3,26 @@
 " =============================================================================
 
 let g:vimspector_install_gadgets = ['debugpy']
-let g:vimspector_base_dir = expand('$HOME/.dotfiles/neovim/.config/nvim/vimspector/')
 
-nnoremap <leader>dd :call vimspector#Launch()<cr>
+nmap <leader>dd :call vimspector#Launch()<cr>
 
-nnoremap <leader>d<space> :call vimspector#Continue()<cr>
-nnoremap <leader>drc :call vimspector#RunToCursor()<cr>
-nnoremap <leader>dq :call vimspector#Reset()<cr>
+nmap <leader>d<space> :call vimspector#Continue()<cr>
+nmap <leader>drc <Plug>VimspectorRunToCursor
+nmap <leader>dq :call vimspector#Reset()<cr>
 
-nnoremap <leader>dk :call vimspector#StepOut()<cr>
-nnoremap <leader>dj :call vimspector#StepInto()<cr>
-nnoremap <leader>dl :call vimspector#StepOver()<cr>
+nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>dj <Plug>VimspectorStepInto
+nmap <leader>dl <Plug>VimspectorStepOver
 
-nnoremap <leader>dfk :call vimspector#UpFrame()<cr>
-nnoremap <leader>dfj :call vimspector#DownFrame()<cr>
+nmap <leader>di <Plug>VimspectorBalloonEval
+xmap <leader>di <Plug>VimspectorBalloonEval
 
-nnoremap <leader>di :call vimspector#BalloonEval()<cr>
-xnoremap <leader>di :call vimspector#BalloonEval()<cr>
+nmap <leader>dp <Plug>VimspectorToggleBreakpoint
+nmap <leader>dPc <Plug>VimspectorToggleConditionalBreakpoint
+nmap <leader>dPf <Plug>VimspectorAddFunctionBreakpoint
+nmap <leader>dPdd <Plug>VimspectorClearBreakpoints
+nmap <leader>dPl :call vimspector#ListBreakpoints()<cr>
 
-nnoremap <leader>db :call vimspector#ToggleBreakpoint()<cr>
-nnoremap <leader>dBc :call vimspector#ToggleConditionalBreakpoint()<cr>
-nnoremap <leader>dBf :call vimspector#AddFunctionBreakpoint()<cr>
-nnoremap <leader>dBdd :call vimspector#ClearBreakpoints()<cr>
-nnoremap <leader>dBa :call vimspector#ListBreakpoints()<cr>
+nmap <leader>dc :call win_gotoid(g:vimspector_session_windows.code)<cr>
+nmap <leader>dv :call win_gotoid(g:vimspector_session_windows.variables)<cr>
+nmap <leader>dw :call win_gotoid(g:vimspector_session_windows.watches)<cr>
