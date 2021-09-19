@@ -21,7 +21,7 @@ endfunction
 
 augroup theme_tweaks
   au!
-  au ColorScheme * call ApplyThemeTweaks()
+  au ColorScheme,VimEnter * call ApplyThemeTweaks()
 augroup end
 
 
