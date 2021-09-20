@@ -89,7 +89,10 @@ Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 
 " Debugging
-Plug 'puremourning/vimspector', { 'do': ':VimspectorUpdate' }
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'jbyuki/one-small-step-for-vimkind'
 
 " Show hex colors
 Plug 'chrisbra/Colorizer'

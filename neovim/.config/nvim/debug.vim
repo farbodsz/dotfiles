@@ -2,45 +2,35 @@
 " Debugging configuration
 " =============================================================================
 
-let g:vimspector_install_gadgets = ['debugpy']
+lua require("farbodsz.debug")
 
-nmap <leader>dd :call vimspector#Launch()<cr>
+nmap <leader>dd :lua require("dap").continue()<CR>
+nmap <leader>d_ :lua require("dap").run_last()<CR>
 
-nmap <leader>d<space> :call vimspector#Continue()<cr>
-nmap <leader>drc <Plug>VimspectorRunToCursor
-nmap <leader>dq :call vimspector#Reset()<cr>
+nmap <leader>d<space> :lua require("dap").run_to_cursor()<CR>
+nmap <leader>dq :lua require("farbodsz.debug").disconnect_and_close()<CR>
 
-nmap <leader>dk <Plug>VimspectorStepOut
-nmap <leader>dj <Plug>VimspectorStepInto
-nmap <leader>dl <Plug>VimspectorStepOver
+nmap <leader>dk :lua require("dap").step_out()<CR>
+nmap <leader>dj :lua require("dap").step_into()<CR>
+nmap <leader>dl :lua require("dap").step_over()<CR>
 
-nmap <leader>di <Plug>VimspectorBalloonEval
-xmap <leader>di <Plug>VimspectorBalloonEval
+nmap <leader>dfk :lua require("dap").up()<CR>
+nmap <leader>dfj :lua require("dap").down()<CR>
 
-nmap <leader>dp <Plug>VimspectorToggleBreakpoint
-nmap <leader>dPc <Plug>VimspectorToggleConditionalBreakpoint
-nmap <leader>dPf <Plug>VimspectorAddFunctionBreakpoint
-nmap <leader>dPdd <Plug>VimspectorClearBreakpoints
-nmap <leader>dPl :call vimspector#ListBreakpoints()<cr>
+nmap <leader>dp :lua require("dap").toggle_breakpoint()<CR>
+nmap <leader>dPc :lua require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 
-nmap <leader>dc :call win_gotoid(g:vimspector_session_windows.code)<cr>
-nmap <leader>dv :call win_gotoid(g:vimspector_session_windows.variables)<cr>
-nmap <leader>dw :call win_gotoid(g:vimspector_session_windows.watches)<cr>
+sign define DapBreakpoint text=🛑
+sign define DapLogPoint text=🔵
+sign define DapBreakpointRejected text=❌
 
+" Use OSV to debug Lua plugins (pneumonic: debug extension)
+nmap <leader>dX :lua require("osv").launch({ log = true })<CR>
 
-" Set custom syntax highlighting for buffers
-function! s:SetupVimspectorSyntax()
-  call win_gotoid(g:vimspector_session_windows.stack_trace)
-  setlocal ft=vimspectorStackTrace
+" nvim-dap-ui
+nmap <leader>dw :lua require("dapui").toggle()<CR>
+vmap <leader>di :lua require("dapui").eval()<CR>
+nmap <leader>di viw :lua require("dapui").eval()<CR>
 
-  call win_gotoid(g:vimspector_session_windows.variables)
-  setlocal ft=vimspectorVariables
-
-  call win_gotoid(g:vimspector_session_windows.watches)
-  setlocal ft=vimspectorWatches
-endfunction
-
-augroup vimspector_ui_customisations
-  au!
-  au User VimspectorUICreated call s:SetupVimspectorSyntax()
-augroup end
+" nvim-dap-virtual-text
+let g:dap_virtual_text = 'all frames'
