@@ -11,6 +11,10 @@ require("diffview").setup({
   file_panel = {
     position = "left",
     width = 40,
+    listing_style = "tree",
+    tree_options = {
+      folder_statuses = "only_folded",
+    },
   },
 
   file_history_panel = {
@@ -24,6 +28,7 @@ require("diffview").setup({
   key_bindings = {
     disable_defaults = true,
     file_panel = {
+      ["<cr>"] = cb("select_entry"),
       ["k"] = cb("prev_entry"),
       ["j"] = cb("next_entry"),
       ["[f"] = cb("select_prev_entry"),
@@ -33,8 +38,11 @@ require("diffview").setup({
       ["<C-w>f"] = cb("goto_file_split"),
       ["<C-w><C-f>"] = cb("goto_file_split"),
       ["<C-w>gf"] = cb("goto_file_tab"),
+      ["i"] = cb("listing_style"),
+      [","] = cb("toggle_flatten_dirs"),
     },
     file_history_panel = {
+      ["<cr>"] = cb("select_entry"),
       ["k"] = cb("prev_entry"),
       ["j"] = cb("next_entry"),
       ["[f"] = cb("select_prev_entry"),
@@ -61,7 +69,7 @@ require("diffview").setup({
       ["<C-w>gf"] = cb("goto_file_tab"),
     },
     option_panel = {
-      ["<return>"] = cb("select"),
+      ["<cr>"] = cb("select"),
       ["q"] = cb("close"),
     },
   },
