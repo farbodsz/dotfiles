@@ -74,7 +74,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
 Plug 'psf/black', { 'for': 'python', 'branch': 'stable' }
 Plug 'stsewd/isort.nvim', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
-Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 
 " Git
 Plug 'airblade/vim-gitgutter'
