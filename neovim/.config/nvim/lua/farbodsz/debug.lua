@@ -57,6 +57,20 @@ dap.configurations.python = {
 }
 
 --
+-- Listeners
+--
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+
+--
 -- nvim-dap-ui
 --
 
@@ -71,7 +85,6 @@ dapui.setup({
     repl = "r",
   },
   sidebar = {
-    open_on_start = true,
     elements = {
       -- Order (bottom-to-top) and relative size of windows
       { id = "breakpoints", size = 0.2 },
@@ -83,7 +96,6 @@ dapui.setup({
     position = "left",
   },
   tray = {
-    open_on_start = false,
     elements = { "repl" },
     size = 12,
     position = "bottom",
