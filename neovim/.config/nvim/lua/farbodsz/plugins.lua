@@ -38,13 +38,12 @@ require("packer").startup({
       },
     })
 
-    -- Navigation: Telescope (TODO: depencies and optionals)
-    use("nvim-lua/popup.nvim")
-    use("nvim-lua/plenary.nvim")
+    -- Navigation: Telescope
+    use({ "nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim" })
     use({
-      "nvim-telescope/telescope.nvim",
+      "nvim-telescope/telescope-fzy-native.nvim",
+      requires = "telescope.nvim",
     })
-    use("nvim-telescope/telescope-fzy-native.nvim")
 
     -- Navigation: Others
     use("kassio/neoterm")
@@ -56,13 +55,13 @@ require("packer").startup({
 
     -- Language support
     use("dense-analysis/ale")
-    use({ "lervag/vimtex", ft = { "tex" } })
-    use({ "KeitaNakamura/tex-conceal.vim", ft = { "tex" } })
-    use({ "plasticboy/vim-markdown", ft = { "markdown" } })
+    use({ "lervag/vimtex", ft = "tex" })
+    use({ "KeitaNakamura/tex-conceal.vim", ft = "tex" })
+    use({ "plasticboy/vim-markdown", ft = "markdown" })
 
     -- Auto-completion
     use({ "neoclide/coc.nvim", branch = "release" })
-    use("rafcamlet/coc-nvim-lua")
+    use({ "rafcamlet/coc-nvim-lua", requires = "coc.nvim" })
     use("jiangmiao/auto-pairs")
     use("tpope/vim-surround")
     use("tpope/vim-commentary")
@@ -75,50 +74,38 @@ require("packer").startup({
     })
 
     -- Language syntax/detection
-    use({ "memgraph/cypher.vim", ft = { "cypher" } })
-    use({ "neovimhaskell/haskell-vim", ft = { "haskell" } })
+    use({ "memgraph/cypher.vim", ft = "cypher" })
+    use({ "neovimhaskell/haskell-vim", ft = "haskell" })
     use({ "towolf/vim-helm", ft = { "helm", "yaml" } })
-    use({ "mboughaba/i3config.vim", ft = { "i3config" } })
-    use({ "LnL7/vim-nix", ft = { "nix" } })
+    use({ "mboughaba/i3config.vim", ft = "i3config" })
+    use({ "LnL7/vim-nix", ft = "nix" })
     use("lifepillar/pgsql.vim")
-    use({ "adimit/prolog.vim", ft = { "prolog" } })
-    use({ "MTDL9/vim-log-highlighting", ft = { "log" } })
+    use({ "adimit/prolog.vim", ft = "prolog" })
+    use({ "MTDL9/vim-log-highlighting", ft = "log" })
 
     -- Auto-formatting
     use({ "prettier/vim-prettier", run = "yarn install" })
     use({ "rhysd/vim-clang-format", ft = { "c", "cpp" } })
-    use({
-      "psf/black",
-      ft = { "python" },
-      tag = "stable",
-    })
-    use({
-      "stsewd/isort.nvim",
-      ft = { "python" },
-      run = ":UpdateRemotePlugins",
-    })
+    use({ "psf/black", ft = "python", tag = "stable" })
+    use({ "stsewd/isort.nvim", ft = "python", run = ":UpdateRemotePlugins" })
 
     -- Git
     use("airblade/vim-gitgutter")
     use("tpope/vim-fugitive")
-    use("tpope/vim-rhubarb")
-    use({
-      "sindrets/diffview.nvim",
-    })
+    use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
+    use({ "tommcdo/vim-fugitive-blame-ext", requires = "vim-fugitive" })
+    use("sindrets/diffview.nvim")
     use("rbong/vim-flog")
-    use("tommcdo/vim-fugitive-blame-ext")
 
     -- Databases
     use("tpope/vim-dadbod")
     use("kristijanhusak/vim-dadbod-ui")
 
     -- Debugging
-    use({
-      "mfussenegger/nvim-dap",
-    })
-    use("rcarriga/nvim-dap-ui")
-    use("theHamsta/nvim-dap-virtual-text")
-    use("jbyuki/one-small-step-for-vimkind")
+    use({ "mfussenegger/nvim-dap", module = "dap" })
+    use({ "rcarriga/nvim-dap-ui", requires = "nvim-dap" })
+    use({ "theHamsta/nvim-dap-virtual-text", requires = "nvim-dap" })
+    use({ "jbyuki/one-small-step-for-vimkind", requires = "nvim-dap" })
 
     -- Show hex colors
     use("chrisbra/Colorizer")
@@ -126,10 +113,10 @@ require("packer").startup({
     -- Previewing
     use({
       "iamcco/markdown-preview.nvim",
-      ft = { "markdown" },
+      ft = "markdown",
       run = "cd app & yarn install",
     })
-    use({ "xuhdev/vim-latex-live-preview", ft = { "tex" } })
+    use({ "xuhdev/vim-latex-live-preview", ft = "tex" })
   end,
 
   config = {

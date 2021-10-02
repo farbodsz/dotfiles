@@ -1,8 +1,6 @@
-local M = {}
-
-function M.setup()
-  print("TS setup")
-end
+--------------------------------------------------------------------------------
+-- nvim-treesitter configuration
+--------------------------------------------------------------------------------
 
 require("nvim-treesitter.configs").setup({
   -- Highlighting
@@ -18,5 +16,3 @@ require("nvim-treesitter.configs").setup({
 -- At the moment, some languages (e.g. Haskell) compile with errors when
 -- compiled with `gcc`.
 require("nvim-treesitter.install").compilers = { "clang" }
-
-return M
