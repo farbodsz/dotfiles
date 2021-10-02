@@ -1,0 +1,141 @@
+-------------------------------------------------------------------------------
+-- Plugin configuration
+-------------------------------------------------------------------------------
+
+-- Install packer
+local fn = vim.fn
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  })
+  vim.cmd("packadd packer.nvim")
+end
+
+-- Plugins
+require("packer").startup({
+  function(use)
+    use("wbthomason/packer.nvim")
+    use("lewis6991/impatient.nvim")
+    use("tweekmonster/startuptime.vim")
+
+    -- Theming and styling
+    use("gruvbox-community/gruvbox")
+    use("itchyny/lightline.vim")
+    use("shinchu/lightline-gruvbox.vim")
+
+    -- Navigation: FZF
+    use({
+      "junegunn/fzf.vim",
+      requires = {
+        "junegunn/fzf",
+        run = "vim.cmd[[fzf#install]]",
+      },
+    })
+
+    -- Navigation: Telescope (TODO: depencies and optionals)
+    use("nvim-lua/popup.nvim")
+    use("nvim-lua/plenary.nvim")
+    use({
+      "nvim-telescope/telescope.nvim",
+    })
+    use("nvim-telescope/telescope-fzy-native.nvim")
+
+    -- Navigation: Others
+    use("kassio/neoterm")
+    use("kshenoy/vim-signature")
+    use("milkypostman/vim-togglelist")
+    use("szw/vim-maximizer")
+    use("tpope/vim-unimpaired")
+    use("liuchengxu/vista.vim")
+
+    -- Language support
+    use("dense-analysis/ale")
+    use({ "lervag/vimtex", ft = { "tex" } })
+    use({ "KeitaNakamura/tex-conceal.vim", ft = { "tex" } })
+    use({ "plasticboy/vim-markdown", ft = { "markdown" } })
+
+    -- Auto-completion
+    use({ "neoclide/coc.nvim", branch = "release" })
+    use("rafcamlet/coc-nvim-lua")
+    use("jiangmiao/auto-pairs")
+    use("tpope/vim-surround")
+    use("tpope/vim-commentary")
+    use("SirVer/ultisnips")
+
+    -- Tree sitter
+    use({
+      { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+      "nvim-treesitter/playground",
+    })
+
+    -- Language syntax/detection
+    use({ "memgraph/cypher.vim", ft = { "cypher" } })
+    use({ "neovimhaskell/haskell-vim", ft = { "haskell" } })
+    use({ "towolf/vim-helm", ft = { "helm", "yaml" } })
+    use({ "mboughaba/i3config.vim", ft = { "i3config" } })
+    use({ "LnL7/vim-nix", ft = { "nix" } })
+    use("lifepillar/pgsql.vim")
+    use({ "adimit/prolog.vim", ft = { "prolog" } })
+    use({ "MTDL9/vim-log-highlighting", ft = { "log" } })
+
+    -- Auto-formatting
+    use({ "prettier/vim-prettier", run = "yarn install" })
+    use({ "rhysd/vim-clang-format", ft = { "c", "cpp" } })
+    use({
+      "psf/black",
+      ft = { "python" },
+      tag = "stable",
+    })
+    use({
+      "stsewd/isort.nvim",
+      ft = { "python" },
+      run = ":UpdateRemotePlugins",
+    })
+
+    -- Git
+    use("airblade/vim-gitgutter")
+    use("tpope/vim-fugitive")
+    use("tpope/vim-rhubarb")
+    use({
+      "sindrets/diffview.nvim",
+    })
+    use("rbong/vim-flog")
+    use("tommcdo/vim-fugitive-blame-ext")
+
+    -- Databases
+    use("tpope/vim-dadbod")
+    use("kristijanhusak/vim-dadbod-ui")
+
+    -- Debugging
+    use({
+      "mfussenegger/nvim-dap",
+    })
+    use("rcarriga/nvim-dap-ui")
+    use("theHamsta/nvim-dap-virtual-text")
+    use("jbyuki/one-small-step-for-vimkind")
+
+    -- Show hex colors
+    use("chrisbra/Colorizer")
+
+    -- Previewing
+    use({
+      "iamcco/markdown-preview.nvim",
+      ft = { "markdown" },
+      run = "cd app & yarn install",
+    })
+    use({ "xuhdev/vim-latex-live-preview", ft = { "tex" } })
+  end,
+
+  config = {
+    -- Move to lua dir so impatient.nvim can cache it
+    compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
+  },
+})
+
+require("packer_compiled")

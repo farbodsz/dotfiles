@@ -3,3 +3,6 @@
 
 # NeoMutt email account details
 accounts.muttrc
+
+# Compiled plugins
+packer_compiled.lua

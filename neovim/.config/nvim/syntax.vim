@@ -2,6 +2,8 @@
 " Syntax improvements
 " =============================================================================
 
+lua require("farbodsz.treesitter")
+
 " i3config detection based on filepath
 aug i3config_ft_detection
   au!
@@ -21,21 +23,3 @@ aug mutt_ft_detection
   au BufNewFile,BufRead *.muttrc set filetype=muttrc
   au BufNewFile,BufRead *mutt-* set filetype=mail
 aug end
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  -- Highlighting
-  highlight = {
-    enable = true
-  },
-  -- Tree-sitter based indentation
-  indent = {
-    enable = false
-  }
-}
-
--- At the moment, some languages (e.g. Haskell) compile with errors when
--- compiled with `gcc`.
-require'nvim-treesitter.install'.compilers = { "clang" }
-
-EOF
