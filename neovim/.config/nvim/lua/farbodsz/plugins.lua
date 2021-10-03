@@ -50,7 +50,6 @@ require("packer").startup({
     use("kshenoy/vim-signature")
     use("milkypostman/vim-togglelist")
     use("szw/vim-maximizer")
-    use("tpope/vim-unimpaired")
     use("liuchengxu/vista.vim")
 
     -- Language support
