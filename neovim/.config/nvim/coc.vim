@@ -162,7 +162,6 @@ let g:coc_global_extensions = [
       \ 'coc-cssmodules',
       \ 'coc-db',
       \ 'coc-eslint',
-      \ 'coc-explorer',
       \ 'coc-java',
       \ 'coc-json',
       \ 'coc-lists',
