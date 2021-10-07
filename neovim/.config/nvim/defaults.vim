@@ -5,6 +5,11 @@
 " Syntax
 syntax on
 
+set hidden
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
 " Encoding
 set encoding=utf-8
 

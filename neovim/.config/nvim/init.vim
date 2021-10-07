@@ -7,15 +7,16 @@
 source ~/.config/nvim/defaults.vim
 source ~/.config/nvim/mappings.vim
 
-" Disable LSP features in ALE since already provided by COC
+" Disable LSP features in ALE since already provided by built-in LSP
 " This needs to be before plugins are loaded.
 let g:ale_disable_lsp = 1
 
 lua require("farbodsz.plugins")
 lua require("impatient")
 
+lua require("farbodsz.lsp")
+
 source ~/.config/nvim/ale.vim
-source ~/.config/nvim/coc.vim
 source ~/.config/nvim/database.vim
 source ~/.config/nvim/debug.vim
 source ~/.config/nvim/format.vim

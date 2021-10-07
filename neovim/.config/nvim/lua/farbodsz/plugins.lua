@@ -58,6 +58,16 @@ require("packer").startup({
     use("szw/vim-maximizer")
     use("liuchengxu/vista.vim")
 
+    -- LSP
+    use("neovim/nvim-lspconfig")
+    use({ "hrsh7th/nvim-cmp", module = "cmp" })
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-buffer")
+
+    -- Snippets
+    use("SirVer/ultisnips")
+    use("quangnguyen30192/cmp-nvim-ultisnips")
+
     -- Language support
     use("dense-analysis/ale")
     use({ "lervag/vimtex", ft = "tex" })
@@ -65,12 +75,9 @@ require("packer").startup({
     use({ "plasticboy/vim-markdown", ft = "markdown" })
 
     -- Auto-completion
-    use({ "neoclide/coc.nvim", branch = "release" })
-    use({ "rafcamlet/coc-nvim-lua", requires = "coc.nvim" })
     use("jiangmiao/auto-pairs")
     use("tpope/vim-surround")
     use("tpope/vim-commentary")
-    use("SirVer/ultisnips")
 
     -- Tree sitter
     use({
