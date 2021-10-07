@@ -56,6 +56,9 @@ return {
     },
   },
 
+  -- Installation instructions in repo
+  texlab = {},
+
   -- npm i -g typescript typescript-language-server
   tsserver = {},
 
