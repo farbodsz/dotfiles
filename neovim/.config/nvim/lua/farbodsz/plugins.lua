@@ -106,7 +106,7 @@ require("packer").startup({
     use("tpope/vim-fugitive")
     use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
     use({ "tommcdo/vim-fugitive-blame-ext", requires = "vim-fugitive" })
-    use("sindrets/diffview.nvim")
+    use({ "sindrets/diffview.nvim", requires = "nvim-web-devicons" })
     use("rbong/vim-flog")
 
     -- Databases
