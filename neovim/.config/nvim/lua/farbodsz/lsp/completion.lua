@@ -29,6 +29,13 @@ function M.setup()
     },
   })
 
+  vim.cmd([[
+    augroup DadbodSql
+      au!
+      autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
+    augroup END
+  ]])
+
   -- Set completeopt to have a better completion experience
   vim.o.completeopt = "menu,menuone,noselect"
 end

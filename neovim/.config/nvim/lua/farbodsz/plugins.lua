@@ -111,7 +111,8 @@ require("packer").startup({
 
     -- Databases
     use("tpope/vim-dadbod")
-    use("kristijanhusak/vim-dadbod-ui")
+    use({ "kristijanhusak/vim-dadbod-ui", requires = "vim-dadbod" })
+    use({ "kristijanhusak/vim-dadbod-completion", requires = "vim-dadbod" })
 
     -- Debugging
     use({ "mfussenegger/nvim-dap", module = "dap" })
