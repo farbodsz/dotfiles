@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------
 
 local default_on_attach = require("farbodsz.lsp.config").on_attach
-local ft_formatters = require("farbodsz.lsp.formatters").filetype_formatters
+local efm_ft_progs = require("farbodsz.lsp.efm").filetype_programs
 
 local sumneko_root_path = vim.fn.stdpath("data") .. "/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
@@ -26,11 +26,11 @@ return {
 
   -- Installation instructions in repo
   efm = {
-    filetypes = vim.tbl_keys(ft_formatters),
+    filetypes = vim.tbl_keys(efm_ft_progs),
     init_options = { documentFormatting = true },
     settings = {
       rootMarkers = { ".git/" },
-      languages = ft_formatters,
+      languages = efm_ft_progs,
     },
   },
 

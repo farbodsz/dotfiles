@@ -68,12 +68,6 @@ require("packer").startup({
     use("SirVer/ultisnips")
     use("quangnguyen30192/cmp-nvim-ultisnips")
 
-    -- Language support
-    use("dense-analysis/ale")
-    use({ "lervag/vimtex", ft = "tex" })
-    use({ "KeitaNakamura/tex-conceal.vim", ft = "tex" })
-    use({ "plasticboy/vim-markdown", ft = "markdown" })
-
     -- Auto-completion
     use("jiangmiao/auto-pairs")
     use("tpope/vim-surround")
@@ -90,10 +84,13 @@ require("packer").startup({
     use({ "neovimhaskell/haskell-vim", ft = "haskell" })
     use({ "towolf/vim-helm", ft = { "helm", "yaml" } })
     use({ "mboughaba/i3config.vim", ft = "i3config" })
+    use({ "plasticboy/vim-markdown", ft = "markdown" })
     use({ "LnL7/vim-nix", ft = "nix" })
     use("lifepillar/pgsql.vim")
     use({ "adimit/prolog.vim", ft = "prolog" })
     use({ "MTDL9/vim-log-highlighting", ft = "log" })
+    use({ "lervag/vimtex", ft = "tex" })
+    use({ "KeitaNakamura/tex-conceal.vim", ft = "tex" })
 
     -- Auto-formatting
     use({ "prettier/vim-prettier", run = "yarn install" })

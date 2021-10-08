@@ -16,7 +16,6 @@ lua require("impatient")
 
 lua require("farbodsz.lsp")
 
-source ~/.config/nvim/ale.vim
 source ~/.config/nvim/database.vim
 source ~/.config/nvim/debug.vim
 source ~/.config/nvim/format.vim

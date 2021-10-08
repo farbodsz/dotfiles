@@ -16,12 +16,7 @@ let g:ale_echo_msg_info_str = 'I'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
-      \ 'lua': ['luacheck',],
       \ 'prolog': ['swipl'],
-      \ 'python': ['pylint', 'mypy'],
-      \ 'sh': ['shellcheck'],
-      \ 'tex': ['chktex'],
-      \ 'vim': ['vimls', 'vint'],
       \ }
 
 " Mapping to see error detail window
