@@ -2,6 +2,9 @@
 -- Language servers
 -------------------------------------------------------------------------------
 
+local default_on_attach = require("farbodsz.lsp.config").on_attach
+local ft_formatters = require("farbodsz.lsp.formatters").filetype_formatters
+
 local sumneko_root_path = vim.fn.stdpath("data") .. "/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
@@ -13,6 +16,7 @@ return {
   -- npm i -g bash-language-server
   bashls = {},
 
+  -- Should already be installed
   clangd = {
     cmd = { "clangd-9", "--background-index" },
   },
@@ -20,11 +24,27 @@ return {
   -- npm i -g vscode-langservers-extracted
   cssls = {},
 
+  -- Installation instructions in repo
+  efm = {
+    filetypes = vim.tbl_keys(ft_formatters),
+    init_options = { documentFormatting = true },
+    settings = {
+      rootMarkers = { ".git/" },
+      languages = ft_formatters,
+    },
+  },
+
   -- npm i -g graphql-language-service-cli
   graphql = {},
 
   -- ghcup install hls
-  hls = {},
+  hls = {
+    on_attach = function(client, bufnr)
+      -- Disable builtin HLS formatting
+      client.resolved_capabilities.document_formatting = false
+      default_on_attach(client, bufnr)
+    end,
+  },
 
   -- npm i -g vscode-langservers-extracted
   html = {},

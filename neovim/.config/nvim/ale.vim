@@ -24,15 +24,5 @@ let g:ale_linters = {
       \ 'vim': ['vimls', 'vint'],
       \ }
 
-let g:ale_fixers = {
-      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'haskell': ['stylish-haskell', 'brittany'],
-      \ 'lua': ['stylua'],
-      \ 'sh': ['shfmt'],
-      \ }
-
-" Shfmt options: like Google style guide
-let g:ale_sh_shfmt_options = '-i 2 -ci'
-
 " Mapping to see error detail window
 nnoremap <leader>ed :ALEDetail<cr>

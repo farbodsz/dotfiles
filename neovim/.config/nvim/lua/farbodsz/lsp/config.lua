@@ -32,10 +32,15 @@ M.on_attach = function(client, bufnr)
     "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
     opts
   )
-  bufmap("n", "rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+
+  bufmap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   bufmap("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   bufmap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
   bufmap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+
+  if client.resolved_capabilities.document_formatting then
+    bufmap("n", "<space>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  end
 end
 
 return M
