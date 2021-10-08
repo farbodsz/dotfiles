@@ -6,7 +6,7 @@ local cb = require("diffview.config").diffview_callback
 
 require("diffview").setup({
   diff_binaries = false,
-  use_icons = false,
+  use_icons = true,
 
   file_panel = {
     position = "left",

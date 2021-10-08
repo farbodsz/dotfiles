@@ -15,21 +15,8 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_info_str = 'I'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-
 let g:ale_linters = {
-      \ 'bash': ['shellcheck'],
-      \ 'lua': ['luacheck',],
       \ 'prolog': ['swipl'],
-      \ 'python': ['pylint', 'mypy'],
-      \ 'tex': ['chktex'],
-      \ 'vim': ['vimls', 'vint'],
-      \ }
-
-let g:ale_fixers = {
-      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'bash': ['shfmt'],
-      \ 'haskell': ['stylish-haskell', 'brittany'],
-      \ 'lua': ['stylua'],
       \ }
 
 " Mapping to see error detail window

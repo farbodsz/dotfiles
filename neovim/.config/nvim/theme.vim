@@ -61,10 +61,5 @@ let g:colorizer_colornames = 0
 
 
 " Explorer
-let g:coc_explorer_global_presets = {
-      \ 'custom': {
-      \   'width': 30,
-      \ },
-      \ }
-
-nnoremap <leader>t :CocCommand explorer --preset custom<CR>
+lua require("farbodsz.filetree")
+nnoremap <leader>t :NvimTreeToggle<CR>

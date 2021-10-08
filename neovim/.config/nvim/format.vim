@@ -15,7 +15,7 @@ augroup autoformat_settings
   autocmd FileType lua nnoremap <buffer><leader>cf :ALEFix<cr>
   autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
-  autocmd FileType sh nnoremap <buffer><leader>cf :Shfmt<cr>
+  autocmd FileType sh nnoremap <buffer><leader>cf :ALEFix<cr>
   autocmd FileType typescript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType typescriptreact nnoremap <buffer><leader>cf :Prettier<cr>
   " Default
@@ -31,6 +31,3 @@ let g:prettier#config#prose_wrap = 'always'
 
 " Black options
 let g:black_linelength = 80
-
-" Shfmt options: like Google style guide
-let g:shfmt_extra_args = '-i 2 -ci'

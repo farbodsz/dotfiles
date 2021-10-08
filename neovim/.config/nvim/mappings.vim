@@ -61,3 +61,7 @@ aug end
 " Quickfix and location list
 nmap <script> <silent> <leader>l :call ToggleLocationList()<cr>
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<cr>
+
+
+" Unimpaired
+source ~/.config/nvim/unimpaired.vim
