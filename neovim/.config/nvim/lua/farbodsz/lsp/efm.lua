@@ -71,6 +71,10 @@ local formatters = {
     formatCommand = "brittany",
     formatStdin = true,
   },
+  latexindent = {
+    formatCommand = "latexindent -m",
+    formatStdin = true,
+  },
   shfmt = {
     formatCommand = "shfmt -i 2 -ci -",
     formatStdin = true,
@@ -86,11 +90,12 @@ local formatters = {
 }
 
 M.filetype_programs = {
+  bib = { linters.chktex, formatters.latexindent },
   haskell = { formatters.stylish_haskell, formatters.brittany },
   lua = { linters.luacheck, formatters.stylua },
   python = { linters.pylint, linters.mypy },
   sh = { linters.shellcheck, formatters.shfmt },
-  tex = { linters.chktex },
+  tex = { linters.chktex, formatters.latexindent },
   vim = { linters.vint },
 }
 

@@ -2,7 +2,13 @@
 -- Language servers
 -------------------------------------------------------------------------------
 
-local default_on_attach = require("farbodsz.lsp.config").on_attach
+local on_attach_default = require("farbodsz.lsp.config").on_attach
+local on_attach_no_fmt = function(client, bufnr)
+  -- Disable built-in language server formatting
+  client.resolved_capabilities.document_formatting = false
+  on_attach_default(client, bufnr)
+end
+
 local efm_ft_progs = require("farbodsz.lsp.efm").filetype_programs
 
 local sumneko_root_path = vim.fn.stdpath("data") .. "/lua-language-server"
@@ -39,11 +45,7 @@ return {
 
   -- ghcup install hls
   hls = {
-    on_attach = function(client, bufnr)
-      -- Disable builtin HLS formatting
-      client.resolved_capabilities.document_formatting = false
-      default_on_attach(client, bufnr)
-    end,
+    on_attach = on_attach_no_fmt,
   },
 
   -- npm i -g vscode-langservers-extracted
@@ -77,7 +79,9 @@ return {
   },
 
   -- Installation instructions in repo
-  texlab = {},
+  texlab = {
+    on_attach = on_attach_no_fmt,
+  },
 
   -- npm i -g typescript typescript-language-server
   tsserver = {},
