@@ -19,16 +19,16 @@ require("telescope").setup({
     mappings = {
       i = {
         -- Esc or <C-c> closes telescope instead of going into normal mode
-        ["<c-c>"] = actions.close,
-        ["<esc>"] = actions.close,
+        ["<C-c>"] = actions.close,
+        ["<Esc>"] = actions.close,
 
         -- Navigating results
-        ["<c-k>"] = actions.move_selection_previous,
-        ["<c-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
 
         -- Quickfix list
-        ["<c-q>"] = actions.send_selected_to_qflist,
-        ["<c-Q>"] = actions.send_to_qflist,
+        ["<C-q>"] = actions.send_selected_to_qflist,
+        ["<C-Q>"] = actions.send_to_qflist,
 
         -- Opening result
         ["<C-s>"] = actions.select_horizontal,
