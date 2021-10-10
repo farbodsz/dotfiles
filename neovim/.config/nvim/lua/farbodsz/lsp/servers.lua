@@ -51,6 +51,13 @@ return {
   -- npm i -g vscode-langservers-extracted
   html = {},
 
+  -- npm i -g vscode-langservers-extracted
+  jsonls = {
+    init_options = {
+      provideFormatter = false,
+    },
+  },
+
   -- Installation instructions in repo
   rnix = {},
 
