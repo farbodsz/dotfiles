@@ -10,12 +10,6 @@ local vint_msg_format = "{severity}: "
   .. "{description} [{reference}]"
 
 local linters = {
-  chktex = {
-    -- TODO: Find out why chktex doesn't lint properly
-    lintCommand = "chktex -q -v0 -I",
-    lintStdin = true,
-    lintFormats = { "%f:%l:%c:%m" },
-  },
   luacheck = {
     lintCommand = "luacheck --formatter visual_studio -",
     lintStdin = true,
@@ -90,12 +84,12 @@ local formatters = {
 }
 
 M.filetype_programs = {
-  bib = { linters.chktex, formatters.latexindent },
+  bib = { formatters.latexindent },
   haskell = { formatters.stylish_haskell, formatters.brittany },
   lua = { linters.luacheck, formatters.stylua },
   python = { linters.pylint, linters.mypy },
   sh = { linters.shellcheck, formatters.shfmt },
-  tex = { linters.chktex, formatters.latexindent },
+  tex = { formatters.latexindent },
   vim = { linters.vint },
 }
 

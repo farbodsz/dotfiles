@@ -81,6 +81,14 @@ return {
   -- Installation instructions in repo
   texlab = {
     on_attach = on_attach_no_fmt,
+    settings = {
+      texlab = {
+        chktex = {
+          onEdit = true,
+          onOpenAndSave = true,
+        },
+      },
+    },
   },
 
   -- npm i -g typescript typescript-language-server
