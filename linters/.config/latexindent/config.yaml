@@ -2,14 +2,17 @@ defaultIndent: "  "
 removeTrailingWhitespace: 1
 
 indentAfterItems:
-    itemize: 0
-    enumerate: 0
-    description: 0
-    list: 0
+  itemize: 1
+  enumerate: 1
+  description: 1
+  list: 1
 
 modifyLineBreaks:
   preserveBlankLines: 0
   condenseMultipleBlankLinesInto: 1
 
   textWrapOptions:
-    columns: 0
+    columns: 80
+    items: 1
+  removeParagraphLineBreaks:
+    beforeTextWrap: 1
