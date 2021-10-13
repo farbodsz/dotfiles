@@ -35,20 +35,12 @@ require("packer").startup({
       requires = "kyazdani42/nvim-web-devicons",
     })
 
-    -- Navigation: FZF
-    use({
-      "junegunn/fzf.vim",
-      requires = {
-        "junegunn/fzf",
-        run = "vim.cmd[[fzf#install]]",
-      },
-    })
-
     -- Navigation: Telescope
     use({ "nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim" })
     use({
-      "nvim-telescope/telescope-fzy-native.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim",
       requires = "telescope.nvim",
+      run = "make",
     })
 
     -- Navigation: Others

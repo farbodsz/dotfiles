@@ -9,8 +9,6 @@ local builtin = require("telescope.builtin")
 
 require("telescope").setup({
   defaults = {
-    file_sorter = require("telescope.sorters").get_fzy_sorter,
-
     layout_config = {
       prompt_position = "top",
     },
@@ -37,14 +35,16 @@ require("telescope").setup({
   },
 
   extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
       override_file_sorter = true,
+      case_mode = "smart_case",
     },
   },
 })
 
-require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("fzf")
 
 local opts_find_command = {
   "rg",
@@ -56,10 +56,12 @@ local opts_find_command = {
 
 local opts_vimgrep_args = {
   "rg",
-  "--column",
+  "--color=never",
   "--no-heading",
+  "--with-filename",
   "--line-number",
-  "--color=always",
+  "--column",
+  "--smart-case",
   "--hidden",
   "-g",
   "!{.git,.cache,node_modules}",

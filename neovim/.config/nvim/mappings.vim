@@ -50,12 +50,10 @@ endfunction
 
 
 " Terminal mode mappings
-aug terminal_escape
+augroup terminal_escape
   " Use Esc to go to normal mode in terminal, *except* for FZF buffer
-  au!
-  au TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
-  au FileType fzf tunmap <buffer> <Esc>
-aug end
+  au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+augroup end
 
 
 " Quickfix and location list
