@@ -41,10 +41,18 @@ require("telescope").setup({
       override_file_sorter = true,
       case_mode = "smart_case",
     },
+
+    project = {
+      base_dirs = {
+        -- Include all git repos under home
+        "~",
+      },
+    },
   },
 })
 
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("project")
 
 local opts_find_command = {
   "rg",

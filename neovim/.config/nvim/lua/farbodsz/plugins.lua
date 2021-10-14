@@ -42,6 +42,10 @@ require("packer").startup({
       requires = "telescope.nvim",
       run = "make",
     })
+    use({
+      "nvim-telescope/telescope-project.nvim",
+      requires = "telescope.nvim",
+    })
 
     -- Navigation: Others
     use("kassio/neoterm")

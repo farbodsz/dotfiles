@@ -12,6 +12,7 @@ require("nvim-tree").setup({
     icons = { hint = "", info = "", warning = "", error = "" },
   },
 
+  update_cwd = true,
   update_focused_file = {
     enable = true, -- un-collapse folders recursively until it finds this file
   },
