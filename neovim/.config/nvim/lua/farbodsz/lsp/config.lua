@@ -24,6 +24,7 @@ M.on_attach = function(client, bufnr)
   bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  bufmap("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   bufmap("n", "gwa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
   bufmap("n", "gwd", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
   bufmap(

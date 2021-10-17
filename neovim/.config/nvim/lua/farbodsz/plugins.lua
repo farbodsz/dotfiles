@@ -59,6 +59,7 @@ require("packer").startup({
     use({ "hrsh7th/nvim-cmp", module = "cmp" })
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
+    use("ray-x/lsp_signature.nvim")
 
     -- Snippets
     use("SirVer/ultisnips")
