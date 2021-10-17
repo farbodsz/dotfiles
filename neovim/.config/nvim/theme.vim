@@ -44,15 +44,9 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead',
-      \   'gitstatus': 'GitStatus',
-      \   'cocstatus': 'coc#status'
+      \   'gitstatus': 'GitStatus'
       \ },
       \ }
-
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-" Use autocmd to force lightline update for Coc
-autocmd User CocStatusChange, CocDiagnosticChange call lightline#update()
 
 
 " GitGutter summary
