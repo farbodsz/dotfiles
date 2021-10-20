@@ -14,6 +14,8 @@ let g:ale_disable_lsp = 1
 lua require("farbodsz.plugins")
 lua require("impatient")
 
+source ~/.config/nvim/theme.vim
+
 lua require("farbodsz.lsp")
 
 source ~/.config/nvim/database.vim
@@ -26,5 +28,4 @@ source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/tex.vim
-source ~/.config/nvim/theme.vim
 source ~/.config/nvim/vista.vim
