@@ -8,18 +8,12 @@ augroup autoformat_settings
   " Language-specific
   autocmd FileType c,cpp nnoremap <buffer><leader>cf :ClangFormat<cr>
   autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<cr>
-  autocmd FileType haskell nnoremap <buffer><leader>cf :ALEFix<cr>
   autocmd FileType html,css,scss nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType javascript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType json,yaml nnoremap <buffer><leader>cf :Prettier<cr>
-  autocmd FileType lua nnoremap <buffer><leader>cf :ALEFix<cr>
   autocmd FileType markdown nnoremap <buffer><leader>cf :Prettier<cr>
-  autocmd FileType python nnoremap <buffer><leader>cf :Isort -m 3 -tc<cr>:Black<cr>
-  autocmd FileType sh nnoremap <buffer><leader>cf :ALEFix<cr>
   autocmd FileType typescript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType typescriptreact nnoremap <buffer><leader>cf :Prettier<cr>
-  " Default
-  nnoremap <buffer><leader>cf :ALEFix<cr>
 augroup end
 
 " ClangFormat defaults
@@ -28,6 +22,3 @@ let g:clang_format#style_options = { 'AccessModifierOffset': -2 }
 
 " Prettier
 let g:prettier#config#prose_wrap = 'always'
-
-" Black options
-let g:black_linelength = 80

@@ -92,8 +92,6 @@ require("packer").startup({
     -- Auto-formatting
     use({ "prettier/vim-prettier", run = "yarn install" })
     use({ "rhysd/vim-clang-format", ft = { "c", "cpp" } })
-    use({ "psf/black", ft = "python", tag = "stable" })
-    use({ "stsewd/isort.nvim", ft = "python", run = ":UpdateRemotePlugins" })
 
     -- Git
     use("airblade/vim-gitgutter")

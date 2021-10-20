@@ -61,8 +61,16 @@ local linters = {
 }
 
 local formatters = {
+  black = {
+    formatCommand = "black -l 80 -",
+    formatStdin = true,
+  },
   brittany = {
     formatCommand = "brittany",
+    formatStdin = true,
+  },
+  isort = {
+    formatCommand = "isort -m 3 -tc -",
     formatStdin = true,
   },
   latexindent = {
@@ -87,7 +95,7 @@ M.filetype_programs = {
   bib = { formatters.latexindent },
   haskell = { formatters.stylish_haskell, formatters.brittany },
   lua = { linters.luacheck, formatters.stylua },
-  python = { linters.pylint, linters.mypy },
+  python = { linters.pylint, linters.mypy, formatters.isort, formatters.black },
   sh = { linters.shellcheck, formatters.shfmt },
   tex = { formatters.latexindent },
   vim = { linters.vint },
