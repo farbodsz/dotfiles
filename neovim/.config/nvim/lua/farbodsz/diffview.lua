@@ -8,6 +8,11 @@ require("diffview").setup({
   diff_binaries = false,
   use_icons = true,
 
+  default_args = {
+    DiffviewOpen = { "--imply-local" },
+    DiffviewFileHistory = {},
+  },
+
   file_panel = {
     position = "left",
     width = 40,
