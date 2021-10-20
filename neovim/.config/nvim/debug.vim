@@ -8,7 +8,7 @@ nmap <leader>dd :lua require("dap").continue()<CR>
 nmap <leader>d_ :lua require("dap").run_last()<CR>
 
 nmap <leader>d<space> :lua require("dap").run_to_cursor()<CR>
-nmap <leader>dq :lua require("farbodsz.debug").disconnect_and_close()<CR>
+nmap <leader>dq :lua require("farbodsz.debug.utils").disconnect_and_close()<CR>
 
 nmap <leader>dk :lua require("dap").step_out()<CR>
 nmap <leader>dj :lua require("dap").step_into()<CR>
