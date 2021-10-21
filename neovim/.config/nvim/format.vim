@@ -6,8 +6,6 @@
 augroup autoformat_settings
   au!
   " Language-specific
-  autocmd FileType c,cpp nnoremap <buffer><leader>cf :ClangFormat<cr>
-  autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<cr>
   autocmd FileType html,css,scss nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType javascript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType json,yaml nnoremap <buffer><leader>cf :Prettier<cr>
@@ -15,10 +13,6 @@ augroup autoformat_settings
   autocmd FileType typescript nnoremap <buffer><leader>cf :Prettier<cr>
   autocmd FileType typescriptreact nnoremap <buffer><leader>cf :Prettier<cr>
 augroup end
-
-" ClangFormat defaults
-let g:clang_format#code_style = 'google'
-let g:clang_format#style_options = { 'AccessModifierOffset': -2 }
 
 " Prettier
 let g:prettier#config#prose_wrap = 'always'

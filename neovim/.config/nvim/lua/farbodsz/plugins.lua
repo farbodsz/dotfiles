@@ -88,10 +88,7 @@ require("packer").startup({
     use({ "MTDL9/vim-log-highlighting", ft = "log" })
     use({ "lervag/vimtex", ft = "tex" })
     use({ "KeitaNakamura/tex-conceal.vim", ft = "tex" })
-
-    -- Auto-formatting
     use({ "prettier/vim-prettier", run = "yarn install" })
-    use({ "rhysd/vim-clang-format", ft = { "c", "cpp" } })
 
     -- Git
     use("airblade/vim-gitgutter")

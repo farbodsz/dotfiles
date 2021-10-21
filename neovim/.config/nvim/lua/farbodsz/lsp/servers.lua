@@ -27,6 +27,7 @@ return {
   -- Should already be installed
   clangd = {
     cmd = { "clangd-9", "--background-index" },
+    on_attach = on_attach_no_fmt,
   },
 
   -- npm i -g vscode-langservers-extracted

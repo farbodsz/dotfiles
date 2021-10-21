@@ -69,6 +69,10 @@ local formatters = {
     formatCommand = "brittany",
     formatStdin = true,
   },
+  clang_format = {
+    formatCommand = "clang-format -style=file",
+    formatStdin = true,
+  },
   isort = {
     formatCommand = "isort -m 3 -tc -",
     formatStdin = true,
@@ -93,6 +97,8 @@ local formatters = {
 
 M.filetype_programs = {
   bib = { formatters.latexindent },
+  c = { formatters.clang_format },
+  cpp = { formatters.clang_format },
   haskell = { formatters.stylish_haskell, formatters.brittany },
   lua = { linters.luacheck, formatters.stylua },
   python = { linters.pylint, linters.mypy, formatters.isort, formatters.black },
