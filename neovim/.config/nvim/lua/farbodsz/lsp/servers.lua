@@ -58,6 +58,9 @@ return {
     },
   },
 
+  -- npm i -g pyright
+  pyright = {},
+
   -- Installation instructions in repo
   rnix = {},
 
@@ -108,54 +111,11 @@ return {
   yamlls = {},
 }
 
--- TODO:
--- "javacc": {
---   "command": "java",
---   "args": ["-jar", "/home/farbod/.config/nvim/bin/com.javacc.ls-uber.jar"],
---   "filetypes": ["javacc"]
--- },
-
--- "python": {
---   "command": "python",
---   "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
---   "trace.server": "verbose",
---   "filetypes": ["python"],
---   "settings": {
---     "pyls": {
---       "enable": true,
---       "trace": { "server": "verbose" },
---       "commandPath": "",
---       "plugins": {
---         "jedi_completion": { "enabled": true },
---         "jedi_hover": { "enabled": true },
---         "jedi_references": { "enabled": true },
---         "jedi_signature_help": { "enabled": true },
---         "jedi_symbols": { "enabled": true, "all_scopes": true },
---         "mccabe": { "enabled": true, "threshold": 15 },
---         "preload": { "enabled": true },
---         // Enable type-checking (requires pyls-mypy from pip)
---         "pyls_mypy": { "enabled": true, "live_mode": false },
---         "rope_completion": { "enabled": true }
---       }
---     }
---   }
--- },
-
--- "prolog-lsp": {
---   "command": "swipl",
---   "args": [
---     "-g",
---     "use_module(library(lsp_server)).",
---     "-g",
---     "lsp_server:main",
---     "-t",
---     "halt",
---     "--",
---     "stdio"
---   ],
---   "filetypes": ["prolog"]
--- }
+-- TODO: See previous coc-settings.json for these
+-- "javacc"
+-- "prolog-lsp"
 --
+-- Plus these extensions:
 -- let g:coc_global_extensions = [
 --       \ 'coc-clang-format-style-options',
 --       \ 'coc-cssmodules',
