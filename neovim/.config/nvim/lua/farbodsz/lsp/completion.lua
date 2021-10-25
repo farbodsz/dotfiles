@@ -23,8 +23,10 @@ function M.setup()
       ["<CR>"] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
+      -- Order of sources determines priority in completion list
       { name = "nvim_lsp" },
       { name = "ultisnips" },
+      { name = "path" },
       { name = "buffer" },
     },
   })

@@ -54,16 +54,15 @@ require("packer").startup({
     use("szw/vim-maximizer")
     use("liuchengxu/vista.vim")
 
-    -- LSP
+    -- LSP and completion
     use("neovim/nvim-lspconfig")
-    use({ "hrsh7th/nvim-cmp", module = "cmp" })
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-buffer")
-    use("ray-x/lsp_signature.nvim")
-
-    -- Snippets
     use("SirVer/ultisnips")
+    use({ "hrsh7th/nvim-cmp", module = "cmp" })
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-nvim-lsp")
     use("quangnguyen30192/cmp-nvim-ultisnips")
+    use("hrsh7th/cmp-path")
+    use("ray-x/lsp_signature.nvim")
 
     -- Auto-completion
     use("jiangmiao/auto-pairs")
