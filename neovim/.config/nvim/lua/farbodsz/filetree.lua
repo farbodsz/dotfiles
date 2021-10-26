@@ -22,3 +22,6 @@ require("nvim-tree").setup({
     side = "left",
   },
 })
+
+vim.g.nvim_tree_group_empty = 1
+vim.g.nvim_tree_special_files = {}
