@@ -107,7 +107,9 @@ return {
   },
 
   -- npm i -g typescript typescript-language-server
-  tsserver = {},
+  tsserver = {
+    on_attach = on_attach_no_fmt,
+  },
 
   -- npm i -g vim-language-server
   vimls = {},

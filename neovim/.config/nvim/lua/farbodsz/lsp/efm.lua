@@ -81,6 +81,10 @@ local formatters = {
     formatCommand = "latexindent -m",
     formatStdin = true,
   },
+  prettier = {
+    formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
+    formatStdin = true,
+  },
   shfmt = {
     formatCommand = "shfmt -i 2 -ci -",
     formatStdin = true,
@@ -99,12 +103,21 @@ M.filetype_programs = {
   bib = { formatters.latexindent },
   c = { formatters.clang_format },
   cpp = { formatters.clang_format },
+  css = { formatters.prettier },
   haskell = { formatters.stylish_haskell, formatters.brittany },
+  html = { formatters.prettier },
+  javascript = { formatters.prettier },
+  json = { formatters.prettier },
   lua = { linters.luacheck, formatters.stylua },
+  markdown = { formatters.prettier },
   python = { linters.pylint, linters.mypy, formatters.isort, formatters.black },
+  scss = { formatters.prettier },
   sh = { linters.shellcheck, formatters.shfmt },
   tex = { formatters.latexindent },
+  typescript = { formatters.prettier },
+  typescriptreact = { formatters.prettier },
   vim = { linters.vint },
+  yaml = { formatters.prettier },
 }
 
 return M

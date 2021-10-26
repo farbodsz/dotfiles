@@ -20,7 +20,6 @@ lua require("farbodsz.lsp")
 
 source ~/.config/nvim/database.vim
 source ~/.config/nvim/debug.vim
-source ~/.config/nvim/format.vim
 source ~/.config/nvim/git.vim
 source ~/.config/nvim/markdown.vim
 source ~/.config/nvim/neoterm.vim
