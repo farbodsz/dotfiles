@@ -10,7 +10,7 @@ require("diffview").setup({
   use_icons = true,
 
   default_args = {
-    DiffviewOpen = { "--imply-local" },
+    DiffviewOpen = {},
     DiffviewFileHistory = {},
   },
 
