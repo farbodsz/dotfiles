@@ -4,7 +4,15 @@
 
 local M = {}
 
+local cpptools_path = "/home/farbod/.dotfiles/neovim/.config/nvim/bin/cpptools/"
+
 M.adapters = {
+  -- Via vscode-cpptools (see nvim-dap installation instructions)
+  cppdbg = {
+    type = "executable",
+    command = cpptools_path .. "extension/debugAdapters/bin/OpenDebugAD7",
+  },
+
   -- Plugin 'jbyuki/one-small-step-for-vimkind'
   nlua = function(callback, config)
     callback({ type = "server", host = config.host, port = config.port })
@@ -19,6 +27,23 @@ M.adapters = {
 }
 
 M.configurations = {
+  cpp = {
+    {
+      name = "Launch file",
+      type = "cppdbg",
+      request = "launch",
+      program = function()
+        return vim.fn.input(
+          "Path to executable: ",
+          vim.fn.getcwd() .. "/",
+          "file"
+        )
+      end,
+      cwd = "${workspaceFolder}",
+      stopOnEntry = true,
+    },
+  },
+
   lua = {
     {
       type = "nlua",
