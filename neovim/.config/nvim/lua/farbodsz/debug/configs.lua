@@ -39,6 +39,14 @@ M.configurations = {
           "file"
         )
       end,
+      args = function()
+        local args_str = vim.fn.input("Args: ", "", "file")
+        local args = {}
+        for word in args_str:gmatch("%S+") do
+          table.insert(args, word)
+        end
+        return args
+      end,
       cwd = "${workspaceFolder}",
       stopOnEntry = true,
     },
