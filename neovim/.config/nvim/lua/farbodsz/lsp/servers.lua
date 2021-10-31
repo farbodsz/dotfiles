@@ -26,7 +26,7 @@ return {
 
   -- Should already be installed
   clangd = {
-    cmd = { "clangd-9", "--background-index" },
+    cmd = { "clangd", "--background-index" },
     on_attach = on_attach_no_fmt,
   },
 
