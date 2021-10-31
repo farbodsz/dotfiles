@@ -70,7 +70,7 @@ local formatters = {
     formatStdin = true,
   },
   clang_format = {
-    formatCommand = "clang-format -style=file",
+    formatCommand = "clang-format -style=file -assume-filename=${INPUT}",
     formatStdin = true,
   },
   isort = {
