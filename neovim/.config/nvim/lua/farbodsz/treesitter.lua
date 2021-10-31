@@ -2,17 +2,54 @@
 -- nvim-treesitter configuration
 --------------------------------------------------------------------------------
 
+-- At the moment, some languages (e.g. Haskell) compile with errors when
+-- compiled with `gcc`.
+require("nvim-treesitter.install").compilers = { "clang" }
+
 require("nvim-treesitter.configs").setup({
   -- Highlighting
   highlight = {
     enable = true,
   },
+
   -- Tree-sitter based indentation
   indent = {
     enable = false,
   },
-})
 
--- At the moment, some languages (e.g. Haskell) compile with errors when
--- compiled with `gcc`.
-require("nvim-treesitter.install").compilers = { "clang" }
+  -- nvim-treesitter-textobjects
+  textobjects = {
+    move = {
+      enable = true,
+      set_jumps = true, -- add to jumplist
+      goto_next_start = {
+        ["]m"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
+
+    select = {
+      enable = true,
+      lookahead = true, -- auto-jump forward to textobj
+      keymaps = {
+        -- Using the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+    },
+  },
+})

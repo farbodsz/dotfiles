@@ -73,6 +73,7 @@ require("packer").startup({
     use({
       { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
       "nvim-treesitter/playground",
+      "nvim-treesitter/nvim-treesitter-textobjects"
     })
 
     -- Language syntax/detection
