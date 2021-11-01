@@ -28,7 +28,6 @@ set listchars=tab:>\ ,nbsp:+
 " Language-specific overrides for whitespace (tabstop and shiftwidth)
 augroup whitespace_settings
   au!
-  autocmd FileType c,cpp setlocal sw=4 ts=4
   autocmd FileType haskell setlocal sw=4 ts=4
   autocmd FileType python setlocal sw=4 ts=4
   autocmd FileType make setlocal noexpandtab
