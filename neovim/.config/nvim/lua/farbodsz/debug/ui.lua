@@ -7,7 +7,7 @@ local dapui = require("dapui")
 
 local M = {}
 
-function M.configure_dapui()
+function M.setup_dapui()
   dapui.setup({
     icons = { expanded = "▾", collapsed = "▸" },
 
@@ -62,6 +62,15 @@ function M.listen_dapui_events()
   dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
   end
+end
+
+function M.setup_virtual_text()
+  require("nvim-dap-virtual-text").setup({
+    enabled = true,
+    highlight_changed_variables = true,
+    highlight_new_as_changed = true,
+    show_stop_reason = true, -- when stopped for exceptions
+  })
 end
 
 return M

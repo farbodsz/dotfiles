@@ -12,4 +12,5 @@ dap.adapters = configs.adapters
 dap.configurations = configs.configurations
 
 ui.listen_dapui_events()
-ui.configure_dapui()
+ui.setup_dapui()
+ui.setup_virtual_text()

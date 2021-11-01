@@ -32,6 +32,3 @@ nmap <leader>dX :lua require("osv").launch({ log = true })<CR>
 nmap <leader>dw :lua require("dapui").toggle()<CR>
 vmap <leader>di :lua require("dapui").eval()<CR>
 nmap <leader>di viw :lua require("dapui").eval()<CR>
-
-" nvim-dap-virtual-text
-let g:dap_virtual_text = 'all frames'
