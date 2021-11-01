@@ -19,6 +19,7 @@ nmap <leader>dfj :lua require("dap").down()<CR>
 
 nmap <leader>dp :lua require("dap").toggle_breakpoint()<CR>
 nmap <leader>dPc :lua require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nmap <leader>dPl :lua require("dap").list_breakpoints()<CR>
 
 sign define DapBreakpoint text=🛑
 sign define DapLogPoint text=🔵
