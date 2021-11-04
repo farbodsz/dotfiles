@@ -82,7 +82,8 @@ local formatters = {
     formatStdin = true,
   },
   prettier = {
-    formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
+    -- prettierd uses local prettier if available, otherwise a default prettier
+    formatCommand = "prettierd ${INPUT}",
     formatStdin = true,
   },
   shfmt = {
