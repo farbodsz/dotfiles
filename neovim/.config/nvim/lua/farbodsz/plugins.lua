@@ -73,7 +73,7 @@ require("packer").startup({
     use({
       { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
       "nvim-treesitter/playground",
-      "nvim-treesitter/nvim-treesitter-textobjects"
+      "nvim-treesitter/nvim-treesitter-textobjects",
     })
 
     -- Language syntax/detection
@@ -94,7 +94,13 @@ require("packer").startup({
     use("tpope/vim-fugitive")
     use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
     use({ "tommcdo/vim-fugitive-blame-ext", requires = "vim-fugitive" })
-    use({ "sindrets/diffview.nvim", requires = "nvim-web-devicons" })
+    use({
+      "sindrets/diffview.nvim",
+      requires = {
+        "plenary.nvim",
+        { "nvim-web-devicons", opt = true },
+      },
+    })
     use("rbong/vim-flog")
 
     -- Databases
