@@ -118,8 +118,9 @@ require("packer").startup({
     use({ "theHamsta/nvim-dap-virtual-text", requires = "nvim-dap" })
     use({ "jbyuki/one-small-step-for-vimkind", requires = "nvim-dap" })
 
-    -- Show hex colors
+    -- Useful tools
     use("chrisbra/Colorizer")
+    use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } })
 
     -- Previewing
     use({
