@@ -22,7 +22,7 @@ require("packer").startup({
   function(use)
     use("wbthomason/packer.nvim")
     use("lewis6991/impatient.nvim")
-    use("tweekmonster/startuptime.vim")
+    use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
 
     -- Theming and styling
     use("gruvbox-community/gruvbox")
@@ -48,7 +48,7 @@ require("packer").startup({
     })
 
     -- Navigation: Others
-    use("kassio/neoterm")
+    use({ "kassio/neoterm", cmd = { "REPL", "Tnew", "Topen", "Ttoggle" } })
     use("kshenoy/vim-signature")
     use("milkypostman/vim-togglelist")
     use("szw/vim-maximizer")
@@ -83,7 +83,7 @@ require("packer").startup({
     use({ "mboughaba/i3config.vim", ft = "i3config" })
     use({ "plasticboy/vim-markdown", ft = "markdown" })
     use({ "LnL7/vim-nix", ft = "nix" })
-    use("lifepillar/pgsql.vim")
+    use({ "lifepillar/pgsql.vim", ft = { "sql", "pgsql", "plsql" } })
     use({ "adimit/prolog.vim", ft = "prolog" })
     use({ "MTDL9/vim-log-highlighting", ft = "log" })
     use({ "lervag/vimtex", ft = "tex" })
@@ -92,8 +92,8 @@ require("packer").startup({
     -- Git
     use("airblade/vim-gitgutter")
     use("tpope/vim-fugitive")
-    use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
-    use({ "tommcdo/vim-fugitive-blame-ext", requires = "vim-fugitive" })
+    use({ "tpope/vim-rhubarb", after = "vim-fugitive" })
+    use({ "tommcdo/vim-fugitive-blame-ext", after = "vim-fugitive" })
     use({
       "sindrets/diffview.nvim",
       requires = {
@@ -101,7 +101,7 @@ require("packer").startup({
         { "nvim-web-devicons", opt = true },
       },
     })
-    use("rbong/vim-flog")
+    use({ "rbong/vim-flog", requires = "vim-fugitive" })
 
     -- Databases
     use("tpope/vim-dadbod")
