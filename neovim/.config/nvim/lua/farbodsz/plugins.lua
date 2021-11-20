@@ -120,7 +120,7 @@ require("packer").startup({
 
     -- Useful tools
     use("chrisbra/Colorizer")
-    use("tpope/vim-dispatch")
+    use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } })
 
     -- Previewing
     use({
