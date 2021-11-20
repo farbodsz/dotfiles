@@ -162,6 +162,13 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 1%- unmute -q \
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 1%+ unmute -q \
   && pkill -RTMIN+10 i3blocks
 
+bindsym $mod+Shift+v exec amixer -D pulse set Master 1+ toggle \
+  && pkill -RTMIN+10 i3blocks
+bindsym $mod+v exec amixer -D pulse set Master 1%- unmute -q \
+  && pkill -RTMIN+10 i3blocks
+bindsym $mod+b exec amixer -D pulse set Master 1%+ unmute -q \
+  && pkill -RTMIN+10 i3blocks
+
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 \
   && pkill -RTMIN+11 i3blocks
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 \
