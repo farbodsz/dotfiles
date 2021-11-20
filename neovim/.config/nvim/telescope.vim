@@ -9,6 +9,7 @@ nnoremap <silent><leader>F :lua require("farbodsz.telescope").live_grep()<cr>
 
 nnoremap <leader>fG <cmd>Telescope git_files<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser hidden=true<cr>
+nnoremap <leader>fs <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>ft <cmd>Telescope filetypes<cr>
 nnoremap <leader>fp :lua require("telescope").extensions.project.project{ display_type = "full" }<cr>
 nnoremap <leader>f: <cmd>Telescope commands<cr>
