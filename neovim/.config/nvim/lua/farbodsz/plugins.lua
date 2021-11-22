@@ -81,6 +81,7 @@ require("packer").startup({
     use({ "neovimhaskell/haskell-vim", ft = "haskell" })
     use({ "towolf/vim-helm", ft = { "helm", "yaml" } })
     use({ "mboughaba/i3config.vim", ft = "i3config" })
+    use({ "rhysd/vim-llvm", ft = "llvm" })
     use({ "plasticboy/vim-markdown", ft = "markdown" })
     use({ "LnL7/vim-nix", ft = "nix" })
     use({ "lifepillar/pgsql.vim", ft = { "sql", "pgsql", "plsql" } })
