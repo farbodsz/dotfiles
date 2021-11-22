@@ -122,6 +122,7 @@ require("packer").startup({
     -- Useful tools
     use("chrisbra/Colorizer")
     use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } })
+    use({ "mbbill/undotree", cmd = { "UndotreeToggle" } })
 
     -- Previewing
     use({
