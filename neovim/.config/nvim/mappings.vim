@@ -67,3 +67,8 @@ nmap <script> <silent> <leader>q :call ToggleQuickfixList()<cr>
 
 " Unimpaired
 source ~/.config/nvim/unimpaired.vim
+
+
+" Code format: remove trailing whitespace and blank lines
+" TODO: Use this as a 'backup' option for my cf mapping?
+nnoremap <silent><leader>cF :%s/\s\+$//e<CR>:%s#\($\n\s*\)\+\%$##e<CR>
