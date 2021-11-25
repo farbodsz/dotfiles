@@ -3,6 +3,8 @@
 --------------------------------------------------------------------------------
 
 require("nvim-tree").setup({
+  disable_netrw = false, -- netrw needed for :GBrowse
+
   open_on_setup = false,
   auto_close = false, -- auto-close nvim when tree is last window
   hijack_cursor = true, -- force cursor at start of filename in tree

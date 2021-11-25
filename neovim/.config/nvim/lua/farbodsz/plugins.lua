@@ -93,8 +93,8 @@ require("packer").startup({
     -- Git
     use("airblade/vim-gitgutter")
     use("tpope/vim-fugitive")
-    use({ "tpope/vim-rhubarb", after = "vim-fugitive" })
-    use({ "tommcdo/vim-fugitive-blame-ext", after = "vim-fugitive" })
+    use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
+    use({ "tommcdo/vim-fugitive-blame-ext", requires = "vim-fugitive" })
     use({
       "sindrets/diffview.nvim",
       requires = {
