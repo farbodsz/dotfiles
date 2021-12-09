@@ -43,6 +43,9 @@ return {
     },
   },
 
+  -- npm i -g elm-test elm-format @elm-tooling/elm-language-server
+  elmls = {},
+
   -- npm i -g graphql-language-service-cli
   graphql = {},
 
