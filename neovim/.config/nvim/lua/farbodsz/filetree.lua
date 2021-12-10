@@ -2,7 +2,10 @@
 -- File tree
 --------------------------------------------------------------------------------
 
-require("nvim-tree").setup({
+local tree = require("nvim-tree")
+local tree_cb = require("nvim-tree.config").nvim_tree_callback
+
+tree.setup({
   disable_netrw = false, -- netrw needed for :GBrowse
 
   open_on_setup = false,
@@ -22,6 +25,14 @@ require("nvim-tree").setup({
   view = {
     width = 30,
     side = "left",
+
+    mappings = {
+      custom_only = false,
+      list = {
+        { key = { "<Tab>" }, cb = tree_cb("cd") },
+        { key = { "<S-Tab>" }, cb = tree_cb("dir_up") },
+      },
+    },
   },
 })
 
