@@ -22,7 +22,7 @@ source ~/.config/nvim/database.vim
 source ~/.config/nvim/debug.vim
 source ~/.config/nvim/dispatch.vim
 source ~/.config/nvim/git.vim
-source ~/.config/nvim/hoogle.vim
+source ~/.config/nvim/haskell.vim
 source ~/.config/nvim/markdown.vim
 source ~/.config/nvim/neoterm.vim
 source ~/.config/nvim/octo.vim

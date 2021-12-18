@@ -1,5 +1,5 @@
 " =============================================================================
-" Hoogle search
+" Haskell config
 " =============================================================================
 
 " Opens a web browser with the Hoogle search result
@@ -10,4 +10,5 @@ endfunction
 
 command! -nargs=1 Hoogle call s:SearchHoogle(<f-args>)
 
-nnoremap <leader>H :Hoogle<space>
+nnoremap <leader>Hh :Hoogle<space>
+nnoremap <leader>Hp :Pointfree<CR>

@@ -136,6 +136,11 @@ require("packer").startup({
     -- Useful tools
     use("chrisbra/Colorizer")
     use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } })
+    use({
+      "~/pointfree.nvim",
+      requires = "plenary.nvim",
+      ft = "haskell",
+    })
     use({ "mbbill/undotree", cmd = { "UndotreeToggle" } })
 
     -- Previewing
