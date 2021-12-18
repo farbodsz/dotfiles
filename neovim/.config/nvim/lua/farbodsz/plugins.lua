@@ -110,6 +110,13 @@ require("packer").startup({
       },
     })
     use({ "rbong/vim-flog", requires = "vim-fugitive" })
+    use({
+      "pwntester/octo.nvim",
+      requires = {
+        "telescope.nvim",
+        { "nvim-web-devicons", opt = true },
+      },
+    })
 
     -- Databases
     use("tpope/vim-dadbod")

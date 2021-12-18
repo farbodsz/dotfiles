@@ -25,6 +25,7 @@ source ~/.config/nvim/git.vim
 source ~/.config/nvim/hoogle.vim
 source ~/.config/nvim/markdown.vim
 source ~/.config/nvim/neoterm.vim
+source ~/.config/nvim/octo.vim
 source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/telescope.vim
