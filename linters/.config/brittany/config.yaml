@@ -25,6 +25,7 @@ conf_forward:
     - -XRecursiveDo
     - -XTemplateHaskell
     - -XTupleSections
+    - -XTypeApplications
     - -XViewPatterns
 conf_errorHandling:
   econf_ExactPrintFallback: ExactPrintFallbackModeInline
