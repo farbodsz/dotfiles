@@ -12,3 +12,4 @@ command! -nargs=1 Hoogle call s:SearchHoogle(<f-args>)
 
 nnoremap <leader>Hh :Hoogle<space>
 nnoremap <leader>Hp :Pointfree<CR>
+vnoremap <leader>Hp :PointfreeSelection<CR>
