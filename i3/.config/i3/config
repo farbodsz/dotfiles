@@ -150,11 +150,12 @@ bindsym $mod+r mode "resize"
 
 
 # -----------------------------------------------------------------------------
-# AUDIO/VIDEO CONTROLS
+# MEDIA CONTROLS
 # -----------------------------------------------------------------------------
 
-# Status bar is updated by sending the signal number in the i3block config
+# Note: status bar is updated by sending the signal number in the i3block config
 
+# Audio
 bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle \
   && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 1%- unmute -q \
@@ -162,6 +163,7 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 1%- unmute -q \
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 1%+ unmute -q \
   && pkill -RTMIN+10 i3blocks
 
+# Audio (alternative bindings)
 bindsym $mod+Shift+v exec amixer -D pulse set Master 1+ toggle \
   && pkill -RTMIN+10 i3blocks
 bindsym $mod+v exec amixer -D pulse set Master 1%- unmute -q \
@@ -169,10 +171,17 @@ bindsym $mod+v exec amixer -D pulse set Master 1%- unmute -q \
 bindsym $mod+b exec amixer -D pulse set Master 1%+ unmute -q \
   && pkill -RTMIN+10 i3blocks
 
+# Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 \
   && pkill -RTMIN+11 i3blocks
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 \
   && pkill -RTMIN+11 i3blocks
+
+# Media player
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 
 # -----------------------------------------------------------------------------
