@@ -212,11 +212,6 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 # i3-gaps only:
 #  - Disable window titlebars (needed in order for gaps to work)
 for_window [class=".*"] border pixel 0
-#  - Gap width
-gaps inner 20
-#  - Only show gap if in split mode with >1 window
-# smart_gaps on
-
 
 # Gruvbox dark hard colors, with darker bg from badwolf
 set $bg     #1c1b1a
