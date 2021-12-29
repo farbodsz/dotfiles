@@ -88,8 +88,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #-------------------------------------------------------------------------------
 
 # Source aliases and custom styling if exist
-source $HOME/.dotfiles/bash/aliases
-source $HOME/.dotfiles/bash/styles
+source "$HOME/.dotfiles/bash/aliases"
+source "$HOME/.dotfiles/bash/styles"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -118,5 +118,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] &&
 #-------------------------------------------------------------------------------
 
 [[ $(hostname) = "ldz"* ]] &&
-  [ -f $HOME/.dotfiles/bash/work ] &&
-  source $HOME/.dotfiles/bash/work
+  [ -f "$HOME/.dotfiles/bash/work" ] &&
+  source "$HOME/.dotfiles/bash/work"

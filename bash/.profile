@@ -19,7 +19,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-if [ ! -w ${XDG_RUNTIME_DIR:="/run/user/$UID"} ]; then
+if [ ! -w "${XDG_RUNTIME_DIR:="/run/user/$UID"}" ]; then
   echo "\$XDG_RUNTIME_DIR ($XDG_RUNTIME_DIR) not writable. Unsetting." >&2
   unset XDG_RUNTIME_DIR
 else
@@ -60,13 +60,13 @@ export EDITOR=~/.local/bin/nvim.appimage
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # IHP and dependencies
-[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] &&
-  source $HOME/.nix-profile/etc/profile.d/nix.sh &&
+[ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] &&
+  source "$HOME/.nix-profile/etc/profile.d/nix.sh" &&
   export IHP_BROWSER=google-chrome &&
   eval "$(direnv hook bash)"
 
 # Hackage user details
-[ -f $HOME/.hackage_userinfo.sh ] && source $HOME/.hackage_userinfo.sh
+[ -f "$HOME/.hackage_userinfo.sh" ] && source "$HOME/.hackage_userinfo.sh"
 
 #-------------------------------------------------------------------------------
 # Java
