@@ -262,3 +262,5 @@ bindsym $mod+e exec ~/.dotfiles/scripts/dmenu-emoji.sh
 bindsym $mod+m exec ~/.dotfiles/scripts/dmenu-man.sh
 # M = message (send someting to i3-msg)
 bindsym $mod+Shift+m exec ~/.dotfiles/scripts/dmenu-i3-msg.sh
+# w = word reference
+bindsym $mod+w exec ~/.dotfiles/scripts/dmenu-wordreference.sh
