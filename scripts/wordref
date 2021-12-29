@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+// Runs wordref using these arguments:
+//  * fromLang
+//  * toLang
+//  * word
+
+// NOTE: To have the module installed:
+// Install from source: https://github.com/farbodsz/wordref
+// Then in the directory of this file: `npm link wordref`
+const wordref = require("wordref");
+
+const args = process.argv.slice(2);
+
+const fromLang = args[0];
+const toLang = args[1];
+const word = args[2];
+
+wordref(word, fromLang, toLang).then((result) =>
+  console.log(JSON.stringify(result, null, 2))
+);
+
+// vi:ft=javascript
