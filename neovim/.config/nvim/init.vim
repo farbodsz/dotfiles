@@ -30,5 +30,6 @@ source ~/.config/nvim/snippets.vim
 source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/tex.vim
-source ~/.config/nvim/vista.vim
 source ~/.config/nvim/undotree.vim
+source ~/.config/nvim/unimpaired.vim
+source ~/.config/nvim/vista.vim
