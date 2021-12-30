@@ -119,10 +119,7 @@ require("packer").startup({
     use({ "rbong/vim-flog", requires = "vim-fugitive" })
     use({
       "pwntester/octo.nvim",
-      requires = {
-        "telescope.nvim",
-        { "nvim-web-devicons", opt = true },
-      },
+      requires = { "plenary.nvim", "telescope.nvim", "nvim-web-devicons" },
     })
 
     -- Databases
