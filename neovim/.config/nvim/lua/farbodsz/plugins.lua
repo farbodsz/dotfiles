@@ -25,6 +25,12 @@ require("packer").startup({
     use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
 
     -- Theming and styling
+    use({
+      "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("farbodsz.icons").setup()
+      end,
+    })
     use("gruvbox-community/gruvbox")
     use("itchyny/lightline.vim")
     use("shinchu/lightline-gruvbox.vim")
