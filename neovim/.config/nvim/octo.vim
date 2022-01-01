@@ -16,3 +16,4 @@ nnoremap <leader>Gic :Octo issue create<CR>
 
 nnoremap <leader>Gp<space> :Octo pr<space>
 nnoremap <leader>Gpl :Octo pr list<CR>
+nnoremap <leader>Gpc :Octo pr create<CR>
