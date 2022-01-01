@@ -26,7 +26,7 @@ require("telescope").setup({
 
         -- Quickfix list
         ["<C-q>"] = actions.send_selected_to_qflist,
-        ["<C-Q>"] = actions.send_to_qflist,
+        ["<C-a>"] = actions.send_to_qflist,
 
         -- Opening result
         ["<C-s>"] = actions.select_horizontal,
