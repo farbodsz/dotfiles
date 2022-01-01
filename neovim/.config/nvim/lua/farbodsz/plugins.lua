@@ -31,9 +31,8 @@ require("packer").startup({
         require("farbodsz.icons").setup()
       end,
     })
-    use("gruvbox-community/gruvbox")
+    use("~/gruvbox-alt.nvim")
     use("itchyny/lightline.vim")
-    use("shinchu/lightline-gruvbox.vim")
 
     -- Navigation: Explorer
     use({

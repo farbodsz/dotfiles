@@ -6,24 +6,7 @@
 set background=dark
 set termguicolors
 
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_colors = { 'bg0': '1c1b1a' } " darker bg from badwolf
-let g:gruvbox_sign_column = 'bg0'
-let g:gruvbox_invert_selection = 0
-
-colorscheme gruvbox
-
-function ApplyThemeTweaks()
-  hi link TSOperator     GruvboxRed
-  hi link TSPunctBracket Comment
-  hi link TSTagDelimiter Comment
-endfunction
-
-augroup theme_tweaks
-  au!
-  au ColorScheme,VimEnter * call ApplyThemeTweaks()
-augroup end
-
+colorscheme gruvbox-alt
 
 " LSP signs
 sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsSignError linehl= numhl=
@@ -34,7 +17,6 @@ sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint linehl
 
 " Lightline customisation
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
