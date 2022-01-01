@@ -56,11 +56,6 @@ function! GitStatus()
 endfunction
 
 
-" Colorizer
-let g:colorizer_skip_comments = 1
-let g:colorizer_colornames = 0
-
-
 " Explorer
 lua require("farbodsz.filetree")
 nnoremap <leader>t :NvimTreeToggle<CR>

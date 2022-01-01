@@ -138,14 +138,20 @@ require("packer").startup({
     use({ "jbyuki/one-small-step-for-vimkind", requires = "nvim-dap" })
 
     -- Useful tools
-    use("chrisbra/Colorizer")
+    use({
+      "norcalli/nvim-colorizer.lua",
+      cmd = "ColorizerToggle",
+      config = function()
+        require("colorizer").setup()
+      end,
+    })
     use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } })
     use({
       "~/pointfree.nvim",
       requires = "plenary.nvim",
       ft = "haskell",
     })
-    use({ "mbbill/undotree", cmd = { "UndotreeToggle" } })
+    use({ "mbbill/undotree", cmd = "UndotreeToggle" })
 
     -- Previewing
     use({
