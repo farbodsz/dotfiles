@@ -38,6 +38,10 @@ require("packer").startup({
     use({
       "kyazdani42/nvim-tree.lua",
       requires = "kyazdani42/nvim-web-devicons",
+      cmd = "NvimTreeToggle",
+      config = function()
+        require("farbodsz.filetree")
+      end,
     })
 
     -- Navigation: Telescope
