@@ -25,6 +25,7 @@ function M.setup()
     sources = {
       -- Order of sources determines priority in completion list
       { name = "nvim_lsp" },
+      { name = "nvim_lua" },
       { name = "ultisnips" },
       { name = "path" },
       { name = "buffer" },
