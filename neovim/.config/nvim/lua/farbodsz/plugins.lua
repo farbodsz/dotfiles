@@ -79,6 +79,7 @@ require("packer").startup({
     use("hrsh7th/cmp-nvim-lua")
     use("quangnguyen30192/cmp-nvim-ultisnips")
     use("hrsh7th/cmp-path")
+    use("onsails/lspkind-nvim")
     use("ray-x/lsp_signature.nvim")
 
     -- Auto-completion

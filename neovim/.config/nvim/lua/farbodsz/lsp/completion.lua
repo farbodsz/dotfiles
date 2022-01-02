@@ -2,19 +2,29 @@
 -- Completion configuration
 -------------------------------------------------------------------------------
 
+local cmp = require("cmp")
+local lspkind = require("lspkind")
+
 local M = {}
 
 function M.setup()
-  -- Setup nvim-cmp
-  local cmp = require("cmp")
-
   cmp.setup({
-    snippet = {
-      expand = function(args)
-        -- Ultisnips
-        vim.fn["UltiSnips#Anon"](args.body)
-      end,
+    formatting = {
+      format = lspkind.cmp_format({
+        with_text = false,
+        maxwidth = 50,
+
+        menu = {
+          -- For each source
+          buffer = "[buf]",
+          nvim_lsp = "[LSP]",
+          nvim_lua = "[api]",
+          path = "[path]",
+          ultisnips = "[snip]",
+        },
+      }),
     },
+
     mapping = {
       ["<C-d>"] = cmp.mapping.scroll_docs(-4),
       ["<C-u>"] = cmp.mapping.scroll_docs(4),
@@ -22,6 +32,14 @@ function M.setup()
       ["<C-e>"] = cmp.mapping.close(),
       ["<CR>"] = cmp.mapping.confirm({ select = true }),
     },
+
+    snippet = {
+      expand = function(args)
+        -- Ultisnips
+        vim.fn["UltiSnips#Anon"](args.body)
+      end,
+    },
+
     sources = {
       -- Order of sources determines priority in completion list
       { name = "nvim_lsp" },

@@ -2,7 +2,10 @@
 -- LSP configuration
 -------------------------------------------------------------------------------
 
+local lspconfig = require("lspconfig")
+
 local completion = require("farbodsz.lsp.completion")
+local diagnostics = require("farbodsz.lsp.diagnostics")
 local on_attach = require("farbodsz.lsp.config").on_attach
 local servers = require("farbodsz.lsp.servers")
 local signature = require("farbodsz.lsp.signature")
@@ -10,6 +13,7 @@ local signature = require("farbodsz.lsp.signature")
 completion.setup()
 local updated_capabilities = completion.make_capabilities()
 
+diagnostics.setup()
 signature.setup()
 
 for server, config in pairs(servers) do
@@ -21,11 +25,7 @@ for server, config in pairs(servers) do
     },
   }, config)
 
-  require("lspconfig")[server].setup(config)
+  lspconfig[server].setup(config)
 end
 
--- TODO:
--- Change mapping for autocompletion/snippets expand
--- Highlight symbol and references when cursor on variable/function/...
--- Mappings for text objects (using textDocment.docmentSymbol?)
---   - E.g. xmap if / omap if / xmap ac / omap ...
+-- TODO: Change mapping for autocompletion/snippets expand
