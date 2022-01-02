@@ -2,84 +2,91 @@
 -- diffview.nvim configuration
 --------------------------------------------------------------------------------
 
+local diffview = require("diffview")
 local cb = require("diffview.config").diffview_callback
 
-require("diffview").setup({
-  diff_binaries = false,
-  enhanced_diff_hl = true,
-  use_icons = true,
+local M = {}
 
-  default_args = {
-    DiffviewOpen = {},
-    DiffviewFileHistory = {},
-  },
+function M.setup()
+  diffview.setup({
+    diff_binaries = false,
+    enhanced_diff_hl = true,
+    use_icons = true,
 
-  file_panel = {
-    position = "left",
-    width = 40,
-    listing_style = "tree",
-    tree_options = {
-      folder_statuses = "only_folded",
+    default_args = {
+      DiffviewOpen = {},
+      DiffviewFileHistory = {},
     },
-  },
 
-  file_history_panel = {
-    position = "bottom",
-    height = 16,
-    log_options = {
-      follow = true,
-    },
-  },
-
-  key_bindings = {
-    disable_defaults = true,
     file_panel = {
-      ["<cr>"] = cb("select_entry"),
-      ["k"] = cb("prev_entry"),
-      ["j"] = cb("next_entry"),
-      ["[f"] = cb("select_prev_entry"),
-      ["]f"] = cb("select_next_entry"),
-      ["<leader>t"] = cb("toggle_files"),
-      ["gf"] = cb("goto_file"),
-      ["<C-w>f"] = cb("goto_file_split"),
-      ["<C-w><C-f>"] = cb("goto_file_split"),
-      ["<C-w>gf"] = cb("goto_file_tab"),
-      ["s"] = cb("toggle_stage_entry"),
-      ["X"] = cb("restore_entry"),
-      ["R"] = cb("refresh_files"),
-      ["i"] = cb("listing_style"),
-      [","] = cb("toggle_flatten_dirs"),
+      position = "left",
+      width = 40,
+      listing_style = "tree",
+      tree_options = {
+        folder_statuses = "only_folded",
+      },
     },
+
     file_history_panel = {
-      ["<cr>"] = cb("select_entry"),
-      ["k"] = cb("prev_entry"),
-      ["j"] = cb("next_entry"),
-      ["[f"] = cb("select_prev_entry"),
-      ["]f"] = cb("select_next_entry"),
-      ["<leader>t"] = cb("toggle_files"),
-      ["g?"] = cb("options"),
-      ["zC"] = cb("close_all_folds"),
-      ["zM"] = cb("close_all_folds"),
-      ["zO"] = cb("open_all_folds"),
-      ["zR"] = cb("open_all_folds"),
-      ["<leader>gD"] = cb("open_in_diffview"),
-      ["gf"] = cb("goto_file"),
-      ["<C-w>f"] = cb("goto_file_split"),
-      ["<C-w><C-f>"] = cb("goto_file_split"),
-      ["<C-w>gf"] = cb("goto_file_tab"),
+      position = "bottom",
+      height = 16,
+      log_options = {
+        follow = true,
+      },
     },
-    view = {
-      ["[f"] = cb("select_prev_entry"),
-      ["]f"] = cb("select_next_entry"),
-      ["<leader>t"] = cb("toggle_files"),
-      ["gf"] = cb("goto_file"),
-      ["<C-w>f"] = cb("goto_file_split"),
-      ["<C-w><C-f>"] = cb("goto_file_split"),
-      ["<C-w>gf"] = cb("goto_file_tab"),
+
+    key_bindings = {
+      disable_defaults = true,
+      file_panel = {
+        ["<cr>"] = cb("select_entry"),
+        ["k"] = cb("prev_entry"),
+        ["j"] = cb("next_entry"),
+        ["[f"] = cb("select_prev_entry"),
+        ["]f"] = cb("select_next_entry"),
+        ["<leader>t"] = cb("toggle_files"),
+        ["gf"] = cb("goto_file"),
+        ["<C-w>f"] = cb("goto_file_split"),
+        ["<C-w><C-f>"] = cb("goto_file_split"),
+        ["<C-w>gf"] = cb("goto_file_tab"),
+        ["s"] = cb("toggle_stage_entry"),
+        ["X"] = cb("restore_entry"),
+        ["R"] = cb("refresh_files"),
+        ["i"] = cb("listing_style"),
+        [","] = cb("toggle_flatten_dirs"),
+      },
+      file_history_panel = {
+        ["<cr>"] = cb("select_entry"),
+        ["k"] = cb("prev_entry"),
+        ["j"] = cb("next_entry"),
+        ["[f"] = cb("select_prev_entry"),
+        ["]f"] = cb("select_next_entry"),
+        ["<leader>t"] = cb("toggle_files"),
+        ["g?"] = cb("options"),
+        ["zC"] = cb("close_all_folds"),
+        ["zM"] = cb("close_all_folds"),
+        ["zO"] = cb("open_all_folds"),
+        ["zR"] = cb("open_all_folds"),
+        ["<leader>gD"] = cb("open_in_diffview"),
+        ["gf"] = cb("goto_file"),
+        ["<C-w>f"] = cb("goto_file_split"),
+        ["<C-w><C-f>"] = cb("goto_file_split"),
+        ["<C-w>gf"] = cb("goto_file_tab"),
+      },
+      view = {
+        ["[f"] = cb("select_prev_entry"),
+        ["]f"] = cb("select_next_entry"),
+        ["<leader>t"] = cb("toggle_files"),
+        ["gf"] = cb("goto_file"),
+        ["<C-w>f"] = cb("goto_file_split"),
+        ["<C-w><C-f>"] = cb("goto_file_split"),
+        ["<C-w>gf"] = cb("goto_file_tab"),
+      },
+      option_panel = {
+        ["<cr>"] = cb("select"),
+        ["q"] = cb("close"),
+      },
     },
-    option_panel = {
-      ["<cr>"] = cb("select"),
-      ["q"] = cb("close"),
-    },
-  },
-})
+  })
+end
+
+return M

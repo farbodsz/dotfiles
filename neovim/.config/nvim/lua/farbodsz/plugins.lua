@@ -45,23 +45,21 @@ require("packer").startup({
     })
 
     -- Navigation: Telescope
-    use({ "nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim" })
     use({
-      "nvim-telescope/telescope-fzf-native.nvim",
-      requires = "telescope.nvim",
-      run = "make",
-    })
-    use({
-      "nvim-telescope/telescope-project.nvim",
-      requires = "telescope.nvim",
+      "nvim-telescope/telescope.nvim",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+        "nvim-telescope/telescope-project.nvim",
+      },
     })
 
     -- Navigation: Others
     use({ "kassio/neoterm", cmd = { "REPL", "Tnew", "Topen", "Ttoggle" } })
-    use("kshenoy/vim-signature")
+    use({ "kshenoy/vim-signature", event = "BufEnter" })
     use("milkypostman/vim-togglelist")
-    use("szw/vim-maximizer")
-    use("liuchengxu/vista.vim")
+    use({ "szw/vim-maximizer", cmd = { "MaximizerToggle", "MaximizerToggle!" } })
+    use({ "liuchengxu/vista.vim", cmd = { "Vista", "Vista!", "Vista!!" } })
 
     -- LSP and completion
     use({
@@ -120,11 +118,19 @@ require("packer").startup({
         "plenary.nvim",
         { "nvim-web-devicons", opt = true },
       },
+      cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+      config = function()
+        require("farbodsz.diffview").setup()
+      end,
     })
     use({ "rbong/vim-flog", requires = "vim-fugitive" })
     use({
       "pwntester/octo.nvim",
       requires = { "plenary.nvim", "telescope.nvim", "nvim-web-devicons" },
+      cmd = { "Octo" },
+      config = function()
+        require("farbodsz.octo").setup()
+      end,
     })
 
     -- Databases

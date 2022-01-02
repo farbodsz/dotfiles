@@ -2,7 +2,7 @@
 " telescope configuration
 " =============================================================================
 
-lua require("farbodsz.telescope")
+lua require("farbodsz.telescope").setup()
 
 nnoremap <silent><leader><backspace> :lua require("farbodsz.telescope").find_files()<cr>
 nnoremap <silent><leader>F :lua require("farbodsz.telescope").live_grep()<cr>

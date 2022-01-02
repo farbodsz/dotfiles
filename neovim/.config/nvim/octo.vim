@@ -1,12 +1,6 @@
 " =============================================================================
-" Octo.nvim configuration
+" Octo.nvim global keybindings only
 " =============================================================================
-
-" NOTE: Keybindings from Lua config apply to Octo filetype
-
-lua require("farbodsz.octo").setup()
-
-" Keybindings below are global
 
 nnoremap <leader>G<space> :Octo<space>
 
