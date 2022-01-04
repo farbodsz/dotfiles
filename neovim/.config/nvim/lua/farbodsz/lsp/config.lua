@@ -35,8 +35,8 @@ M.on_attach = function(client, bufnr)
 
   bufmap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   bufmap("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  bufmap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-  bufmap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+  bufmap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+  bufmap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 
   if client.resolved_capabilities.document_formatting then
     bufmap("n", "<space>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
