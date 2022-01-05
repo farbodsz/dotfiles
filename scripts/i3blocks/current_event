@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+# Prints details of the currently running event
+
+set -e
+
+SUB_ANSI_CODES='s/\x1B\[[0-9;]\{1,\}[A-Za-z]//g'
+
+start_time=$(date '+%H:%M')
+end_time=$(date -d '+1 hour' '+%H:%M')
+
+output=$(
+  gcalcli agenda "$start_time" "$end_time" \
+    --details end \
+    --config-folder "$XDG_CONFIG_HOME/gcalcli/" |
+    xargs -I {} printf '%s' {} |
+    sed "$SUB_ANSI_CODES"
+)
+
+event_times=$(echo "$output" | awk -F'  ' '{ print $2 }')
+event_name=$(echo "$output" | awk -F'  ' '{ print $3 }')
+
+event_start=$(echo "$event_times" | awk '{ print $1 }')
+event_end=$(echo "$event_times" | awk '{ print $3 }')
+
+printf '%s (%s-%s)\n' "$event_name" "$event_start" "$event_end"

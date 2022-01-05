@@ -11,6 +11,10 @@ markup=pango
 command=$SCRIPT_DIR/spotifystatus
 interval=10
 
+[event]
+command=$SCRIPT_DIR/current_event
+interval=600
+
 [volume]
 command=$SCRIPT_DIR/volume
 interval=once
