@@ -1,17 +1,30 @@
 #!/usr/bin/env sh
-# Prints details of the currently running event
+# Prints details of the currently running event, or next upcoming event today.
 
 set -e
+
+GCALCLI_AGENDA="gcalcli agenda --config-folder=$XDG_CONFIG_HOME/gcalcli/ --tsv"
 
 start_time=$(date '+%H:%M')
 end_time=$(date -d '+1 hour' '+%H:%M')
 
-output=$(
-  gcalcli agenda "$start_time" "$end_time" \
-    --tsv \
-    --config-folder "$XDG_CONFIG_HOME/gcalcli/" |
-    head -n 1
-)
+output=$($GCALCLI_AGENDA "$start_time" "$end_time" | head -n 1)
+
+# If empty output, then no current event
+if [ -z "$output" ]; then
+  output=$($GCALCLI_AGENDA --nostarted | head -n 1)
+
+  event_date=$(echo "$output" | awk -F'\t' '{ print $1 }')
+  curr_date=$(date '+%Y-%m-%d')
+
+  if [ "$event_date" = "$curr_date" ]; then
+    event_start_time=$(echo "$output" | awk -F'\t' '{ print $2 }')
+    event_end_time=$(echo "$output" | awk -F'\t' '{ print $4 }')
+    event_name=$(echo "$output" | awk -F'\t' '{ print $5 }')
+    printf 'Free until %s (%s)\n' "$event_start_time" "$event_name"
+  fi
+  exit 0
+fi
 
 event_start_time=$(echo "$output" | awk -F'\t' '{ print $2 }')
 event_end_time=$(echo "$output" | awk -F'\t' '{ print $4 }')
