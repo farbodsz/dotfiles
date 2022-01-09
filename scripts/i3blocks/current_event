@@ -5,8 +5,8 @@ set -e
 
 GCALCLI_AGENDA="gcalcli agenda --config-folder=$XDG_CONFIG_HOME/gcalcli/ --tsv"
 
-start_time=$(date '+%H:%M')
-end_time=$(date -d '+1 hour' '+%H:%M')
+start_time=$(date -d '+10 minutes' '+%H:%M')
+end_time=$(date -d '+70 minutes' '+%H:%M')
 
 output=$($GCALCLI_AGENDA "$start_time" "$end_time" | head -n 1)
 
