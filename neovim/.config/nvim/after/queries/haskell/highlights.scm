@@ -13,3 +13,5 @@
   name: (variable) @function)
 (exp_apply . (exp_name (variable) @none))
 (exp_apply . (exp_name (qualified_variable (variable) @none)))
+
+(type_variable) @field
