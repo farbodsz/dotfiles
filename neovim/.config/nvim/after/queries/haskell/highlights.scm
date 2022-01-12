@@ -10,13 +10,6 @@
 ; Function names in the signature and decl should be highlighted, but not
 ; applied functions
 (function
-  name: (variable) @function
-  patterns: (patterns))
-(function
-  name: (variable) @function
-  rhs: (exp_infix))
-(function
-  name: (variable) @function
-  rhs: (exp_literal))
+  name: (variable) @function)
 (exp_apply . (exp_name (variable) @none))
 (exp_apply . (exp_name (qualified_variable (variable) @none)))
