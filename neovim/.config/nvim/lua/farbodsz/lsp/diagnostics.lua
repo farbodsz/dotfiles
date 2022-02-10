@@ -12,11 +12,9 @@ function M.setup()
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
-  -- Show source in diagnostics and sort by severity
   vim.diagnostic.config({
     float = { source = "always" },
     severity_sort = true,
-    virtual_text = { source = "always" },
   })
 end
 
