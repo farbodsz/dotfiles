@@ -71,6 +71,9 @@ return {
   rnix = {},
 
   -- Installation instructions in repo
+  rust_analyzer = {},
+
+  -- Installation instructions in repo
   sumneko_lua = {
     cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
     settings = {
