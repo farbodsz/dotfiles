@@ -183,14 +183,21 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # -----------------------------------------------------------------------------
+# LOCK SCREEN
+# -----------------------------------------------------------------------------
+
+bindsym $mod+Shift+x exec i3lock -c 000000
+
+
+# -----------------------------------------------------------------------------
 # NOTIFICATIONS
 # -----------------------------------------------------------------------------
 
 # Pause notifications
-bindsym $mod+x exec killall -SIGUSR1 dunst
+bindsym $mod+n exec killall -SIGUSR1 dunst
 
 # Resume notifications
-bindsym $mod+Shift+x exec killall -SIGUSR2 dunst # resume
+bindsym $mod+Shift+n exec killall -SIGUSR2 dunst # resume
 
 
 # -----------------------------------------------------------------------------
