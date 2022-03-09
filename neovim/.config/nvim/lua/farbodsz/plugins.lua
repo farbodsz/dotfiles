@@ -163,6 +163,12 @@ require("packer").startup({
       ft = "haskell",
     })
     use({ "mbbill/undotree", cmd = "UndotreeToggle" })
+    use({
+      "jbyuki/venn.nvim",
+      config = function()
+        require("farbodsz.venn").setup()
+      end,
+    })
 
     -- Previewing
     use({
