@@ -1,7 +1,3 @@
-snippet lang "LANGUAGE pragma"
-{-# LANGUAGE $1 #-}
-endsnippet
-
 snippet info "Module documentation"
 -- |
 -- Module      : ${1:ModuleName}
@@ -27,4 +23,13 @@ $2
 $0
 
 --------------------------------------------------------------------------------
+endsnippet
+
+
+snippet lang "LANGUAGE pragma"
+{-# LANGUAGE $1 #-}
+endsnippet
+
+snippet depr "DEPRECATED pragma"
+{-# DEPRECATED $1 #-}
 endsnippet
