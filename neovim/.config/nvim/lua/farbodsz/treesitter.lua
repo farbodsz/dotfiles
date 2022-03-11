@@ -61,4 +61,6 @@ parser_config.haskell = {
     files = { "src/parser.c", "src/scanner.c" },
   },
 }
-parser_config.markdown.used_by = "octo"
+
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.octo = "markdown"
