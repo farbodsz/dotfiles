@@ -75,8 +75,19 @@ export EDITOR=~/.local/bin/nvim.appimage
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="/usr/local/jdk1.7.0/bin:$PATH"
-export PATH="/usr/local/javacc/javacc-javacc-7.0.10/scripts:$PATH"
-export PATH="/opt/gradle/gradle-6.4.1/bin:$PATH"
+
+export JAVACC_HOME="/usr/local/javacc/javacc-javacc-7.0.10"
+export PATH="$JAVACC_HOME/scripts:$PATH"
+
+export GRADLE_HOME="/opt/gradle/gradle-6.4.1"
+export PATH="$GRADLE_HOME/bin:$PATH"
+
+export M2_HOME="/usr/local/apache-maven/apache-maven-3.8.4"
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+export PATH="$M2_HOME/bin:$PATH"
+
+export JDTLS_HOME="/usr/local/eclipse.jdt.ls"
+export PATH="$JDTLS_HOME/bin:$PATH"
 
 #-------------------------------------------------------------------------------
 # Nix

@@ -14,6 +14,11 @@ function M.setup()
         color = "#26A69A",
         name = "Decks",
       },
+      ["gradle"] = {
+        icon = "",
+        color = "#39d52d",
+        name = "Gradle",
+      },
     },
   })
 end

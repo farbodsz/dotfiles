@@ -79,6 +79,7 @@ require("packer").startup({
     use("hrsh7th/cmp-path")
     use("onsails/lspkind-nvim")
     use("ray-x/lsp_signature.nvim")
+    use("mfussenegger/nvim-jdtls")
 
     -- Auto-completion
     use("jiangmiao/auto-pairs")
