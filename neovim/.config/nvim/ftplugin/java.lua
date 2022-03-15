@@ -9,7 +9,7 @@ local root_markers = { ".git", "mvnw", "gradlew" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
 
 local workspace_folder = home
-  .. "/.workspace"
+  .. "/.workspace/"
   .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
 local config = {
