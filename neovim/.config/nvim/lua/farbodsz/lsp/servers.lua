@@ -2,8 +2,6 @@
 -- Language servers
 -------------------------------------------------------------------------------
 
-require("farbodsz.lsp.custom_servers")
-
 local on_attach_default = require("farbodsz.lsp.config").on_attach
 local on_attach_no_fmt = function(client, bufnr)
   -- Disable built-in language server formatting
@@ -97,8 +95,6 @@ return {
     },
   },
 
-  prolog_lsp = {},
-
   -- Installation instructions in repo
   texlab = {
     on_attach = on_attach_no_fmt,
@@ -123,15 +119,3 @@ return {
   -- npm i -g yaml-language-server
   yamlls = {},
 }
-
--- TODO: See previous coc-settings.json for these
--- "javacc"
---
--- Plus these extensions:
--- let g:coc_global_extensions = [
---       \ 'coc-clang-format-style-options',
---       \ 'coc-cssmodules',
---       \ 'coc-db',
---       \ 'coc-eslint',
---       \ 'coc-vimtex',
---       \ ]

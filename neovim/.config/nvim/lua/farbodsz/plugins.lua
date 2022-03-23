@@ -62,14 +62,7 @@ require("packer").startup({
     use({ "liuchengxu/vista.vim", cmd = { "Vista", "Vista!", "Vista!!" } })
 
     -- LSP and completion
-    use({
-      "neovim/nvim-lspconfig",
-      -- TODO: On HEAD we get an error - fix on my side later.
-      -- [lspconfig]: Cannot access configuration for prolog_lsp. Ensure this
-      -- server is listed in `server_configurations.md` or added as a custom
-      -- server.
-      commit = "6d4ae56cd62d374ab8364b09a179a03c65e92f0d",
-    })
+    use("neovim/nvim-lspconfig")
     use("SirVer/ultisnips")
     use({ "hrsh7th/nvim-cmp", module = "cmp" })
     use("hrsh7th/cmp-buffer")
