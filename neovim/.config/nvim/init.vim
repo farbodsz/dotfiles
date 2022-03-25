@@ -16,6 +16,7 @@ lua require("impatient")
 
 source ~/.config/nvim/theme.vim
 
+lua require("farbodsz.completion").setup()
 lua require("farbodsz.lsp")
 
 source ~/.config/nvim/database.vim

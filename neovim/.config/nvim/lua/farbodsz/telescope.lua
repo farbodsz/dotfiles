@@ -4,11 +4,33 @@
 
 local M = {}
 
+local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
+local opts_find_command = {
+  "rg",
+  "--files",
+  "--hidden",
+  "-g",
+  "!{.git,.cache,node_modules}",
+}
+
+local opts_vimgrep_args = {
+  "rg",
+  "--color=never",
+  "--no-heading",
+  "--with-filename",
+  "--line-number",
+  "--column",
+  "--smart-case",
+  "--hidden",
+  "-g",
+  "!{.git,.cache,node_modules}",
+}
+
 M.setup = function()
-  require("telescope").setup({
+  telescope.setup({
     defaults = {
       layout_config = {
         prompt_position = "top",
@@ -52,31 +74,10 @@ M.setup = function()
     },
   })
 
-  require("telescope").load_extension("fzf")
-  require("telescope").load_extension("project")
-  require("telescope").load_extension("refactoring")
+  telescope.load_extension("fzf")
+  telescope.load_extension("project")
+  telescope.load_extension("refactoring")
 end
-
-local opts_find_command = {
-  "rg",
-  "--files",
-  "--hidden",
-  "-g",
-  "!{.git,.cache,node_modules}",
-}
-
-local opts_vimgrep_args = {
-  "rg",
-  "--color=never",
-  "--no-heading",
-  "--with-filename",
-  "--line-number",
-  "--column",
-  "--smart-case",
-  "--hidden",
-  "-g",
-  "!{.git,.cache,node_modules}",
-}
 
 M.find_files = function()
   builtin.find_files({ find_command = opts_find_command })

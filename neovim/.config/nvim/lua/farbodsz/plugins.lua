@@ -132,7 +132,7 @@ require("packer").startup({
       requires = { "plenary.nvim", "telescope.nvim", "nvim-web-devicons" },
       cmd = { "Octo" },
       config = function()
-        require("farbodsz.octo").setup()
+        require("octo").setup()
       end,
     })
 

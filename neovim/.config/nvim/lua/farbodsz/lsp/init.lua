@@ -4,7 +4,7 @@
 
 local lspconfig = require("lspconfig")
 
-local completion = require("farbodsz.lsp.completion")
+local completion = require("farbodsz.completion")
 local diagnostics = require("farbodsz.lsp.diagnostics")
 local on_attach = require("farbodsz.lsp.config").on_attach
 local servers = require("farbodsz.lsp.servers")

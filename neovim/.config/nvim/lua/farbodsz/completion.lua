@@ -5,9 +5,15 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 
+local has_setup = false
+
 local M = {}
 
 function M.setup()
+  if has_setup then
+    return
+  end
+
   cmp.setup({
     formatting = {
       format = lspkind.cmp_format({
@@ -59,6 +65,8 @@ function M.setup()
 
   -- Set completeopt to have a better completion experience
   vim.o.completeopt = "menu,menuone,noselect"
+
+  has_setup = true
 end
 
 -- Add additional capabilities supported by nvim-cmp and snippet support
