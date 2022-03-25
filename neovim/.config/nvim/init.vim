@@ -19,6 +19,8 @@ source ~/.config/nvim/theme.vim
 lua require("farbodsz.completion").setup()
 lua require("farbodsz.lsp")
 
+lua require("farbodsz.treesitter")
+
 source ~/.config/nvim/database.vim
 source ~/.config/nvim/debug.vim
 source ~/.config/nvim/dispatch.vim
@@ -29,7 +31,6 @@ source ~/.config/nvim/neoterm.vim
 source ~/.config/nvim/octo.vim
 source ~/.config/nvim/refactoring.vim
 source ~/.config/nvim/snippets.vim
-source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/tex.vim
 source ~/.config/nvim/undotree.vim
