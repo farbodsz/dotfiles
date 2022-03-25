@@ -101,6 +101,15 @@ require("packer").startup({
     use({ "lervag/vimtex", ft = "tex" })
     use({ "KeitaNakamura/tex-conceal.vim", ft = "tex" })
 
+    -- Refactoring
+    use({
+      "ThePrimeagen/refactoring.nvim",
+      requires = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
+      config = function()
+        require("refactoring").setup({})
+      end,
+    })
+
     -- Git
     use("airblade/vim-gitgutter")
     use("tpope/vim-fugitive")
