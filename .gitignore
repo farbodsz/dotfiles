@@ -7,5 +7,5 @@ accounts.muttrc
 # Compiled plugins
 packer_compiled.lua
 
-# C/C++/Rust debugging via vscode-cpptools 
-neovim/.config/nvim/bin/cpptools/
+# Language server and debug tools 
+neovim/.config/nvim/bin/

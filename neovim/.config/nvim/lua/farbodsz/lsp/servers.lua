@@ -18,6 +18,8 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+local nvim_cfg_path = vim.env["DOTFILES"] .. "/neovim/.config/nvim"
+
 return {
   -- npm i -g bash-language-server
   bashls = {},
@@ -43,6 +45,16 @@ return {
 
   -- npm i -g elm-test elm-format @elm-tooling/elm-language-server
   elmls = {},
+
+  -- Installation instructions in repo
+  gradle_ls = {
+    cmd = {
+      nvim_cfg_path
+        .. "/bin/vscode-gradle"
+        .. "/gradle-language-server/build/install/gradle-language-server"
+        .. "/bin/gradle-language-server",
+    },
+  },
 
   -- npm i -g graphql-language-service-cli
   graphql = {},
