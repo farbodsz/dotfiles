@@ -66,6 +66,7 @@ require("packer").startup({
     use("SirVer/ultisnips")
     use({ "hrsh7th/nvim-cmp", module = "cmp" })
     use("hrsh7th/cmp-buffer")
+    use("uga-rosa/cmp-dictionary")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-nvim-lua")
     use("quangnguyen30192/cmp-nvim-ultisnips")

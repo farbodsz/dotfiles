@@ -9,28 +9,21 @@ local has_setup = false
 
 local M = {}
 
+local function setup_cmp_dictionary()
+  require("cmp_dictionary").setup({
+    dic = {
+      ["markdown"] = { "/usr/share/dict/words" },
+      ["tex"] = { "/usr/share/dict/words" },
+    },
+  })
+end
+
 function M.setup()
   if has_setup then
     return
   end
 
   cmp.setup({
-    formatting = {
-      format = lspkind.cmp_format({
-        with_text = false,
-        maxwidth = 50,
-
-        menu = {
-          -- For each source
-          buffer = "[buf]",
-          nvim_lsp = "[LSP]",
-          nvim_lua = "[api]",
-          path = "[path]",
-          ultisnips = "[snip]",
-        },
-      }),
-    },
-
     mapping = {
       ["<C-d>"] = cmp.mapping.scroll_docs(-4),
       ["<C-u>"] = cmp.mapping.scroll_docs(4),
@@ -39,22 +32,42 @@ function M.setup()
       ["<CR>"] = cmp.mapping.confirm({ select = true }),
     },
 
-    snippet = {
-      expand = function(args)
-        -- Ultisnips
-        vim.fn["UltiSnips#Anon"](args.body)
-      end,
-    },
-
     sources = {
       -- Order of sources determines priority in completion list
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
       { name = "ultisnips" },
       { name = "path" },
-      { name = "buffer" },
+      { name = "dictionary", keyword_length = 5 },
+      { name = "buffer", keyword_length = 4 },
+    },
+
+    formatting = {
+      format = lspkind.cmp_format({
+        with_text = false,
+        maxwidth = 50,
+
+        menu = {
+          -- For each source
+          buffer = "[buf]",
+          dictionary = "[dict]",
+          nvim_lsp = "[LSP]",
+          nvim_lua = "[api]",
+          path = "[path]",
+          ultisnips = "[snip]",
+        },
+      }),
+    },
+
+    snippet = {
+      expand = function(args)
+        -- Ultisnips
+        vim.fn["UltiSnips#Anon"](args.body)
+      end,
     },
   })
+
+  setup_cmp_dictionary()
 
   vim.cmd([[
     augroup DadbodSql
