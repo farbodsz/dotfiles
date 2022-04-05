@@ -11,10 +11,12 @@
   (qualified_module) 
   (module) @namespace)
 
-; Function names in the signature and decl should be highlighted, but not
-; applied functions
-(function
+; Highlight functions in the signature
+; But don't highlight functions in declaration or function calls
+(signature 
   name: (variable) @function)
+(function
+  name: (variable) @none)
 (exp_apply . (exp_name (variable) @none))
 (exp_apply . (exp_name (qualified_variable (variable) @none)))
 
