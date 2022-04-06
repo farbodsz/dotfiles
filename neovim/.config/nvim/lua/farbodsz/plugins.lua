@@ -63,13 +63,13 @@ require("packer").startup({
 
     -- LSP and completion
     use("neovim/nvim-lspconfig")
-    use("SirVer/ultisnips")
+    use("L3MON4D3/LuaSnip")
     use({ "hrsh7th/nvim-cmp", module = "cmp" })
     use("hrsh7th/cmp-buffer")
     use("uga-rosa/cmp-dictionary")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-nvim-lua")
-    use("quangnguyen30192/cmp-nvim-ultisnips")
+    use("saadparwaiz1/cmp_luasnip")
     use("hrsh7th/cmp-path")
     use("onsails/lspkind-nvim")
     use("ray-x/lsp_signature.nvim")

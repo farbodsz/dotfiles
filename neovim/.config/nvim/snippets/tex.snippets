@@ -1,0 +1,61 @@
+snippet begin "insert environment"
+	\\begin{${1:env}}
+	${0:${VISUAL}}
+	\\end{$1}
+
+snippet ch "\chapter"
+	\\chapter{${1:Chapter Name}}
+	\\label{ch:${2:label}}
+
+snippet sec "\section"
+	\\section{${1:Section Name}}
+	${0}
+
+snippet sub "\subsection"
+	\\subsection{${1:Section Name}}
+	${0}
+
+snippet ssub "\subsubsection"
+	\\subsubsection{${1:Section Name}}
+	${0}
+
+snippet par "\paragraph"
+	\\paragraph{${1:Section Name}}
+	${0}
+
+snippet it "italic text"
+	\\textit{${1:${VISUAL:Text}}}${0}
+
+snippet bf "bold face text"
+	\\textbf{${1:${VISUAL:Text}}}${0}
+
+snippet uu "underlined text"
+	\\underline{${1:${VISUAL:Text}}}${0}
+
+snippet item "\itemize (unordered list)"
+	\\begin{itemize}
+		\\item ${1:${VISUAL:Item}}${0}
+	\\end{itemize}
+
+snippet enum "\enumerate (ordered list)"
+	\\begin{enumerate}
+		\\item ${1:${VISUAL:Item}}${0}
+	\\end{enumerate}
+
+snippet figure "insert figure"
+	\\begin{figure}
+		${1}
+		\\caption{$2}%
+		\\label{fig:$3}
+	\\end{figure}
+
+snippet img "insert graphic"
+	\\begin{figure}
+		\\includegraphics[width=\\linewidth]{$1}
+		\\caption{$2}%
+		\\label{fig:$3}
+	\\end{figure}
+
+snippet newcommand "new command"
+	\\newcommand{\\${1}}[${2}]{${3}}
+	${0}

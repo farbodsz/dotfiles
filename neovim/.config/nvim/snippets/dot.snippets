@@ -1,0 +1,40 @@
+# Finite State Automata
+
+snippet fsm
+	digraph {
+
+	rankdir=LR
+	node [shape=circle]
+	start [shape=point, label=""]
+
+	$1
+	}
+	$0
+
+# UML Class Diagrams
+
+snippet umlcls
+	$1 [
+	shape="record"
+	label="{ $1 | $2 | $3 \l }"
+	]
+	$0
+
+snippet umlassoc
+	$1 -> $2 [
+	label="$3",
+	arrowhead="none",
+	headlabel="$4"
+	taillabel="$5",
+	]
+	$0
+
+snippet umlcomp
+	$1 -> $2 [
+	dir=back,
+	arrowtail="odiamond",
+	label="$3",
+	taillabel="$4",
+	headlabel="$5"
+	]
+	$0

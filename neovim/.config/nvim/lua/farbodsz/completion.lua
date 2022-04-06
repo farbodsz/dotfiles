@@ -36,7 +36,7 @@ function M.setup()
       -- Order of sources determines priority in completion list
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
-      { name = "ultisnips" },
+      { name = "luasnip" },
       { name = "path" },
       { name = "dictionary", keyword_length = 5 },
       { name = "buffer", keyword_length = 4 },
@@ -54,20 +54,20 @@ function M.setup()
           nvim_lsp = "[LSP]",
           nvim_lua = "[api]",
           path = "[path]",
-          ultisnips = "[snip]",
+          luasnip = "[snip]",
         },
       }),
     },
 
     snippet = {
       expand = function(args)
-        -- Ultisnips
-        vim.fn["UltiSnips#Anon"](args.body)
+        require("luasnip").lsp_expand(args.body)
       end,
     },
   })
 
   setup_cmp_dictionary()
+  require("luasnip.loaders.from_snipmate").load()
 
   vim.cmd([[
     augroup DadbodSql
