@@ -8,7 +8,7 @@ nnoremap <silent><leader><backspace> :lua require("farbodsz.telescope").find_fil
 nnoremap <silent><leader>F :lua require("farbodsz.telescope").live_grep()<cr>
 
 nnoremap <leader>fd <cmd>Telescope diagnostics<cr>
-nnoremap <leader>fG <cmd>Telescope git_files<cr>
+nnoremap <leader>fg <cmd>Telescope git_files<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser hidden=true<cr>
 nnoremap <leader>fs <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fS <cmd>Telescope lsp_workspace_symbols<cr>
