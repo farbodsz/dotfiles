@@ -3,8 +3,11 @@ removeTrailingWhitespace: 1
 
 indentAfterItems:
   itemize: 1
+  itemize*: 1
   enumerate: 1
+  enumerate*: 1
   description: 1
+  description*: 1
   list: 1
 
 modifyLineBreaks:
