@@ -48,8 +48,13 @@ function M.setup()
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-      ["<C-i>"] = cmp.mapping(jump_next_snippet, { "i", "s" }),
-      ["<C-u>"] = cmp.mapping(jump_prev_snippet, { "i", "s" }),
+      ["<C-p>"] = cmp.mapping.select_prev_item(),
+      ["<C-n>"] = cmp.mapping.select_next_item(),
+
+      ["<C-l>"] = cmp.mapping(jump_next_snippet),
+      ["<C-h>"] = cmp.mapping(jump_prev_snippet),
+      ["<Tab>"] = nil,
+      ["<S-Tab>"] = nil,
     },
 
     sources = {
