@@ -43,8 +43,8 @@ snippet item "\itemize (unordered list)"
 	${0}
 
 snippet enum "\enumerate (ordered list)"
-	\\begin{enumerate}
-		\\item ${1}
+	\\begin{enumerate}${1}
+		\\item ${2}
 	\\end{enumerate}
 	${0}
 
@@ -96,7 +96,7 @@ snippet newcommand "new command"
 # TikZ snippets
 
 snippet tikzstyle "TikZ style"
-	\tikzstyle{$1} = [$2]$0
+	\tikzstyle{$1} = [$2];$0
 
 snippet node "TikZ node"
 	\\node ($1) [$2] {$3};$0
