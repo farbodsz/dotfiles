@@ -1,4 +1,7 @@
-# Finite State Automata
+################################################################################
+# Diagram templates
+
+# Finite state machine
 
 snippet fsm
 	digraph {
@@ -9,7 +12,6 @@ snippet fsm
 
 	$1
 	}
-	$0
 
 # UML Class Diagrams
 
@@ -18,7 +20,6 @@ snippet umlcls
 	shape="record"
 	label="{ $1 | $2 | $3 \l }"
 	]
-	$0
 
 snippet umlassoc
 	$1 -> $2 [
@@ -27,7 +28,6 @@ snippet umlassoc
 	headlabel="$4"
 	taillabel="$5",
 	]
-	$0
 
 snippet umlcomp
 	$1 -> $2 [
@@ -37,4 +37,5 @@ snippet umlcomp
 	taillabel="$4",
 	headlabel="$5"
 	]
-	$0
+
+################################################################################
