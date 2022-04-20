@@ -51,8 +51,8 @@ function M.setup()
       ["<C-p>"] = cmp.mapping.select_prev_item(),
       ["<C-n>"] = cmp.mapping.select_next_item(),
 
-      ["<C-l>"] = cmp.mapping(jump_next_snippet),
-      ["<C-h>"] = cmp.mapping(jump_prev_snippet),
+      ["<C-l>"] = cmp.mapping(jump_next_snippet, { "i", "s" }),
+      ["<C-h>"] = cmp.mapping(jump_prev_snippet, { "i", "s" }),
       ["<Tab>"] = nil,
       ["<S-Tab>"] = nil,
     },
