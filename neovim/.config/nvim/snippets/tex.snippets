@@ -14,11 +14,7 @@ snippet figure "insert figure"
 	\end{figure}
 
 snippet img "insert graphic"
-	\begin{figure}
-		\includegraphics[$1{width=\linewidth}]{$2}
-		\caption{$3}%
-		\label{fig:$4}
-	\end{figure}
+	\includegraphics[${1:width=\\linewidth}]{$2}
 
 snippet listing "insert external listing"
 	\begin{listing}[${1:ht}]
@@ -48,8 +44,24 @@ snippet enum "\enumerate (ordered list)"
 	\end{enumerate}
 	${0}
 
+snippet table "\table with some presets"
+	\begin{table}
+		${1:\centering}
+
+		\begin{tabular}{$2}
+			\toprule
+			$3
+			\midrule
+			$4
+			\bottomrule
+		\end{tabular}
+
+		\caption{$5}%
+		\label{tbl:$6}
+	\end{table}
+
 snippet newcommand "new command"
-	\newcommand{\${1}}[${2}]{${3}}
+	\newcommand{\\${1}}[${2}]{${3}}
 	${0}
 
 ################################################################################
@@ -75,15 +87,18 @@ snippet par "\paragraph"
 	\paragraph{${1}}${0}
 
 ################################################################################
-# Text styling
+# Inline text styling
 
-snippet it "italic text"
+snippet i "italic text"
 	\textit{${1}} ${0}
 
-snippet bf "bold face text"
+snippet emph "emphasised text"
+	\emph{${1}} ${0}
+
+snippet b "bold face text"
 	\textbf{${1}} ${0}
 
-snippet uu "underlined text"
+snippet u "underlined text"
 	\underline{${1}} ${0}
 
 snippet tt "insert inline code with \texttt"
@@ -91,6 +106,21 @@ snippet tt "insert inline code with \texttt"
 
 ################################################################################
 # Math environments and commands
+
+snippet align
+	\begin{align}{$1}
+	$2
+	\end{align}$0
+
+snippet aligned
+	\begin{aligned}{$1}
+	$2
+	\end{aligned}$0
+
+snippet array
+	\begin{array}{$1}
+	$2
+	\end{array}$0
 
 snippet cases
 	\begin{cases}
@@ -101,11 +131,6 @@ snippet matrix
 	\begin{matrix}
 	$1
 	\end{matrix}
-
-snippet array
-	\begin{array}{$1}
-	$2
-	\end{array}$0
 
 snippet boxed
 	\boxed{$1}
@@ -120,6 +145,33 @@ snippet declaremathop
 
 snippet declaremathoptext
 	\DeclareMathOperator{\\$1}{$1}$0
+
+snippet frac
+	\frac{$1}{$2}
+
+snippet implies
+	\implies
+
+snippet lim
+	\lim_{$1} $0
+
+snippet max
+	\max_{$1} $0
+
+snippet min
+	\min_{$1} $0
+
+snippet sqrt
+	\sqrt[$1]{$2}
+
+snippet sum
+	\sum_{$1}^{$2}$0
+
+snippet underbrace
+	\underbrace{$1}_\text{$2}
+
+snippet overbrace
+	\overbrace{$1}_\text{$2}
 
 ################################################################################
 # Longer math templates
@@ -141,5 +193,30 @@ snippet tikzstyle "TikZ style"
 
 snippet node "TikZ node"
 	\node ($1) [$2] {$3};$0
+
+################################################################################
+# Comments
+
+snippet todo "TODO comment"
+	% TODO: $0
+
+snippet fixme "FIXME comment"
+	% FIXME: $0
+
+################################################################################
+# Musical package
+
+snippet dialog "dialogue"
+	\dialog{$1}{$2}$0
+
+snippet lyrics "lyrics"
+	\lyrics{$1}{
+		$2
+	}$0
+
+snippet stdir "stage direction"
+	\stdir{
+		$1
+	}$0
 
 ################################################################################

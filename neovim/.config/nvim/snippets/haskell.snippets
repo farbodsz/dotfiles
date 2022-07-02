@@ -1,14 +1,5 @@
-snippet info "Module documentation"
-	-- |
-	-- Module      : ${1:ModuleName}
-	-- Copyright   : (c) ${2:Author} ${3:Year}
-	-- License     : ${4:BSD3}
-	-- Maintainer  : ${5:email@something.com}
-	-- Stability   : ${6:experimental}
-	-- Portability : ${7:unknown}
-	--
-	-- ${0:Description}
-	--
+################################################################################
+# Templates
 
 snippet module "Module template with bar separators"
 	--------------------------------------------------------------------------------
@@ -23,9 +14,34 @@ snippet module "Module template with bar separators"
 
 	--------------------------------------------------------------------------------
 
+################################################################################
+# Pragmas
 
 snippet lang "LANGUAGE pragma"
 	{-# LANGUAGE $1 #-}
 
 snippet depr "DEPRECATED pragma"
 	{-# DEPRECATED $1 #-}
+
+################################################################################
+# Comments and documentation
+
+snippet info "Module documentation"
+	-- |
+	-- Module      : ${1:ModuleName}
+	-- Copyright   : (c) ${2:Author} ${3:Year}
+	-- License     : ${4:BSD3}
+	-- Maintainer  : ${5:email@something.com}
+	-- Stability   : ${6:experimental}
+	-- Portability : ${7:unknown}
+	--
+	-- ${0:Description}
+	--
+
+snippet todo "TODO comment"
+	-- TODO: $0
+
+snippet fixme "FIXME comment"
+	-- FIXME: $0
+
+################################################################################

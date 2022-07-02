@@ -1,29 +1,8 @@
 snippet #!
 	#!/usr/bin/env lua
 
-snippet fun "function"
-	$1function $2($3)
-		$0
-	end
+snippet todo
+	-- TODO: $1
 
-snippet if
-	if ${1} then
-		${2}
-	end
-
-snippet ife
-	if ${1} then
-		${2}
-	else
-		${0}
-	end
-
-snippet forp "for _ in pairs"
-	for $1, $2 in pairs($3) do
-		$0
-	end
-
-snippet fori "for _ in ipairs"
-	for $1, $2 in ipairs($3) do
-		$0
-	end
+snippet fixme
+	-- FIXME: $1
