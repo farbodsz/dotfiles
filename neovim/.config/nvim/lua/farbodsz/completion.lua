@@ -11,12 +11,41 @@ local has_setup = false
 local M = {}
 
 local function setup_cmp_dictionary()
+  local wordlists = {
+    en = "/usr/share/dict/american-english",
+    de = "/usr/share/dict/ngerman",
+  }
+
   require("cmp_dictionary").setup({
     dic = {
-      ["markdown"] = { "/usr/share/dict/words" },
-      ["tex"] = { "/usr/share/dict/words" },
+      ["markdown,tex"] = { wordlists["en"] },
+      spelllang = {
+        de = wordlists["de"],
+      },
     },
   })
+
+  -- TODO: Make issue/PR to set dictionaries based on custom user logic?
+  -- So that the problem of setting dictionary based on a vim option is
+  -- generalised.
+  --
+  -- For example:
+  --
+  -- local wordlists = {
+  --   en = "/usr/share/dict/american-english",
+  --   de = "/usr/share/dict/ngerman",
+  -- }
+  --
+  -- require("cmp_dictionary").setup({
+  --   dic = function()
+  --     if vim.bo.filetype == "markdown" then
+  --       ...
+  --       return wordlists[vim.bo.spelllang],
+  --     end
+  --   end,
+  -- })
+  --
+  -- So this could work for any vim option.
 end
 
 local function jump_prev_snippet(fallback)

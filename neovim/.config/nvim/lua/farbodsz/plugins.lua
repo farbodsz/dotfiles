@@ -63,19 +63,23 @@ require("packer").startup({
 
     -- LSP and completion
     use("neovim/nvim-lspconfig")
-    use("L3MON4D3/LuaSnip")
-    use({ "hrsh7th/nvim-cmp", module = "cmp" })
-    use("hrsh7th/cmp-buffer")
-    use("uga-rosa/cmp-dictionary")
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-nvim-lua")
-    use("saadparwaiz1/cmp_luasnip")
-    use("hrsh7th/cmp-path")
     use("onsails/lspkind-nvim")
     use("ray-x/lsp_signature.nvim")
     use("mfussenegger/nvim-jdtls")
 
-    -- Auto-completion
+    -- Completion
+    use({ "hrsh7th/nvim-cmp", module = "cmp" })
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-nvim-lua")
+    use("hrsh7th/cmp-path")
+    use("uga-rosa/cmp-dictionary")
+
+    -- Snippets
+    use("L3MON4D3/LuaSnip")
+    use("saadparwaiz1/cmp_luasnip")
+
+    -- Other completion
     use("jiangmiao/auto-pairs")
     use("tpope/vim-surround")
     use("tpope/vim-commentary")
