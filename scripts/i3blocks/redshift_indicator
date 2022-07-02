@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Prints an icon if redshift is running
+[ ! -z "$(pgrep "redshift")" ] && echo "🌇"
