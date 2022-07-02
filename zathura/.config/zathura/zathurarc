@@ -10,9 +10,17 @@
 set font "Hasklig 12"
 set adjust-open "width"
 set pages-per-row 1
+set selection-clipboard clipboard
+
+# -----------------------------------------------------------------------------
+# Keybindings
+# -----------------------------------------------------------------------------
 
 map J navigate previous
 map K navigate next
+
+map <Left> navigate previous
+map <Right> navigate next
 
 # -----------------------------------------------------------------------------
 # Theme
