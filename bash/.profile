@@ -10,7 +10,6 @@
 export DOTFILES="$HOME/.dotfiles"
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
 
 # XDG - set defaults as they are not usually set on Ubuntu
