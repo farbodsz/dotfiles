@@ -24,6 +24,7 @@ lua require("farbodsz.treesitter")
 source ~/.config/nvim/database.vim
 source ~/.config/nvim/debug.vim
 source ~/.config/nvim/dispatch.vim
+source ~/.config/nvim/firenvim.vim
 source ~/.config/nvim/git.vim
 source ~/.config/nvim/haskell.vim
 source ~/.config/nvim/markdown.vim

@@ -185,6 +185,14 @@ require("packer").startup({
       run = "cd app & yarn install",
     })
     use({ "xuhdev/vim-latex-live-preview", ft = "tex" })
+
+    -- Firenvim
+    use({
+      "glacambre/firenvim",
+      run = function()
+        vim.fn["firenvim#install"](0)
+      end,
+    })
   end,
 
   config = {
