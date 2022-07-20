@@ -93,7 +93,6 @@ require("packer").startup({
 
     -- Language syntax/detection
     use({ "memgraph/cypher.vim", ft = "cypher" })
-    use({ "~/decks/vim", ft = "decks" })
     use({ "neovimhaskell/haskell-vim", ft = "haskell" })
     use({ "towolf/vim-helm", ft = { "helm", "yaml" } })
     use({ "mboughaba/i3config.vim", ft = "i3config" })
