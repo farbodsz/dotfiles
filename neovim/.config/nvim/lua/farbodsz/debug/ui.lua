@@ -20,22 +20,23 @@ function M.setup_dapui()
       repl = "r",
     },
 
-    sidebar = {
-      elements = {
-        -- Order (bottom-to-top) and relative size of windows
-        { id = "breakpoints", size = 0.2 },
-        { id = "watches", size = 0.15 },
-        { id = "scopes", size = 0.45 },
-        { id = "stacks", size = 0.2 },
+    layouts = {
+      {
+        elements = {
+          -- Order (bottom-to-top) and relative size of windows
+          { id = "breakpoints", size = 0.2 },
+          { id = "watches", size = 0.15 },
+          { id = "scopes", size = 0.45 },
+          { id = "stacks", size = 0.2 },
+        },
+        size = 50,
+        position = "left",
       },
-      size = 50,
-      position = "left",
-    },
-
-    tray = {
-      elements = { "repl" },
-      size = 12,
-      position = "bottom",
+      {
+        elements = { "repl", "console" },
+        size = 12,
+        position = "bottom",
+      },
     },
 
     floating = {

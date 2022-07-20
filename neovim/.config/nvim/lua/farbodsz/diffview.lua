@@ -19,23 +19,25 @@ function M.setup()
     },
 
     file_panel = {
-      position = "left",
-      width = 40,
       listing_style = "tree",
       tree_options = {
+        flatten_dirs = true,
         folder_statuses = "only_folded",
+      },
+      win_config = {
+        position = "left",
+        width = 40,
       },
     },
 
     file_history_panel = {
-      position = "bottom",
-      height = 16,
-      log_options = {
-        follow = true,
+      win_config = {
+        position = "bottom",
+        height = 16,
       },
     },
 
-    key_bindings = {
+    keymaps = {
       disable_defaults = true,
       file_panel = {
         ["<cr>"] = cb("select_entry"),

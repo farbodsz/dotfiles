@@ -2,11 +2,16 @@
 -- Plugin configuration
 -------------------------------------------------------------------------------
 
+local packer = require("packer")
+
+local install_path = vim.fn.stdpath("data")
+  .. "/site/pack/packer/start/packer.nvim"
+local snapshot_path = vim.fn.getenv("HOME")
+  .. "/.dotfiles/neovim/.config/nvim/snapshots"
+
 -- Install packer
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.fn.system({
     "git",
     "clone",
     "--depth",
@@ -17,8 +22,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd("packadd packer.nvim")
 end
 
+-- Configuration
+packer.init({ snapshot_path = snapshot_path })
+
 -- Plugins
-require("packer").startup({
+packer.startup({
   function(use)
     use("wbthomason/packer.nvim")
     use("lewis6991/impatient.nvim")
