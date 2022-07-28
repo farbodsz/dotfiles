@@ -133,6 +133,9 @@ packer.startup({
         "plenary.nvim",
         { "nvim-web-devicons", opt = true },
       },
+      -- Changes to :DiffviewFileHistory command require higher versions of git
+      -- https://github.com/sindrets/diffview.nvim/issues/154
+      commit = "3ffe4a70c4b434ee933cb869b1706632c4407495",
       cmd = { "DiffviewOpen", "DiffviewFileHistory" },
       config = function()
         require("farbodsz.diffview").setup()
