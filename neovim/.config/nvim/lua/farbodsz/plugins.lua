@@ -48,7 +48,7 @@ packer.startup({
       requires = "kyazdani42/nvim-web-devicons",
       cmd = "NvimTreeToggle",
       config = function()
-        require("farbodsz.filetree")
+        require("farbodsz.filetree").setup()
       end,
     })
 
