@@ -39,7 +39,7 @@ packer.startup({
         require("farbodsz.icons").setup()
       end,
     })
-    use("~/gruvbox-alt.nvim")
+    use("farbodsz/gruvbox-alt.nvim")
     use("itchyny/lightline.vim")
 
     -- Navigation: Explorer
@@ -176,7 +176,7 @@ packer.startup({
     })
     use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } })
     use({
-      "~/pointfree.nvim",
+      "farbodsz/pointfree.nvim",
       requires = "plenary.nvim",
       ft = "haskell",
     })
