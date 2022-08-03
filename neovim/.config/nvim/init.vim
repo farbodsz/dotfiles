@@ -24,11 +24,10 @@ source ~/.config/nvim/firenvim.vim
 source ~/.config/nvim/git.vim
 source ~/.config/nvim/haskell.vim
 source ~/.config/nvim/markdown.vim
+source ~/.config/nvim/nav_windows.vim
 source ~/.config/nvim/neoterm.vim
 source ~/.config/nvim/octo.vim
 source ~/.config/nvim/refactoring.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/tex.vim
-source ~/.config/nvim/undotree.vim
 source ~/.config/nvim/unimpaired.vim
-source ~/.config/nvim/vista.vim

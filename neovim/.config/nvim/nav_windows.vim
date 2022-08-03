@@ -1,8 +1,16 @@
 " =============================================================================
-" vista configuration
+" Configuration for plugins opening navigation windows
 " =============================================================================
 
+nnoremap gK :DocsViewToggle<CR>
 nnoremap gO :Vista!!<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
+
+augroup docs_view_window
+  au!
+  autocmd FileType nvim-docs-view
+        \ setlocal wrap nonumber norelativenumber colorcolumn=
+augroup end
 
 let g:vista_default_executive = 'nvim_lsp'
 let g:vista_sidebar_width = 35

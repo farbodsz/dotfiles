@@ -74,6 +74,16 @@ packer.startup({
     use("onsails/lspkind-nvim")
     use("ray-x/lsp_signature.nvim")
     use("mfussenegger/nvim-jdtls")
+    use({
+      "amrbashir/nvim-docs-view",
+      cmd = { "DocsViewToggle" },
+      config = function()
+        require("docs-view").setup({
+          position = "bottom",
+          height = 10,
+        })
+      end,
+    })
 
     -- Completion
     use({ "hrsh7th/nvim-cmp", module = "cmp" })
