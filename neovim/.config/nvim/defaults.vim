@@ -41,7 +41,6 @@ highlight ColorColumn ctermbg=0 guibg=grey
 
 augroup wrapping
   au!
-  autocmd FileType ale-preview setlocal wrap
   autocmd FileType qf setlocal wrap
   autocmd FileType java setlocal tw=100 cc=100
 augroup end
