@@ -20,7 +20,7 @@ M.on_attach = function(client, bufnr)
   -- Mappings
   local opts = { noremap = true, silent = true }
   bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  bufmap("n", "gD", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+  bufmap("n", "gtd", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
   bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -33,8 +33,8 @@ M.on_attach = function(client, bufnr)
     opts
   )
 
-  bufmap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  bufmap("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  bufmap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  bufmap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   bufmap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
   bufmap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 
