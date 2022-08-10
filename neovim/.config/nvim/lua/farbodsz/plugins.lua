@@ -64,7 +64,13 @@ packer.startup({
 
     -- Navigation: Others
     use({ "kassio/neoterm", cmd = { "REPL", "Tnew", "Topen", "Ttoggle" } })
-    use({ "kshenoy/vim-signature", event = "BufEnter" })
+    use({
+      "chentoast/marks.nvim",
+      event = "BufEnter",
+      config = function()
+        require("marks").setup()
+      end,
+    })
     use("milkypostman/vim-togglelist")
     use({ "szw/vim-maximizer", cmd = { "MaximizerToggle", "MaximizerToggle!" } })
     use({ "liuchengxu/vista.vim", cmd = { "Vista", "Vista!", "Vista!!" } })
