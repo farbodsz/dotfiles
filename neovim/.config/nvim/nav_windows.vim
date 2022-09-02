@@ -8,8 +8,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 augroup docs_view_window
   au!
-  autocmd FileType nvim-docs-view
-        \ setlocal wrap nonumber norelativenumber colorcolumn=
+  autocmd FileType nvim-docs-view setlocal wrap nonumber norelativenumber tw=0
 augroup end
 
 let g:vista_default_executive = 'nvim_lsp'

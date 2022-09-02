@@ -48,6 +48,6 @@ augroup end
 
 augroup dbout_settings
   au!
-  autocmd FileType dbout setlocal colorcolumn=
+  autocmd FileType dbout setlocal tw=0
   autocmd FileType dbout setlocal signcolumn=
 augroup end

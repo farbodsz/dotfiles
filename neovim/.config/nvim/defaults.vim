@@ -36,13 +36,13 @@ augroup end
 " Wrapping and column width
 set nowrap
 set textwidth=80
-set colorcolumn=80
+set colorcolumn=+0
 highlight ColorColumn ctermbg=0 guibg=grey
 
 augroup wrapping
   au!
   autocmd FileType qf setlocal wrap
-  autocmd FileType java setlocal tw=100 cc=100
+  autocmd FileType java setlocal tw=100
 augroup end
 
 " Scrolling: keep 4 lines above and below cursor
