@@ -141,6 +141,7 @@ packer.startup({
     -- Git
     use("airblade/vim-gitgutter")
     use("tpope/vim-fugitive")
+    use({ "shumphrey/fugitive-gitlab.vim", requires = "vim-fugitive" })
     use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
     use({ "tommcdo/vim-fugitive-blame-ext", requires = "vim-fugitive" })
     use({
