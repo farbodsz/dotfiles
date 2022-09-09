@@ -8,10 +8,10 @@
 
 nmap <leader>gs :G<cr>
 
-nmap <leader>gb :G blame<cr>
+nmap <leader>gb :lua require("farbodsz.git").git_branches()<cr>
+nmap <leader>gc :lua require("farbodsz.git").git_commits()<cr>
 
-nmap <leader>gc :lua require("farbodsz.git").git_branches()<cr>
-nmap <leader>gC :lua require("farbodsz.git").git_commits()<cr>
+nmap <leader>gB :G blame<cr>
 
 nmap <leader>gdb :lua require("farbodsz.git").git_compare(false)<cr>
 nmap <leader>gdc :lua require("farbodsz.git").git_compare(true)<cr>
