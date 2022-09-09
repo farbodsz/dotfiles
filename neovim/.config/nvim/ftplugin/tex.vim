@@ -9,7 +9,6 @@ let g:tex_flavor = 'latex'
 nnoremap coe :setlocal conceallevel=<c-r>=&conceallevel == 0 ? '2' : '0'<cr><cr>
 let g:tex_conceal = 'abdmg'
 
-
 " Settings for vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
