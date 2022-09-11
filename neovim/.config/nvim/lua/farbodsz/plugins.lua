@@ -63,7 +63,13 @@ packer.startup({
     })
 
     -- Navigation: Others
-    use({ "kassio/neoterm", cmd = { "REPL", "Tnew", "Topen", "Ttoggle" } })
+    use({
+      "akinsho/toggleterm.nvim",
+      tag = "*",
+      config = function()
+        require("farbodsz.terminal").setup()
+      end,
+    })
     use({
       "chentoast/marks.nvim",
       event = "BufEnter",
@@ -120,6 +126,7 @@ packer.startup({
     use({ "neovimhaskell/haskell-vim", ft = "haskell" })
     use({ "towolf/vim-helm", ft = { "helm", "yaml" } })
     use({ "mboughaba/i3config.vim", ft = "i3config" })
+    use({ "martineausimon/nvim-lilypond-suite" })
     use({ "rhysd/vim-llvm", ft = "llvm" })
     use({ "plasticboy/vim-markdown", ft = "markdown" })
     use({ "LnL7/vim-nix", ft = "nix" })
