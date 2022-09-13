@@ -18,6 +18,7 @@ local linters = {
       "%f(%l,%c) : %trror %m",
     },
   },
+
   mypy = {
     lintCommand = "mypy --show-column-numbers",
     lintFormats = {
@@ -26,6 +27,7 @@ local linters = {
       "%f:%l:%c: %tote: %m",
     },
   },
+
   pylint = {
     lintCommand = "pylint --output-format text --score no --msg-template "
       .. pylint_msg_format
@@ -41,6 +43,8 @@ local linters = {
       F = "E",
     },
   },
+
+  -- Installation instructions in repo
   shellcheck = {
     lintCommand = "shellcheck -f gcc -x",
     lintSource = "shellcheck",
@@ -50,6 +54,7 @@ local linters = {
       "%f:%l:%c: %tote: %m",
     },
   },
+
   vint = {
     lintCommand = "vint -s ${INPUT} --format '" .. vint_msg_format .. "'",
     lintStdin = true,
@@ -65,35 +70,46 @@ local formatters = {
     formatCommand = "black -l 80 -",
     formatStdin = true,
   },
+
   brittany = {
     formatCommand = "brittany",
     formatStdin = true,
   },
+
   clang_format = {
     formatCommand = "clang-format -style=file -assume-filename=${INPUT}",
     formatStdin = true,
   },
+
   isort = {
     formatCommand = "isort -m 3 -tc -",
     formatStdin = true,
   },
+
   latexindent = {
     formatCommand = "latexindent -m",
     formatStdin = true,
   },
+
+  -- npm i -g @fsouza/prettierd
   prettier = {
     -- prettierd uses local prettier if available, otherwise a default prettier
     formatCommand = "prettierd ${INPUT}",
     formatStdin = true,
   },
+
+  -- Statically linked binary (see repo)
   shfmt = {
     formatCommand = "shfmt -i 2 -ci -",
     formatStdin = true,
   },
+
   stylish_haskell = {
     formatCommand = "stylish-haskell",
     formatStdin = true,
   },
+
+  -- Binary from releases page
   stylua = {
     formatCommand = "stylua -",
     formatStdin = true,
