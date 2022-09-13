@@ -11,9 +11,6 @@ end
 
 local efm_ft_progs = require("farbodsz.lsp.efm").filetype_programs
 
-local sumneko_root_path = vim.fn.stdpath("data") .. "/lua-language-server"
-local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
-
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
@@ -85,12 +82,11 @@ return {
 
   -- Installation instructions in repo
   sumneko_lua = {
-    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+    on_attach = on_attach_no_fmt,
     settings = {
       Lua = {
         runtime = {
           version = "LuaJIT",
-          path = runtime_path,
         },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
