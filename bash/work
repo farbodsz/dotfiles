@@ -2,6 +2,17 @@
 # Work configuration
 
 #-------------------------------------------------------------------------------
+# Environment variables
+#-------------------------------------------------------------------------------
+
+export APPS_HOME=/apps/home/salamatf
+export DOTFILES="$APPS_HOME/.dotfiles"
+
+export XDG_CONFIG_HOME="$APPS_HOME/.config"
+export XDG_CACHE_HOME="$APPS_HOME/.cache"
+export XDG_DATA_HOME="$APPS_HOME/.local/share"
+
+#-------------------------------------------------------------------------------
 # Terminal
 #-------------------------------------------------------------------------------
 
@@ -27,7 +38,7 @@ alias wah="cd /apps/home/salamatf"
 alias q="/opt/sp/qlib/3.5u.x86_64/q"
 
 #-------------------------------------------------------------------------------
-# Python 3.8
+# Aliases
 #-------------------------------------------------------------------------------
 
-[ -f /opt/rh/rh-python38/enable ] && source /opt/rh/rh-python38/enable
+alias wah="cd $APPS_HOME"

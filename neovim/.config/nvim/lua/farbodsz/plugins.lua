@@ -6,8 +6,8 @@ local packer = require("packer")
 
 local install_path = vim.fn.stdpath("data")
   .. "/site/pack/packer/start/packer.nvim"
-local snapshot_path = vim.fn.getenv("HOME")
-  .. "/.dotfiles/neovim/.config/nvim/snapshots"
+local snapshot_path = vim.fn.getenv("DOTFILES")
+  .. "/neovim/.config/nvim/snapshots"
 
 -- Install packer
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then

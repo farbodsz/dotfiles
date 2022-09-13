@@ -91,7 +91,7 @@ M.search_dotfiles = function()
   builtin.find_files({
     find_command = opts_find_command,
     prompt_title = "Dotfiles",
-    cwd = "~/.dotfiles",
+    cwd = vim.env.DOTFILES,
   })
 end
 
