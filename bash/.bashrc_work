@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+#-------------------------------------------------------------------------------
+# Enabling development tools
+#-------------------------------------------------------------------------------
+
+# Source the shared bashrc to enable features like auto-completion
+if [ -f /etc/bashrc ]; then
+  source /etc/bashrc
+fi
+
+# Source Dev Toolset 3
+if [ -f /opt/rh/devtoolset-3/enable ]; then
+  source /opt/rh/devtoolset-3/enable
+fi
+
+# Source Postgres
+if [ -f /opt/rh/rh-postgresql95/enable ]; then
+  source /opt/rh/rh-postgresql95/enable
+fi
+
+# Locale settings necessary for Python3
+export LC_ALL="en_US.utf8"
+export LANG="en_US.utf8"
+
+# Source Python 3.6
+if [ -f /opt/rh/rh-python36/enable ]; then
+  source /opt/rh/rh-python36/enable
+fi
+
+# Source Python 3.8
+if [ -f /opt/rh/rh-python38/enable ]; then
+  source /opt/rh/rh-python38/enable
+fi
+
+# Setup paths for Java 11
+export PATH="$PATH:/usr/lib/jvm/java-11/bin"
+export JAVA_HOME="/usr/lib/jvm/java-11"
+
+# Source Maven 3.5
+if [ -f /opt/rh/rh-maven35/enable ]; then
+  source /opt/rh/rh-maven35/enable
+fi
+
+# Q REPL
+alias q="/opt/sp/qlib/3.5u.x86_64/q"
+
+# # Source Node JS 12
+# if [ -f /opt/rh/rh-nodejs12/enable ]; then
+#   source /opt/rh/rh-nodejs12/enable
+# fi
+
+#-------------------------------------------------------------------------------
+# Aliases
+#-------------------------------------------------------------------------------
+
+alias wah="cd $APPS_HOME"

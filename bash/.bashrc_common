@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+
+# If not running interactively, don't do anything
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+#-------------------------------------------------------------------------------
+# History
+#-------------------------------------------------------------------------------
+
+HISTSIZE=1000
+HISTFILESIZE=2000
+HISTCONTROL=ignoreboth # no duplicates or commands starting with space
+shopt -s histappend    # append to history file, not overwrite
+
+#-------------------------------------------------------------------------------
+# Misc
+#-------------------------------------------------------------------------------
+
+# Update lines/columns in window size after each command if needed
+shopt -s checkwinsize
+
+# Match all files and zero or more subdirs with "**"
+shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+#-------------------------------------------------------------------------------
+# Colors, prompt, etc
+#-------------------------------------------------------------------------------
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+  xterm-color | *-256color) color_prompt=yes ;;
+esac
+
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
+else
+  color_prompt=
+fi
+
+GREEN="\[\033[01;32m\]"
+YELLOW="\[\033[01;33m\]"
+BLUE="\[\033[01;34m\]"
+NO_COLOR="\[\033[00m\]"
+
+# Terminal colouring for git branches
+# See: https://gist.github.com/danielalvarenga/2df8cabbd6f3041c2378
+function parse_git_branch() {
+  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+if [ "$color_prompt" = yes ]; then
+  PS1="$GREEN\u$NO_COLOR:$BLUE\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
+else
+  PS1="\u:\w\$(parse_git_branch)\$ "
+fi
+
+unset color_prompt force_color_prompt
+
+# Colouring for man pages
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# Enable color support in common commands
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" ||
+    eval "$(dircolors -b)"
+
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+fi
+
+# Colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+#-------------------------------------------------------------------------------
+# Completion
+#-------------------------------------------------------------------------------
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+#-------------------------------------------------------------------------------
+# Node Version Manager
+#-------------------------------------------------------------------------------
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] &&
+  printf %s "${HOME}/.nvm" ||
+  printf %s "${XDG_CONFIG_HOME}/nvm")"
+
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+#-------------------------------------------------------------------------------
+# Rust
+#-------------------------------------------------------------------------------
+
+source "$HOME/.cargo/env"
+
+#-------------------------------------------------------------------------------
+# Aliases
+#-------------------------------------------------------------------------------
+
+alias chrome="google-chrome"
+alias idea="intellij-idea-ultimate"
+alias open="xdg-open"
+alias vi="nvim.appimage"
+
+alias dtf="cd $DOTFILES"
+
+# Clean up home dotfiles
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'

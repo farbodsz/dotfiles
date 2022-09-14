@@ -1,20 +1,16 @@
 #!/bin/sh
-# Work configuration
 
 #-------------------------------------------------------------------------------
-# Environment variables
+# Home, dotfiles, XDG
 #-------------------------------------------------------------------------------
 
 export APPS_HOME=/apps/home/salamatf
+
 export DOTFILES="$APPS_HOME/.dotfiles"
 
 export XDG_CONFIG_HOME="$APPS_HOME/.config"
 export XDG_CACHE_HOME="$APPS_HOME/.cache"
 export XDG_DATA_HOME="$APPS_HOME/.local/share"
-
-#-------------------------------------------------------------------------------
-# Terminal
-#-------------------------------------------------------------------------------
 
 export TERM=xterm-256color
 
@@ -27,18 +23,3 @@ export PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
 export PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
 export PERL_MB_OPT="--install_base \"$HOME/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
-
-#-------------------------------------------------------------------------------
-# Aliases
-#-------------------------------------------------------------------------------
-
-alias wah="cd /apps/home/salamatf"
-
-# Q REPL
-alias q="/opt/sp/qlib/3.5u.x86_64/q"
-
-#-------------------------------------------------------------------------------
-# Aliases
-#-------------------------------------------------------------------------------
-
-alias wah="cd $APPS_HOME"
