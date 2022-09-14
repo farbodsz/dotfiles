@@ -1,5 +1,4 @@
 cache=~/.config/npm
 tmp=/run/user/1000/npm
 init-module=~/.config/npm/config/npm-init.js
-
 package-lock=false
