@@ -97,9 +97,6 @@ set pastetoggle=<F3>
 " Automatically use system clipboard for copy/paste
 set clipboard=unnamedplus
 
-" Give more space for displaying messages
-set cmdheight=2
-
 " Enable mouse
 set mouse=a
 

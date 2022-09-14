@@ -88,11 +88,14 @@ endfunction
 
 
 " -----------------------------------------------------------------------------
-" vim-rhubarb
+" vim-rhubarb and fugitive
 " -----------------------------------------------------------------------------
 
 " No preview window for issue body
 set completeopt-=preview
+
+let g:fugitive_gitlab_domains = 
+      \ {'ssh://gitlab.sqpc.sqrpnt.com': 'https://gitlab.sqpc.sqrpnt.com'}
 
 " Show issue/PR completion after '#' pressed in insert mode
 " Note: ~/.netrc file must be present for auth to work
