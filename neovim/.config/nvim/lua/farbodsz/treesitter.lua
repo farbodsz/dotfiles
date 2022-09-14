@@ -7,6 +7,26 @@
 require("nvim-treesitter.install").compilers = { "clang" }
 
 require("nvim-treesitter.configs").setup({
+  -- Languages
+  ensure_installed = {
+    "bash",
+    "comment",
+    "css",
+    "html",
+    "http",
+    "java",
+    "javascript",
+    "jsdoc",
+    "json",
+    "lua",
+    "python",
+    "regex",
+    "scheme",
+    "scss",
+    "sql",
+    "yaml",
+  },
+
   -- Highlighting
   highlight = {
     enable = true,
