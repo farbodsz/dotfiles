@@ -4,6 +4,7 @@
 
 local M = {}
 
+local fileutils = require("farbodsz.utils.fileutils")
 local cpptools_path = "/home/farbod/.dotfiles/neovim/.config/nvim/bin/cpptools/"
 
 M.adapters = {
@@ -74,10 +75,26 @@ M.configurations = {
 
   python = {
     {
+      name = "Python: Launch Flask backend",
       type = "python",
       request = "launch",
-      name = "Python Flask Backend",
-      -- TODO
+      module = "flask",
+      cwd = function()
+        return vim.fn.input(
+          "Working directory: ",
+          vim.fn.getcwd() .. "/",
+          "file"
+        )
+      end,
+      env = function()
+        local env_path =
+          vim.fn.input("Path to .env file: ", vim.fn.getcwd() .. "/", "file")
+        return fileutils.read_shell_env(env_path)
+      end,
+      args = {
+        "run",
+        "--no-debugger",
+      },
     },
   },
 }

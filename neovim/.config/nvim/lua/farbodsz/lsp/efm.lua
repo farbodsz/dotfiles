@@ -67,7 +67,7 @@ local linters = {
 
 local formatters = {
   black = {
-    formatCommand = "black -l 80 -",
+    formatCommand = "black -",
     formatStdin = true,
   },
 
