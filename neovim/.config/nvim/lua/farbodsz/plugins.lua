@@ -85,6 +85,10 @@ packer.startup({
     use("neovim/nvim-lspconfig")
     use("onsails/lspkind-nvim")
     use("ray-x/lsp_signature.nvim")
+    use({
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = "nvim-lua/plenary.nvim",
+    })
     use("mfussenegger/nvim-jdtls")
     use({
       "amrbashir/nvim-docs-view",
