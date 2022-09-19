@@ -9,8 +9,6 @@ local on_attach_no_fmt = function(client, bufnr)
   on_attach_default(client, bufnr)
 end
 
-local efm_ft_progs = require("farbodsz.lsp.efm").filetype_programs
-
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
@@ -29,16 +27,6 @@ return {
 
   -- npm i -g vscode-langservers-extracted
   cssls = {},
-
-  -- Installation instructions in repo
-  efm = {
-    filetypes = vim.tbl_keys(efm_ft_progs),
-    init_options = { documentFormatting = true },
-    settings = {
-      rootMarkers = { ".git/" },
-      languages = efm_ft_progs,
-    },
-  },
 
   -- npm i -g elm-test elm-format @elm-tooling/elm-language-server
   elmls = {},
