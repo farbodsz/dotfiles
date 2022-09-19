@@ -12,6 +12,18 @@ function M.setup()
     on_attach = require("farbodsz.lsp.config").on_attach,
 
     sources = {
+      -- CPP:
+      --  * clang-format
+      builtins.formatting.clang_format.with({
+        filetypes = { "c", "cpp", "cs" },
+      }),
+
+      -- HASKELL:
+      --  * stylish-haskell (for sorting imports)
+      --  * brittany
+      builtins.formatting.stylish_haskell,
+      builtins.formatting.brittany,
+
       -- LUA:
       --  * luacheck: installation instructions in repo
       --  * stylua: binary from releases page
