@@ -60,7 +60,9 @@ return {
   },
 
   -- npm i -g pyright
-  pyright = {},
+  pyright = {
+    on_attach = on_attach_no_fmt,
+  },
 
   -- Installation instructions in repo
   rnix = {},
