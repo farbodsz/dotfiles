@@ -18,3 +18,4 @@ alias pdf="zathura"
 alias gcalcli="gcalcli --config-folder=/home/farbod/.config/gcalcli"
 alias hue="hue -c ~/.config/hue/hue.json"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
