@@ -29,6 +29,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 
+mkdir -p "${HISTFILE%/*}" && touch "$HISTFILE"
+
 #-------------------------------------------------------------------------------
 # Default programs
 #-------------------------------------------------------------------------------
