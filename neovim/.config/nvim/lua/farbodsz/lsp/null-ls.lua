@@ -63,8 +63,11 @@ function M.setup()
       builtins.diagnostics.vint,
 
       -- WEB:
+      --  * eslint_d: npm i -g eslint_d
       --  * prettierd: npm i -g @fsouza/prettierd
       builtins.formatting.prettierd,
+      builtins.code_actions.eslint_d,
+      builtins.diagnostics.eslint_d,
     },
   })
 end
