@@ -11,7 +11,7 @@ function M.restart()
 end
 
 function M.disconnect_and_close()
-  dapui.close()
+  dapui.close({})
   dap.disconnect()
   dap.close()
 end

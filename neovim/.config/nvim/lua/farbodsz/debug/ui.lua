@@ -53,15 +53,15 @@ end
 
 function M.listen_dapui_events()
   dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
+    dapui.open({})
   end
 
   dap.listeners.before.event_terminated["dapui_config"] = function()
-    dapui.close()
+    dapui.close({})
   end
 
   dap.listeners.before.event_exited["dapui_config"] = function()
-    dapui.close()
+    dapui.close({})
   end
 end
 
