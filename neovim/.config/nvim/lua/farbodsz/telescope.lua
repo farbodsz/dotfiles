@@ -8,6 +8,8 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
+local browser_actions = require("telescope").extensions.file_browser.actions
+
 local opts_find_command = {
   "rg",
   "--files",
@@ -58,6 +60,25 @@ M.setup = function()
     },
 
     extensions = {
+      file_browser = {
+        hijack_netrw = false,
+        mappings = {
+          ["i"] = {
+            ["<C-a>"] = browser_actions.create,
+            ["<C-d>"] = browser_actions.remove,
+            ["<C-r>"] = browser_actions.rename,
+            ["<C-o>"] = browser_actions.open,
+          },
+          ["n"] = {
+            ["<leader>rn"] = browser_actions.rename,
+            ["dd"] = browser_actions.remove,
+            ["cc"] = browser_actions.move,
+            ["yy"] = browser_actions.copy,
+            ["<C-o>"] = browser_actions.open,
+          },
+        },
+      },
+
       fzf = {
         fuzzy = true,
         override_generic_sorter = true,
@@ -74,6 +95,7 @@ M.setup = function()
     },
   })
 
+  telescope.load_extension("file_browser")
   telescope.load_extension("fzf")
   telescope.load_extension("project")
   telescope.load_extension("refactoring")
