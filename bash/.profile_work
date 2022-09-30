@@ -15,7 +15,14 @@ export XDG_DATA_HOME="$APPS_HOME/.local/share"
 export TERM=xterm-256color
 
 #-------------------------------------------------------------------------------
-# Local Perl (for GNU stow)
+# Go (more recent than system)
+#-------------------------------------------------------------------------------
+
+export GOBIN="$HOME/go/bin"
+export PATH="$GOBIN:$PATH"
+
+#-------------------------------------------------------------------------------
+# Perl (for GNU stow)
 #-------------------------------------------------------------------------------
 
 export PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
