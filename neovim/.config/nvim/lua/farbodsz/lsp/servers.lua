@@ -28,6 +28,9 @@ return {
   -- npm i -g vscode-langservers-extracted
   cssls = {},
 
+  -- npm i -g dockerfile-language-server-nodejs
+  dockerls = {},
+
   -- npm i -g elm-test elm-format @elm-tooling/elm-language-server
   elmls = {},
 
