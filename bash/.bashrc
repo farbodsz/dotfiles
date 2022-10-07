@@ -3,7 +3,7 @@
 
 . "$DOTFILES/bash/.bashrc_common"
 
-if [ $IS_WORK_PROFILE = "yes" ] ; then
+if [ "$IS_WORK_PROFILE" = "yes" ]; then
   . "$DOTFILES/bash/.bashrc_work"
 else
   . "$DOTFILES/bash/.bashrc_personal"

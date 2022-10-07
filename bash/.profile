@@ -7,7 +7,7 @@ case "$(hostname)" in
 esac
 export IS_WORK_PROFILE="$_is_work_profile"
 
-if [ $IS_WORK_PROFILE = "yes" ]; then
+if [ "$IS_WORK_PROFILE" = "yes" ]; then
   . "$HOME/.profile_work"
 else
   . "$HOME/.profile_personal"
