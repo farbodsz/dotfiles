@@ -31,6 +31,9 @@ return {
   -- npm i -g dockerfile-language-server-nodejs
   dockerls = {},
 
+  -- npm i -g dot-language-server
+  dotls = {},
+
   -- npm i -g elm-test elm-format @elm-tooling/elm-language-server
   elmls = {},
 
