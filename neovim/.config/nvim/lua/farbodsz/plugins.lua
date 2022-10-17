@@ -131,6 +131,7 @@ packer.startup({
     })
 
     -- Language syntax/detection
+    use("midchildan/ft-confluence.vim")
     use({ "memgraph/cypher.vim", ft = "cypher" })
     use({ "neovimhaskell/haskell-vim", ft = "haskell" })
     use({ "towolf/vim-helm", ft = { "helm", "yaml" } })
@@ -138,6 +139,7 @@ packer.startup({
     use({ "martineausimon/nvim-lilypond-suite" })
     use({ "rhysd/vim-llvm", ft = "llvm" })
     use({ "plasticboy/vim-markdown", ft = "markdown" })
+    use("mracos/mermaid.vim")
     use({ "LnL7/vim-nix", ft = "nix" })
     use({ "lifepillar/pgsql.vim", ft = { "sql", "pgsql", "plsql" } })
     use({ "adimit/prolog.vim", ft = "prolog" })
