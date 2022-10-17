@@ -26,3 +26,5 @@ source ~/.config/nvim/octo.vim
 source ~/.config/nvim/refactoring.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/unimpaired.vim
+
+lua require("farbodsz.harpoon").setup()

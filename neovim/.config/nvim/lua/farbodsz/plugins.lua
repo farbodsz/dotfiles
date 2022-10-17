@@ -65,6 +65,10 @@ packer.startup({
 
     -- Navigation: Others
     use({
+      "ThePrimeagen/harpoon",
+      requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" }
+    })
+    use({
       "akinsho/toggleterm.nvim",
       tag = "*",
       config = function()
