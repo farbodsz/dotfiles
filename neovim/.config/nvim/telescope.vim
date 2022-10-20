@@ -5,7 +5,9 @@
 lua require("farbodsz.telescope").setup()
 
 nnoremap <silent><leader><backspace> :lua require("farbodsz.telescope").find_files()<cr>
+
 nnoremap <silent><leader>F :lua require("farbodsz.telescope").live_grep()<cr>
+vnoremap <silent><leader>F :lua require("farbodsz.telescope").live_grep_visual()<cr>
 
 nnoremap <leader>fd <cmd>Telescope diagnostics<cr>
 nnoremap <leader>fg <cmd>Telescope git_files<cr>

@@ -106,8 +106,43 @@ M.find_files = function()
   builtin.find_files({ find_command = opts_find_command })
 end
 
+---Returns the start/end position of the current visual selection.
+---@return integer,integer,integer,integer
+local function visual_selection_range()
+  local _, start_row, start_col, _ = unpack(vim.fn.getpos("'<"))
+  local _, end_row, end_col, _ = unpack(vim.fn.getpos("'>"))
+  if start_row < end_row or (start_row == end_row and start_col <= end_col) then
+    return start_row - 1, start_col, end_row, end_col
+  else
+    return end_row - 1, end_col, start_row, start_col
+  end
+end
+
+local function get_selection_text(start_row, start_col, end_row, end_col)
+  local lines = vim.api.nvim_buf_get_lines(0, start_row, end_row, false)
+  for i, line in ipairs(lines) do
+    local sub_start, sub_end = 1, string.len(line)
+    if i == 1 and start_col then
+      sub_start = start_col
+    end
+    if lines[i + 1] == nil and end_col then
+      sub_end = end_col
+    end
+    lines[i] = string.sub(line, sub_start, sub_end)
+  end
+  return table.concat(lines, " ")
+end
+
 M.live_grep = function()
   builtin.live_grep({ vimgrep_arguments = opts_vimgrep_args })
+end
+
+M.live_grep_visual = function()
+  local startr, startc, endr, endc = visual_selection_range()
+  builtin.live_grep({
+    default_text = get_selection_text(startr, startc, endr, endc),
+    vimgrep_arguments = opts_vimgrep_args,
+  })
 end
 
 M.search_dotfiles = function()
