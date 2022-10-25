@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
--- git configuration
+-- Git configuration
 --------------------------------------------------------------------------------
 
 local M = {}
@@ -7,7 +7,6 @@ local M = {}
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 local builtin = require("telescope.builtin")
-local utils = require("telescope.utils")
 
 local open_compare = function(value_base)
   local selected_entry = action_state.get_selected_entry()
@@ -112,9 +111,7 @@ M.git_commits = function()
 end
 
 local drop_stash = function(prompt_bufnr)
-  local cwd = action_state.get_current_picker(prompt_bufnr).cwd
   local selection = action_state.get_selected_entry()
-
   local confirmation = vim.fn.input(
     "Do you really wanna drop stash " .. selection.value .. "? [Y/n] "
   )
@@ -123,34 +120,30 @@ local drop_stash = function(prompt_bufnr)
   end
 
   actions.close(prompt_bufnr)
+  vim.cmd(":G stash drop " .. selection.value)
+end
 
-  local _, ret, stderr = utils.get_os_command_output(
-    { "git", "stash", "drop", selection.value },
-    cwd
-  )
-  if ret == 0 then
-    print("Dropped stash: " .. selection.value)
-  else
-    print(
-      string.format(
-        'Error when dropping stash: %s. Git returned: "%s',
-        selection.value,
-        table.concat(stderr, " ")
-      )
-    )
+local push_stash = function(prompt_bufnr)
+  local stash_name = action_state.get_current_line()
+
+  local extra_args = {}
+  if stash_name then
+    extra_args = { "push", "--message", "'" .. stash_name .. "'" }
   end
+
+  actions.close(prompt_bufnr)
+  vim.cmd(":G stash " .. table.concat(extra_args, " "))
 end
 
 M.git_stash = function()
   builtin.git_stash({
     attach_mappings = function(_, map)
-      map("i", "<c-a>", function()
-        vim.api.nvim_win_close(0, true)
-        vim.cmd(":stopinsert")
-        vim.cmd(":G stash")
-      end)
+      map("i", "<c-a>", push_stash)
+      map("n", "<c-a>", push_stash)
 
       map("i", "<c-d>", drop_stash)
+      map("n", "<c-d>", drop_stash)
+
       return true
     end,
   })
