@@ -19,7 +19,7 @@ nmap <leader>gdc :lua require("farbodsz.git").git_compare(true)<cr>
 nmap <leader>ge :Gedit<cr>
 
 nmap <leader>gl :DiffviewFileHistory<cr>
-vmap <leader>gl :Gllog!<cr>
+vmap <leader>gl :DiffviewFileHistory<cr>
 nmap <leader>gL :belowright Flogsplit<cr>
 
 nmap <leader>gmd :GDelete<cr>
@@ -47,7 +47,7 @@ augroup diffview_integrations
   au!
   au FileType floggraph nmap <buffer><leader>gD :call DiffviewFlog()<cr>
   au FileType fugitive nmap <buffer><leader>gD :call DiffviewFugitiveIndex()<cr>
-  au FileType fugitiveblame 
+  au FileType fugitiveblame
         \ nmap <buffer><leader>gD :call DiffviewFugitiveBlame()<cr>
   au FileType git nmap <buffer><leader>gD :call DiffviewFugitiveGit()<cr>
 
@@ -76,7 +76,7 @@ endfunction
 function! DiffviewFugitiveGit()
   let l:sha = expand('%:t')
   let l:project_root = expand('#:h:p')  " path from previously opened file
-  execute "DiffviewOpen --untracked-files=false -C" 
+  execute "DiffviewOpen --untracked-files=false -C"
         \ . l:project_root . " " . l:sha . "^!"
 endfunction
 
@@ -94,7 +94,7 @@ endfunction
 " No preview window for issue body
 set completeopt-=preview
 
-let g:fugitive_gitlab_domains = 
+let g:fugitive_gitlab_domains =
       \ {'ssh://gitlab.sqpc.sqrpnt.com': 'https://gitlab.sqpc.sqrpnt.com'}
 
 " Show issue/PR completion after '#' pressed in insert mode
@@ -146,3 +146,13 @@ let g:gitgutter_sign_removed = '▌'
 let g:gitgutter_sign_removed_first_line = '▌'
 let g:gitgutter_removed_above_and_below = '▌'
 let g:gitgutter_sign_modified_removed = '▌'
+
+
+" -----------------------------------------------------------------------------
+" Filetype settings
+" -----------------------------------------------------------------------------
+
+augroup git_filetype_settings
+  au!
+  autocmd FileType floggraph setlocal tw=0
+augroup end
