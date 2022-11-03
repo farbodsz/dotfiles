@@ -73,13 +73,13 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.haskell = {
-  install_info = {
-    url = "~/cloned/tree-sitter-haskell",
-    files = { "src/parser.c", "src/scanner.c" },
-  },
-}
+-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+-- parser_config.haskell = {
+--   install_info = {
+--     url = "~/cloned/tree-sitter-haskell",
+--     files = { "src/parser.c", "src/scanner.c" },
+--   },
+-- }
 
 local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
 ft_to_parser.octo = "markdown"

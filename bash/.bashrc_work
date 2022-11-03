@@ -47,6 +47,12 @@ fi
 #   source /opt/rh/rh-nodejs12/enable
 # fi
 
+# GHCUP
+[ -f "/apps/home/salamatf/.ghcup/env" ] && source "/apps/home/salamatf/.ghcup/env"
+
+# Rust
+[ -f "/apps/home/salamatf/.cargo/env" ] && source "/apps/home/salamatf/.cargo/env"
+
 #-------------------------------------------------------------------------------
 # Aliases
 #-------------------------------------------------------------------------------
@@ -56,3 +62,7 @@ alias q="/opt/sp/qlib/4.0.0.x86_64/q"
 alias tmux="TERM=screen-256color tmux.appimage"
 
 alias wah="cd $APPS_HOME"
+
+
+
+alias acdemo="~/sudosh.sh nyzls449"
