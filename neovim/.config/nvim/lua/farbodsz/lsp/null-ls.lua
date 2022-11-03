@@ -51,6 +51,17 @@ function M.setup()
         extra_args = { "-i", "2", "-ci" },
       }),
 
+      -- SQL:
+      --  * sql-formatter: npm install
+      builtins.formatting.sql_formatter.with({
+        extra_args = {
+          "--language",
+          "postgresql",
+          "--config",
+          vim.env.XDG_CONFIG_HOME .. "/sql-formatter/config.json",
+        },
+      }),
+
       -- TEX:
       --  * latexindent: installation instructions in repo
       builtins.formatting.latexindent.with({

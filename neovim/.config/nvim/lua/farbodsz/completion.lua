@@ -123,12 +123,15 @@ function M.setup()
   setup_cmp_dictionary()
   require("luasnip.loaders.from_snipmate").load()
 
-  vim.cmd([[
-    augroup DadbodSql
-      au!
-      autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
-    augroup END
-  ]])
+  -- TOOD: a better way of checking
+  if vim.env["IS_WORK_PROFILE"] ~= "yes" then
+    vim.cmd([[
+      augroup DadbodSql
+        au!
+        autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
+      augroup END
+    ]])
+  end
 
   -- Set completeopt to have a better completion experience
   vim.o.completeopt = "menu,menuone,noselect"

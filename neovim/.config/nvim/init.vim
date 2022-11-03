@@ -16,7 +16,11 @@ lua require("farbodsz.completion").setup()
 lua require("farbodsz.lsp")
 lua require("farbodsz.treesitter")
 
-source ~/.config/nvim/database.vim
+let s:is_work_profile = getenv('IS_WORK_PROFILE')
+if s:is_work_profile !=? 'yes'
+  source ~/.config/nvim/database.vim
+endif
+
 source ~/.config/nvim/debug.vim
 source ~/.config/nvim/dispatch.vim
 source ~/.config/nvim/firenvim.vim
