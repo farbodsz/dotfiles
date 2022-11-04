@@ -9,6 +9,9 @@ nnoremap <silent><leader><backspace> :lua require("farbodsz.telescope").find_fil
 nnoremap <silent><leader>F :lua require("farbodsz.telescope").live_grep()<cr>
 vnoremap <silent><leader>F :lua require("farbodsz.telescope").live_grep_visual()<cr>
 
+" *-like mapping for global grep (less keystrokes)
+nnoremap <silent><leader>* viw:lua require("farbodsz.telescope").live_grep_visual()<cr>
+
 nnoremap <leader>fd <cmd>Telescope diagnostics<cr>
 nnoremap <leader>fg <cmd>Telescope git_files<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser hidden=true<cr>
