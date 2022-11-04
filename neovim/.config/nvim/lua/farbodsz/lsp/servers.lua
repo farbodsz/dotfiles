@@ -65,15 +65,15 @@ return {
     },
   },
 
-  -- -- npm i -g pyright
-  -- pyright = {
-  --   on_attach = on_attach_no_fmt,
-  -- },
-
-  -- pip install python-lsp-server pylsp-mypy pylsp-rope pyls-memestra
-  pylsp = {
+  -- npm i -g pyright
+  pyright = {
     on_attach = on_attach_no_fmt,
   },
+
+  -- pip install python-lsp-server pylsp-mypy pylsp-rope pyls-memestra
+  -- pylsp = {
+  --   on_attach = on_attach_no_fmt,
+  -- },
 
   -- Installation instructions in repo
   rnix = {},
