@@ -1,11 +1,11 @@
-#!bin/sh
+#!/usr/bin/env sh
 # xinitrc
 
 # Set envronment variables
-USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
-USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
-ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
-ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
+export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
 # Set keyboard layout
 setxkbmap -layout us -variant altgr-intl
