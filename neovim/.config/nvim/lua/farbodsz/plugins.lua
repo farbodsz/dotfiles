@@ -66,7 +66,7 @@ packer.startup({
     -- Navigation: Others
     use({
       "ThePrimeagen/harpoon",
-      requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" }
+      requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     })
     use({
       "akinsho/toggleterm.nvim",
@@ -125,7 +125,13 @@ packer.startup({
 
     -- Tree sitter
     use({
-      { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+      {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        -- TODO: versions after this remove TS* highlight groups so update
+        -- theme/config first
+        commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0",
+      },
       "nvim-treesitter/playground",
       "nvim-treesitter/nvim-treesitter-textobjects",
     })

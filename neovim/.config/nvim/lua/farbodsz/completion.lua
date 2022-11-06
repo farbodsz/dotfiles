@@ -3,6 +3,7 @@
 -------------------------------------------------------------------------------
 
 local cmp = require("cmp")
+local cmp_lsp = require("cmp_nvim_lsp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
@@ -143,7 +144,7 @@ end
 function M.make_capabilities()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
-  return require("cmp_nvim_lsp").update_capabilities(capabilities)
+  return cmp_lsp.default_capabilities(capabilities)
 end
 
 return M

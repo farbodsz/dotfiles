@@ -53,7 +53,8 @@ augroup diffview_integrations
         \ nmap <buffer><leader>gD :call DiffviewFugitiveBlame()<cr>
   au FileType git nmap <buffer><leader>gD :call DiffviewFugitiveGit()<cr>
 
-  au FileType DiffviewFileHistory nmap <buffer>a :tabclose<cr> :belowright Flogsplit -path=% -- --follow<cr>
+  au FileType DiffviewFileHistory
+        \ nmap <buffer>a :tabclose<cr> :belowright Flogsplit -path=% -- --follow<cr>
 augroup end
 
 
@@ -84,7 +85,7 @@ endfunction
 
 " Opens Diffview to compare local changes from the GStatus buffer
 function! DiffviewFugitiveIndex()
-  let l:project_root = expand('%:h:h')  " project root according to fugitive
+  let l:project_root = expand('#:h:p')  " path from previously opened file
   execute 'DiffviewOpen --untracked-files=true -C' . l:project_root
 endfunction
 
