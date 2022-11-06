@@ -2,6 +2,8 @@
 " Git configuration
 " =============================================================================
 
+scriptencoding utf-8
+
 " -----------------------------------------------------------------------------
 " Mappings
 " -----------------------------------------------------------------------------
@@ -59,16 +61,16 @@ augroup end
 " Floggraph format should have only the SHA in square brackets
 function! DiffviewFlog()
   let l:line = trim(getline('.'))
-  let l:parts = split(line, "[")
-  let l:sha = split(parts[1], "]")[0]
-  execute "DiffviewOpen --untracked-files=false " . l:sha . "^!"
+  let l:parts = split(line, '[')
+  let l:sha = split(parts[1], ']')[0]
+  execute 'DiffviewOpen --untracked-files=false ' . l:sha . '^!'
 endfunction
 
 " Opens Diffview for the commit under the cursor in fugitiveblame
 function! DiffviewFugitiveBlame()
   let l:line = trim(getline('.'))
-  let l:sha = split(line, " ")[0]
-  execute "DiffviewOpen --untracked-files=false " . l:sha . "^!"
+  let l:sha = split(line, ' ')[0]
+  execute 'DiffviewOpen --untracked-files=false ' . l:sha . '^!'
 endfunction
 
 " Opens Diffview for the fugitive file showing commit details (ft=git)
@@ -76,14 +78,14 @@ endfunction
 function! DiffviewFugitiveGit()
   let l:sha = expand('%:t')
   let l:project_root = expand('#:h:p')  " path from previously opened file
-  execute "DiffviewOpen --untracked-files=false -C"
-        \ . l:project_root . " " . l:sha . "^!"
+  execute 'DiffviewOpen --untracked-files=false -C'
+        \ . l:project_root . ' ' . l:sha . '^!'
 endfunction
 
 " Opens Diffview to compare local changes from the GStatus buffer
 function! DiffviewFugitiveIndex()
   let l:project_root = expand('%:h:h')  " project root according to fugitive
-  execute "DiffviewOpen --untracked-files=true -C" . l:project_root
+  execute 'DiffviewOpen --untracked-files=true -C' . l:project_root
 endfunction
 
 
