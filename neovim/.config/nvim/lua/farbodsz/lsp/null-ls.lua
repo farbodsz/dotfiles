@@ -18,12 +18,6 @@ function M.setup()
         filetypes = { "c", "cpp", "cs" },
       }),
 
-      -- HASKELL:
-      --  * stylish-haskell (for sorting imports)
-      --  * brittany
-      builtins.formatting.stylish_haskell,
-      builtins.formatting.brittany,
-
       -- LUA:
       --  * luacheck: installation instructions in repo
       --  * stylua: binary from releases page

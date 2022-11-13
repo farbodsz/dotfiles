@@ -52,7 +52,11 @@ return {
 
   -- ghcup install hls
   hls = {
-    on_attach = on_attach_no_fmt,
+    settings = {
+      haskell = {
+        formattingProvider = "fourmolu",
+      },
+    },
   },
 
   -- npm i -g vscode-langservers-extracted
