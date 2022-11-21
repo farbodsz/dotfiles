@@ -9,6 +9,8 @@ local M = {}
 
 function M.setup()
   diffview.setup({
+    git_cmd = { vim.env.HOME .. "/.local/bin/git" },
+
     diff_binaries = false,
     enhanced_diff_hl = true,
     use_icons = true,
@@ -50,6 +52,7 @@ function M.setup()
         ["<C-w>f"] = actions.goto_file_split,
         ["<C-w><C-f>"] = actions.goto_file_split,
         ["<C-w>gf"] = actions.goto_file_tab,
+        ["u"] = actions.toggle_stage_entry,
         ["s"] = actions.toggle_stage_entry,
         ["X"] = actions.restore_entry,
         ["R"] = actions.refresh_files,
