@@ -84,7 +84,7 @@ packer.startup({
     })
     use("milkypostman/vim-togglelist")
     use({ "szw/vim-maximizer", cmd = { "MaximizerToggle", "MaximizerToggle!" } })
-    use({ "liuchengxu/vista.vim", cmd = { "Vista", "Vista!", "Vista!!" } })
+    use("simrat39/symbols-outline.nvim")
 
     -- LSP and completion
     use("neovim/nvim-lspconfig")
