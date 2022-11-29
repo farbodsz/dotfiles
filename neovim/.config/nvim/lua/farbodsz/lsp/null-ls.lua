@@ -25,11 +25,9 @@ function M.setup()
       builtins.formatting.stylua,
 
       -- PYTHON:
-      --  * mypy: pip install
       --  * pylint: pip install
       --  * black: pip install
       --  * isort: pip install
-      builtins.diagnostics.mypy,
       builtins.diagnostics.pylint,
       builtins.formatting.isort.with({
         extra_args = { "-m", "3", "-tc" }, -- vertical hanging, trailing comma
