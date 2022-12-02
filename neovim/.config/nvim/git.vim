@@ -15,8 +15,9 @@ nmap <leader>gc :lua require("farbodsz.git").git_commits()<cr>
 
 nmap <leader>gB :G blame<cr>
 
-nmap <leader>gdb :lua require("farbodsz.git").git_compare(false)<cr>
-nmap <leader>gdc :lua require("farbodsz.git").git_compare(true)<cr>
+nmap <leader>gdb :lua require("farbodsz.git").git_compare_branches()<cr>
+nmap <leader>gdc :lua require("farbodsz.git").git_compare_commits()<cr>
+nmap <leader>gdl :lua require("farbodsz.git").git_compare_commit_logs()<cr>
 
 nmap <leader>ge :Gedit<cr>
 
