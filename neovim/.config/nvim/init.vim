@@ -21,6 +21,7 @@ if s:is_work_profile !=? 'yes'
   source ~/.config/nvim/database.vim
 endif
 
+source ~/.config/nvim/confluence.vim
 source ~/.config/nvim/debug.vim
 source ~/.config/nvim/dispatch.vim
 source ~/.config/nvim/firenvim.vim
