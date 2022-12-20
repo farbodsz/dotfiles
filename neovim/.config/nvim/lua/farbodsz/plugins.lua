@@ -51,6 +51,12 @@ packer.startup({
         require("farbodsz.filetree").setup()
       end,
     })
+    use({
+      "elihunter173/dirbuf.nvim",
+      config = function()
+        require("farbodsz.dirbuf").setup()
+      end,
+    })
 
     -- Navigation: Telescope
     use({
