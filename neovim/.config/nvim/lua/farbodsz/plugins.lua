@@ -204,6 +204,16 @@ packer.startup({
     use({ "theHamsta/nvim-dap-virtual-text", requires = "nvim-dap" })
     use({ "jbyuki/one-small-step-for-vimkind", requires = "nvim-dap" })
 
+    -- Testing
+    use({
+      "nvim-neotest/neotest",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+      },
+    })
+    use({ "nvim-neotest/neotest-python", requires = "nvim-neotest/neotest" })
+
     -- Useful tools
     use({
       "norcalli/nvim-colorizer.lua",

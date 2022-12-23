@@ -14,6 +14,7 @@ source ~/.config/nvim/theme.vim
 
 lua require("farbodsz.completion").setup()
 lua require("farbodsz.lsp")
+lua require("farbodsz.testing").setup()
 lua require("farbodsz.treesitter")
 
 let s:is_work_profile = getenv('IS_WORK_PROFILE')

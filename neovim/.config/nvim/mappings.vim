@@ -38,8 +38,8 @@ nnoremap [T :tabclose<CR>
 nnoremap ]T :tabnew<CR>
 
 
-" Explorer
-nnoremap <leader>t :NvimTreeToggle<CR>
+" Explorer tree
+nnoremap <leader>et :NvimTreeToggle<CR>
 
 
 " Open scratch buffer (note <C-w>n opens a normal new window/buffer)
