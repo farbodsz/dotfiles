@@ -22,7 +22,6 @@ require("nvim-treesitter.configs").setup({
     "regex",
     "scheme",
     "scss",
-    "sql",
     "yaml",
   },
 

@@ -5,7 +5,8 @@
 local on_attach_default = require("farbodsz.lsp.config").on_attach
 local on_attach_no_fmt = function(client, bufnr)
   -- Disable built-in language server formatting
-  client.resolved_capabilities.document_formatting = false
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
   on_attach_default(client, bufnr)
 end
 

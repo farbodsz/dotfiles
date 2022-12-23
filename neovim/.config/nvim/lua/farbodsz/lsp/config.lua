@@ -40,9 +40,12 @@ M.on_attach = function(client, bufnr)
   bufmap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
   bufmap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 
-  if client.resolved_capabilities.document_formatting then
-    bufmap("n", "<space>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    bufmap("v", "<space>cf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+  local formatCmd = "<cmd>lua vim.lsp.buf.format({ async = true })<CR>"
+  if client.server_capabilities.documentFormattingProvider then
+    bufmap("n", "<space>cf", formatCmd, opts)
+  end
+  if client.server_capabilities.documentRangeFormattingProvider then
+    bufmap("v", "<space>cf", formatCmd, opts)
   end
 end
 

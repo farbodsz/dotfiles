@@ -33,6 +33,13 @@ function M.setup()
     },
 
     file_history_panel = {
+      log_options = {
+        git = {
+          single_file = {
+            follow = true,
+          },
+        },
+      },
       win_config = {
         position = "bottom",
         height = 16,
