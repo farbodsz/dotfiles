@@ -62,6 +62,14 @@ function M.setup()
       neotest.summary.toggle()
     end,
   })
+
+  -- Dark background
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "neotest-summary",
+    callback = function()
+      vim.cmd("set winhighlight=Normal:NeotestNormal")
+    end,
+  })
 end
 
 return M
