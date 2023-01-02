@@ -39,7 +39,7 @@ packer.startup({
         require("farbodsz.icons").setup()
       end,
     })
-    use("farbodsz/gruvbox-alt.nvim")
+    use("farbodsz/farbodsz-theme.nvim")
     use("itchyny/lightline.vim")
 
     -- Navigation: Explorer

@@ -82,9 +82,3 @@ require("nvim-treesitter.configs").setup({
 
 local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
 ft_to_parser.octo = "markdown"
-
-vim.api.nvim_set_hl(0, "@variable", { link = "None" })
-vim.api.nvim_set_hl(0, "@field", { link = "Identifier" })
-vim.api.nvim_set_hl(0, "@include", { link = "Statement" })
-vim.api.nvim_set_hl(0, "@namespace", { link = "Identifier" })
-vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "Comment" })

@@ -6,7 +6,7 @@
 set background=dark
 set termguicolors
 
-colorscheme gruvbox-alt
+colorscheme farbodsz-theme
 
 
 " Lightline customisation
