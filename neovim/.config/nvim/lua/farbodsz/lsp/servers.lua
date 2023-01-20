@@ -26,6 +26,9 @@ return {
     on_attach = on_attach_no_fmt,
   },
 
+  -- pip install cmake-language-server cmakelang
+  cmake = {},
+
   -- npm i -g vscode-langservers-extracted
   cssls = {},
 

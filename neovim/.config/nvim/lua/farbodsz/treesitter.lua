@@ -10,6 +10,7 @@ require("nvim-treesitter.configs").setup({
   -- Languages
   ensure_installed = {
     "bash",
+    "cmake",
     "comment",
     "css",
     "haskell",
@@ -21,6 +22,7 @@ require("nvim-treesitter.configs").setup({
     "jsdoc",
     "json",
     "lua",
+    "make",
     "python",
     "regex",
     "rst",
