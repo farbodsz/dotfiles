@@ -30,7 +30,7 @@ function M.setup()
     },
 
     view = {
-      width = 30,
+      width = 36,
       side = "left",
 
       mappings = {
