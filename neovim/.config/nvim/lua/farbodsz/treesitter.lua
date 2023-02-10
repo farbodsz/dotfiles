@@ -2,8 +2,7 @@
 -- nvim-treesitter configuration
 --------------------------------------------------------------------------------
 
--- At the moment, some languages (e.g. Haskell) compile with errors when
--- compiled with `gcc`.
+-- Some languages compile with errors when compiled with `gcc` (e.g. on CentOS)
 require("nvim-treesitter.install").compilers = { "clang" }
 
 require("nvim-treesitter.configs").setup({
@@ -13,6 +12,7 @@ require("nvim-treesitter.configs").setup({
     "cmake",
     "comment",
     "css",
+    "dockerfile",
     "haskell",
     "help",
     "html",
