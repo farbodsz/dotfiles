@@ -21,7 +21,7 @@ nmap <leader>gdl :lua require("farbodsz.git").git_compare_commit_logs()<cr>
 
 nmap <leader>ge :Gedit<cr>
 
-nmap <leader>gl :DiffviewFileHistory<cr>
+nmap <leader>gl :DiffviewFileHistory %<cr>
 vmap <leader>gl :DiffviewFileHistory<cr>
 nmap <leader>gL :belowright Flogsplit<cr>
 
