@@ -90,7 +90,7 @@ return {
   rust_analyzer = {},
 
   -- Installation instructions in repo
-  sumneko_lua = {
+  lua_ls = {
     on_attach = on_attach_no_fmt,
     settings = {
       Lua = {
