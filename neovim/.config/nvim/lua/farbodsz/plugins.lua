@@ -82,6 +82,14 @@ packer.startup({
       end,
     })
     use({
+      "chomosuke/term-edit.nvim",
+      tag = "v1.*",
+      filetype = "toggleterm",
+      config = function()
+        require("term-edit").setup({ prompt_end = "%$ " })
+      end,
+    })
+    use({
       "chentoast/marks.nvim",
       event = "BufEnter",
       config = function()
