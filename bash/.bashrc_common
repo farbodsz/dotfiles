@@ -46,22 +46,32 @@ else
   color_prompt=
 fi
 
-GREEN="\[\033[01;32m\]"
-YELLOW="\[\033[01;33m\]"
-BLUE="\[\033[01;34m\]"
-NO_COLOR="\[\033[00m\]"
+if [ "$color_prompt" = yes ]; then
+  GREEN="\[\033[0;32m\]"
+  YELLOW="\[\033[0;33m\]"
+  BLUE="\[\033[0;34m\]"
+  MAGENTA="\[\033[0;35m\]"
+  NO_COLOR="\[\033[00m\]"
+fi
 
-# Terminal colouring for git branches
-# See: https://gist.github.com/danielalvarenga/2df8cabbd6f3041c2378
 function parse_git_branch() {
   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-if [ "$color_prompt" = yes ]; then
-  PS1="$GREEN\u$NO_COLOR:$BLUE\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
-else
-  PS1="\u:\w\$(parse_git_branch)\$ "
-fi
+function get_kubectl_context() {
+  if ! command -v kubectl &>/dev/null; then
+    echo ""
+  else
+    printf "[%s]\n" "$(kubectl config current-context)"
+  fi
+}
+
+PS1="\
+$GREEN\u$NO_COLOR:\
+$BLUE\w\
+$MAGENTA\$(get_kubectl_context)\
+$YELLOW\$(parse_git_branch)\
+$NO_COLOR\$ "
 
 unset color_prompt force_color_prompt
 
@@ -124,3 +134,13 @@ alias open="xdg-open"
 alias vi="nvim.appimage"
 
 alias dtf="cd $DOTFILES"
+
+#-------------------------------------------------------------------------------
+# Functions
+#-------------------------------------------------------------------------------
+
+function reset_x11_display() {
+  new_display=$(tmux show-environment | sed -n 's/^DISPLAY=//p')
+  export DISPLAY=$new_display
+}
+export reset_x11_display
