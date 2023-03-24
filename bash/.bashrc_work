@@ -42,11 +42,6 @@ if [ -f /opt/rh/rh-maven35/enable ]; then
   source /opt/rh/rh-maven35/enable
 fi
 
-# # Source Node JS 12
-# if [ -f /opt/rh/rh-nodejs12/enable ]; then
-#   source /opt/rh/rh-nodejs12/enable
-# fi
-
 # GHCUP
 [ -f "/apps/home/salamatf/.ghcup/env" ] && source "/apps/home/salamatf/.ghcup/env"
 
@@ -54,15 +49,27 @@ fi
 [ -f "/apps/home/salamatf/.cargo/env" ] && source "/apps/home/salamatf/.cargo/env"
 
 #-------------------------------------------------------------------------------
-# Aliases
+# Aliases and functions
 #-------------------------------------------------------------------------------
 
 alias authz="/opt/sp/authz/bin/authz-cli"
+alias kc="kubectl"
+alias lmk="/opt/sp/monkey-see/3.1.0/bin/monkey_see --server nyzlmk:50010 --server sgzlmk:9989 --server ldzlmk:8090"
 alias q="/opt/sp/qlib/4.0.0.x86_64/q"
 alias tmux="TERM=screen-256color tmux.appimage"
+alias vi="/usr/local/bin/nvim"
+alias wah="cd \$APPS_HOME"
+alias docker=podman
+alias dive=/opt/third/dive
 
-alias wah="cd $APPS_HOME"
+function acdemo() {
+  "$APPS_HOME/sudosh.sh nyzls449k sp_dse_prd ldzls105i"
+}
 
+function acprod() {
+  "$APPS_HOME/sudosh.sh nyzls404k sp_dse_prd ldzls105i"
+}
 
-
-alias acdemo="~/sudosh.sh nyzls449"
+function docbox() {
+  "$APPS_HOME"/docbox/docbox/client/python/docbox-cli/env/bin/docbox "$@"
+}
