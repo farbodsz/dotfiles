@@ -23,7 +23,7 @@ nmap <leader>ge :Gedit<cr>
 
 nmap <leader>gl :DiffviewFileHistory %<cr>
 vmap <leader>gl :DiffviewFileHistory<cr>
-nmap <leader>gL :belowright Flogsplit<cr>
+nmap <leader>gL :botright Flogsplit<cr>
 
 nmap <leader>gmd :GDelete<cr>
 nmap <leader>gmm :GMove<space>
