@@ -30,15 +30,51 @@ function M.setup()
     adapters = {
       require("neotest-python")({
         runner = "pytest",
-        python = "venv/bin/python",
       }),
     },
+
     icons = {
       passed = "✔",
       running = "⧖",
       failed = "✖",
       skipped = "S",
       unknown = "?",
+    },
+
+    output = {
+      enabled = true,
+      open_on_run = false,
+    },
+    quickfix = {
+      enabled = false,
+      open = false,
+    },
+
+    summary = {
+      enabled = true,
+      animated = true,
+      follow = true,
+      expand_errors = true,
+      open = "botright vsplit | vertical resize 50",
+      mappings = {
+        expand = { "<CR>", "<2-LeftMouse>" },
+        expand_all = "e",
+        output = "o",
+        short = "O",
+        attach = "a",
+        jumpto = "i",
+        stop = "u",
+        run = "r",
+        debug = "d",
+        mark = "m",
+        run_marked = "R",
+        debug_marked = "D",
+        clear_marked = "M",
+        target = "t",
+        clear_target = "T",
+        next_failed = "J",
+        prev_failed = "K",
+      },
     },
   })
 
@@ -60,14 +96,6 @@ function M.setup()
     end,
     ["a"] = function()
       neotest.summary.toggle()
-    end,
-  })
-
-  -- Dark background
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = "neotest-summary",
-    callback = function()
-      vim.cmd("set winhighlight=Normal:NeotestNormal")
     end,
   })
 end
