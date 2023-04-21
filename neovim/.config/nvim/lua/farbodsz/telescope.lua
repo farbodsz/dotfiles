@@ -90,6 +90,9 @@ M.setup = function()
         base_dirs = {
           -- Include all git repos under home
           "~",
+
+          -- Include all git repos under apps dir at work
+          vim.fn.getenv("APPS_HOME"),
         },
       },
     },
