@@ -2,6 +2,8 @@
 -- Language servers
 -------------------------------------------------------------------------------
 
+local util = require("lspconfig.util")
+
 local on_attach_default = require("farbodsz.lsp.config").on_attach
 local on_attach_no_fmt = function(client, bufnr)
   -- Disable built-in language server formatting
@@ -76,6 +78,7 @@ return {
   -- npm i -g pyright
   pyright = {
     on_attach = on_attach_no_fmt,
+    root_dir = util.root_pattern(".git/"),
   },
 
   -- pip install python-lsp-server pylsp-mypy pylsp-rope pyls-memestra
