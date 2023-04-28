@@ -62,12 +62,31 @@ packer.startup({
         "nvim-telescope/telescope-file-browser.nvim",
       },
     })
-
-    -- Navigation: Others
     use({
       "ThePrimeagen/harpoon",
       requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     })
+
+    -- Navigation: Others
+    use({
+      "chentoast/marks.nvim",
+      event = "BufEnter",
+      config = function()
+        require("marks").setup()
+      end,
+    })
+    use("milkypostman/vim-togglelist")
+    use({ "szw/vim-maximizer", cmd = { "MaximizerToggle", "MaximizerToggle!" } })
+    use("simrat39/symbols-outline.nvim")
+    use({
+      "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+      config = function()
+        require("farbodsz.trouble").setup()
+      end,
+    })
+
+    -- Terminal
     use({
       "akinsho/toggleterm.nvim",
       tag = "*",
@@ -83,16 +102,6 @@ packer.startup({
         require("term-edit").setup({ prompt_end = "%$ " })
       end,
     })
-    use({
-      "chentoast/marks.nvim",
-      event = "BufEnter",
-      config = function()
-        require("marks").setup()
-      end,
-    })
-    use("milkypostman/vim-togglelist")
-    use({ "szw/vim-maximizer", cmd = { "MaximizerToggle", "MaximizerToggle!" } })
-    use("simrat39/symbols-outline.nvim")
 
     -- LSP and completion
     use("neovim/nvim-lspconfig")
