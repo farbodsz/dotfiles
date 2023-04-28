@@ -2,13 +2,14 @@
 -- File tree
 --------------------------------------------------------------------------------
 
+local nvim_tree = require("nvim-tree")
+local api = require("nvim-tree.api")
+
 local M = {}
 
 function M.setup()
-  require("nvim-tree").setup({
+  nvim_tree.setup({
     disable_netrw = false, -- netrw needed for :GBrowse
-
-    open_on_setup = false,
     hijack_cursor = true, -- force cursor at start of filename in tree
 
     diagnostics = {
@@ -29,15 +30,16 @@ function M.setup()
     view = {
       width = 36,
       side = "left",
-
-      mappings = {
-        custom_only = false,
-        list = {
-          { key = { "<Tab>" }, action = "cd" },
-          { key = { "<S-Tab>" }, action = "dir_up" },
-        },
-      },
     },
+
+    on_attach = function(bufnr)
+      local opts =
+        { buffer = bufnr, noremap = true, silent = true, nowait = true }
+
+      api.config.mappings.default_on_attach(bufnr)
+      vim.keymap.set("n", "<Tab>", api.tree.change_root_to_node, opts)
+      vim.keymap.set("n", "<S-Tab>", api.tree.change_root_to_parent, opts)
+    end,
   })
 end
 
