@@ -21,9 +21,6 @@ function M.setup()
       enable = true, -- un-collapse folders recursively until it finds this file
     },
 
-    -- Required for dirbuf.nvim
-    hijack_directories = { enable = false },
-
     renderer = {
       group_empty = true,
       special_files = {},
