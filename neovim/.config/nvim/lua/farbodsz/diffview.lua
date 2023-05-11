@@ -37,6 +37,7 @@ function M.setup()
         git = {
           single_file = {
             follow = true,
+            no_merges = true,
           },
         },
       },
