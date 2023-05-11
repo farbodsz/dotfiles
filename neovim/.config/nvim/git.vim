@@ -9,6 +9,7 @@ scriptencoding utf-8
 " -----------------------------------------------------------------------------
 
 nmap <leader>gs :G<cr>
+nmap <leader>g<space> :G<space>
 
 nmap <leader>gb :lua require("farbodsz.git").git_branches()<cr>
 nmap <leader>gc :lua require("farbodsz.git").git_commits()<cr>
