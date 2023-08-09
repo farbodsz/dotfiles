@@ -160,4 +160,6 @@ let g:gitgutter_sign_modified_removed = '▌'
 augroup git_filetype_settings
   au!
   autocmd FileType floggraph setlocal tw=0
+  autocmd FileType floggraph syn match floggraphMergeCommit ".*Merge .*"
+  autocmd FileType floggraph hi def link floggraphMergeCommit Comment
 augroup end
