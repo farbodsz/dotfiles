@@ -60,6 +60,7 @@ packer.startup({
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         "nvim-telescope/telescope-project.nvim",
         "nvim-telescope/telescope-file-browser.nvim",
+        "octarect/telescope-menu.nvim",
       },
     })
     use({
@@ -200,6 +201,16 @@ packer.startup({
       cmd = { "Octo" },
       config = function()
         require("octo").setup()
+      end,
+    })
+    use({
+      "harrisoncramer/gitlab.nvim",
+      requires = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+      run = function()
+        require("gitlab").build()
+      end,
+      config = function()
+        require("farbodsz.gitlab").setup()
       end,
     })
 

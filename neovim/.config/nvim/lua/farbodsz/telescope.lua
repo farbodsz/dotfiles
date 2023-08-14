@@ -7,8 +7,8 @@ local M = {}
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
-
 local browser_actions = require("telescope").extensions.file_browser.actions
+local gitlab = require("farbodsz.gitlab")
 
 local opts_find_command = {
   "rg",
@@ -86,6 +86,12 @@ M.setup = function()
         case_mode = "smart_case",
       },
 
+      menu = {
+        gitlab = {
+          items = gitlab.telescope_menu_items,
+        },
+      },
+
       project = {
         base_dirs = {
           -- Include all git repos under home
@@ -101,6 +107,7 @@ M.setup = function()
   telescope.load_extension("file_browser")
   telescope.load_extension("fzf")
   telescope.load_extension("harpoon")
+  telescope.load_extension("menu")
   telescope.load_extension("project")
   telescope.load_extension("refactoring")
 end
