@@ -160,6 +160,7 @@ packer.startup({
     use({ "LnL7/vim-nix", ft = "nix" })
     use({ "lifepillar/pgsql.vim", ft = { "sql", "pgsql", "plsql" } })
     use({ "adimit/prolog.vim", ft = "prolog" })
+    use({ "katusk/vim-qkdb-syntax" })
     use({ "MTDL9/vim-log-highlighting", ft = "log" })
     use({ "lervag/vimtex", ft = "tex" })
     use({ "KeitaNakamura/tex-conceal.vim", ft = "tex" })
@@ -176,8 +177,6 @@ packer.startup({
     -- Git
     use("airblade/vim-gitgutter")
     use("tpope/vim-fugitive")
-    use({ "shumphrey/fugitive-gitlab.vim", requires = "vim-fugitive" })
-    use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
     use({ "tommcdo/vim-fugitive-blame-ext", requires = "vim-fugitive" })
     use({
       "sindrets/diffview.nvim",
@@ -191,6 +190,10 @@ packer.startup({
       end,
     })
     use({ "rbong/vim-flog", requires = "vim-fugitive" })
+
+    -- GitHub and GitLab
+    use({ "tpope/vim-rhubarb", requires = "vim-fugitive" })
+    use({ "shumphrey/fugitive-gitlab.vim", requires = "vim-fugitive" })
     use({
       "pwntester/octo.nvim",
       requires = { "plenary.nvim", "telescope.nvim", "nvim-web-devicons" },
