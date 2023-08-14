@@ -2,15 +2,12 @@
 -- Neotest configuration
 --------------------------------------------------------------------------------
 
+local nnoremap = require("farbodsz.utils.keymap").nnoremap
 local neotest = require("neotest")
 
 local keymap_prefix = "<leader>t"
 
 local M = {}
-
-local function nnoremap(...)
-  vim.keymap.set("n", ...)
-end
 
 ---@class Keymap
 ---@field suffix string

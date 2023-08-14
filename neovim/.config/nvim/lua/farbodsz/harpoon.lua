@@ -2,14 +2,11 @@
 -- Harpoon configuration
 --------------------------------------------------------------------------------
 
+local nnoremap = require("farbodsz.utils.keymap").nnoremap
 local M = {}
 
 function M.setup()
   require("harpoon").setup()
-
-  local function nnoremap(...)
-    vim.keymap.set("n", ...)
-  end
 
   -- NOTE: same prefix as git hunk mappings
   nnoremap("<leader>hl", "<cmd>Telescope harpoon marks<cr>")
